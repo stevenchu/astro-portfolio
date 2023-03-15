@@ -1,14 +1,22 @@
 ---
-title: Internal tool to reduce email development friction - Uniqlo
+title: Eliminating workflow bottlenecks for email designers at Uniqlo
 publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
+img: /assets/cover-uniqlo.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
-  We designed a whodunnit-style game to introduce Markdown formatting. Suspense — suspicion — syntax!
+  Developed an internal coding automation tool that cut production time for validated email HTML from 40 minutes to 5 minutes.
 tags:
   - Design
   - Dev
   - User Testing
+role:
+  - Service Design
+  - User Research
+  - User Interviews
+  - Journey Mapping
+  - Front-end development
+  - User Testing
+year: "2018"
 ---
 
 ## Level-two heading

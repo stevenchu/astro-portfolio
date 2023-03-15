@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro';
 import Hero from '../components/Hero.astro';
 ---
 
@@ -10,73 +12,131 @@ import Hero from '../components/Hero.astro';
 		<main class="wrapper about">
 			<Hero
 				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+				tagline=""
 			>
-				<img
-					width="800"
-					height="450"
-					src="./assets/about-me.jpg"
-					alt="Steven Chu teaching kayaking"
-				/>
+
 			</Hero>
 
 			<section>
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>University of California, Berkeley</p>
-					<p><span class="i">Business Administration</span> – Haas School of Business</p>
-					<p class="i">Psychology</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<ul>
-						<li>Service design</li>
+					<h5 style="max-width:54ch;font-weight:300;line-height:1.35;margin-bottom:.5em;color: var(--gray-200);font-family: var(--font-body);">
+						I work with startups, not-for-profits, and Fortune 500s to help make their digital products easier to use, communicate clear narratives, and streamline workflow processes.
+						I'm passionate about projects that help people explore their creativity and develop new skillsets.
+					</h5>
 
-						<li>Systems thinking</li>
-							
-						<li>Journey mapping</li>
-							
-						<li>Information architecture</li>
-							
-						<li>Rapid prototyping</li>
-							
-						<li>User flows & wireflows</li>
-							
-						<li>Visual design</li>
-							
-						<li>Responsive web design</li>
-							
-						<li>Front-end development</li>
-							
-						<li>Mentorship & coaching</li>
-							
-						<li>Studio & documentary photography</li>
-					</ul>
+					<div class="ctas">
+						<CallToAction href="/resume" style="inverse small">
+							Resume
+						</CallToAction>
+						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
+							Say Hello 
+							<Icon icon="paper-plane-tilt" size="1.2em" />
+						</CallToAction>
+					</div>
+					<!--img
+					width="800"
+					height="450"
+					src="/assets/about-me.jpg"
+					alt="Steven Chu teaching kayaking"
+				/-->
+					<br>
+					<br>
+					<p>	
+						In my design approach, I strive for inclusive and equitable solutions, early and frequent cross-functional collaboration, and data-backed decision-making. 
+					</p>
+					<p> 
+						l leverage the power of experience and service design, research, prototyping, design operations, and front-end development- 
+						combined with my background in branding and marketing. 
+						Working together, I'll carry the design process end to end, from 0 to 1 and beyond. 
+					</p>
+					<p>
+						Prior to leading design at Motif Photos, I spent time at Uniqlo, Marie Forleo, designing and coding e-commerce stores, and freelancing at agencies.
+					</p>
+
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Former Clients</h2>
+				<div class="content cols-3">
+                    <div>
+						<strong>Agencies</strong><br>
+						Alpaca VC<br>
+						August Jackson<br>
+						BarkerNYC<br>
+						Deutsch<br>
+						DraftFCB<br>
+						Jack Morton<br>
+						Ketchum Change (Daggerwing Group)<br>
+						Kraftworks NYC<br>
+						Meredith Digital<br>
+						Momentum Worldwide<br>
+						The Lab NYC<br>
+					</div>
+					<div>
+						<strong>Consumer</strong><br>
+						Disney Vacation Club<br>
+						IKEA<br>
+						Kiehl's<br>
+						Olympus<br>
+						Prevacid<br>
+						Spectrum<br>
+						State Farm<br>
+						UNIQLO<br>
+						USAA<br>
+						Verizon<br>
+					</div>
+					<div>
+						<strong>Arts & Design</strong><br>
+						Brian Kish Inc.<br>
+						The Archers Design Group<br>
+						The Temenos Foundation<br>
+						Taffera Fine Building & Finishes<br>
+					</div>
+					<div>
+						<strong>Music</strong><br>
+						LadyFag's LadyLand Festival<br>
+						Avant Gardner<br>
+						ebb+flow music<br>
+						United Palace<br>
+						FNV (Fruits & Vegetables)<br>
+					</div>
+					<div>
+						<strong>E-Commerce</strong><br>
+						SokoGlam Beauty<br>
+						Marissa Webb<br>
+						MONSE<br>
+						Voutsa Wallpaper<br>
+						Heather Huey Millinery<br>
+						Virani Jewelers<br>
+					</div>
+					<div>
+						<strong>Lifestyle</strong><br>
+						Jeffrey Fashion Cares<br>
+						Cafe Cluny<br>
+						Cafe Luxembourg<br>
+						The Odeon Restaurant<br>
+						Marie Forleo<br>
+						Sotheby's<br>
+					</div>
+					<div>
+						<strong>Startups</strong><br>
+						Motif Photos<br>
+						Life School<br>
+						GrowthFountain Capital<br>
+						InstaTechie<br>
+						Morgan & Morgan<br>
+					</div>
+					<div>
+						<strong>Publications</strong><br>
+						The Economist<br>
+						Fitness Magazine<br>
+						Food & Wine Magazine<br>
+						More Magazine<br>
+						Pin-UP Architectural Digest<br>
+						The Wall Street Journal<br>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -111,8 +171,31 @@ import Hero from '../components/Hero.astro';
 		color: var(--gray-0);
 	}
 
+	.ctas {
+		margin-top: 1rem;
+	}
+
+	.cols-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-gap: 2em;
+		font-size: 1rem;
+    }
+
+	@media (min-width: 50em) {
+		.ctas {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+	}
+
 	.i {
 		font-style: italic;
+	}
+
+	p {
+		margin-bottom: 1em;
 	}
 
 	.content {

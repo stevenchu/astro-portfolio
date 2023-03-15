@@ -1,12 +1,14 @@
 ---
 interface Props {
 	href: string;
+	size?: string;
+	style?: string;
 }
 
-const { href } = Astro.props;
+const { href, size, style } = Astro.props;
 ---
 
-<a href={href}><slot /></a>
+<a href={href} class={style}><slot /></a>
 
 <style>
 	a {
@@ -24,6 +26,18 @@ const { href } = Astro.props;
 		background: var(--gradient-accent-orange);
 		box-shadow: var(--shadow-md);
 		white-space: nowrap;
+	}
+
+	a.inverse {
+		background: var(--accent-text-over);
+		color: var(--gradient-accent-orange);
+		border-color: var(--gradient-accent-orange);
+		border-width: 1px;
+		border-style: solid;
+	}
+
+	a.small {
+		line-height: 1.35;
 	}
 
 	@media (min-width: 20em) {
@@ -52,5 +66,15 @@ const { href } = Astro.props;
 			padding: 1.125rem 2.5rem;
 			font-size: var(--text-xl);
 		}
+		a.small {
+			font-size: var(--text-md);
+		}
 	}
+
+	@media (max-width: 50em) {
+		.small {
+			margin-bottom: 1rem;
+		}
+	}
+
 </style>

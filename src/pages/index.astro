@@ -10,7 +10,7 @@ import Grid from '../components/Grid.astro';
 import Hero from '../components/Hero.astro';
 import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
-import PortfolioPreview from '../components/PortfolioPreview.astro';
+import PortfolioPreview from '../components/PortfolioPreview-full.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
@@ -37,15 +37,28 @@ const projects = (await getCollection('work'))
 				/>
 				
 				<Hero
-					title="I'm Steven Chu, a Product Designer excited about helping teams make products for people who want to explore their creativity and develop new skillsets."
-					tagline="Since 2010 l've been \n leveraging the power of experience and service design, research, prototyping, design operations, and front-end development- combined with my background in branding and marketing - to help startups, not-for-profits, and Fortune 500s build the right products the first time around from 0 to 1 and beyond. I'm currently the Creative Director at Motif Photos, a mac & iOS photo bookmaking app live in 32 countries and #13 in the App Store - and am based in Brooklyn, NY."
+					title="👋 I'm Steven, a Product Designer based in NYC."
+					tagline="I'm currently at Motif Photos where I'm helping people explore their creativity and develop new skillsets."
 					align="start"
 				>
-					<div class="roles">
+					<!--div class="roles">
 						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
 						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
 						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
+					</div-->
+
+					<div class="ctas">
+						<CallToAction href="/about" style="inverse small">
+							Learn more
+						</CallToAction>
+						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
+							Say Hello 
+							<Icon icon="paper-plane-tilt" size="1.2em" />
+						</CallToAction>
 					</div>
+
+					
+					
 				</Hero>
 
 				
@@ -57,12 +70,11 @@ const projects = (await getCollection('work'))
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Selected Work</h3>
-					<p>Take a look below at some of my featured work for clients from the past few years.</p>
+					<h3>Work</h3>
 				</header>
 
 				<div class="gallery">
-					<Grid variant="offset">
+					<Grid variant="full">
 						{
 							projects.map((project) => (
 								<li>
@@ -136,7 +148,7 @@ const projects = (await getCollection('work'))
 			gap: 3.75rem;
 		}
 
-		.roles {
+		.roles, .ctas {
 			margin-top: 0.5rem;
 			display: flex;
 			gap: 0.5rem;

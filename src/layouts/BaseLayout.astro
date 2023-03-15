@@ -20,10 +20,13 @@ const { title, description } = Astro.props;
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<div class="stack backgrounds">
-			<Nav />
-			<slot />
-			<Footer />
+		<div class="relative">
+			
+			<div class="stack backgrounds relative">
+				<Nav />
+				<slot />
+				<Footer />
+			</div>
 		</div>
 
 		<script>
@@ -108,6 +111,7 @@ const { title, description } = Astro.props;
 					--bg-gradient-size: none;
 				}
 			}
+
 		</style>
 	</body>
 </html>

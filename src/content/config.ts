@@ -9,6 +9,8 @@ export const collections = {
 			tags: z.array(z.string()),
 			img: z.string(),
 			img_alt: z.string().optional(),
+			role: z.array(z.string()).optional(),
+			year: z.string().optional(),
 		}),
 	}),
 };

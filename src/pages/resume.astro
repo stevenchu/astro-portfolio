@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="Resume | Steven Chu" description="Steven Chu Product Designer in Brooklyn, New York - Work experience">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="Steven Chu"
+				tagline="Product Designer based in Brooklyn, NY"
+			>
+			</Hero>
+
+            <div class="content cols-3">
+                <div>
+                    <small>Portfolio</small><br>
+                    stevenchustudio.com
+                </div>
+                <div>
+                    <small>Email</small><br>
+                    work@stevenchustudio.com<br>
+                </div>
+                <div>
+                    <small>Phone</small><br>
+                    646-450-2809
+                </div>
+            </div>
+
+			<section>
+				<h2 class="section-title">Experience</h2>
+				<div class="content">
+					<h5>Motif Photos</h5>
+                    <small>December 2018 - Present</small>
+                    <p>
+						I'm currently building out design process + development infrastructure (designOps: tools, ways of working, design ethos) at Motif Photos, a mac & iOS photo bookmaking startup offered in 32 countries. Motif is the first consumer venture from the world's largest B2B printer, R.R. Donnelley- a Fortune 500 with 35K employees.
+					</p>
+                </div>
+                <div class="content">
+					<h5>Uniqlo</h5>
+                    <small>Dec 2017 - Apr 2018</small>
+                    <p>
+						As an internal UX consultant at UNIQLO, I developed a coding automation tool through contextual research and service design to help the 6 person team eliminate user error when developing emails, meet production goals, and increase email personalization.
+					</p>
+                </div>
+                <div class="content">    
+                    <h5>Marie Forleo</h5>
+                    <small>September 2015 - October 2015</small>
+                    <p>
+						As a UX consultant for Marie Forleo - a multimillion-dollar online education platform for entrepreneurship endorsed by Oprah & Richard Branson with students in 148 countries and 609+ job industries - I led strategy, information architecture, and wireframing to transform MarieForleo.com from a basic Wordpress blog into a fully-developed learning resource hub which has helped 55,000+ students pursue entrepreneurship. The site format quickly became a template replicated by industry competitors.
+					</p>
+                </div>
+                <div class="content">
+                    <h5>Steven Chu Studio</h5>
+                    <small>Mar 2009 - Dec 2018</small>
+                    <p>
+						Launched and managed e-commerce stores as a Shopify Expert for a client roster including: Marissa Webb, former Global Creative Director of Banana Republic and J. Crew; a gold and diamonds jeweler; and e-commerce consulting for Mary Kate & Ashley Olsen, MONSE, S. Rothschild, and Steven Alan.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<h5>B.S. in Business Administration & Psychology</h5>
+                    <span class="i">Haas School of Business</span><br>
+                    University of California, Berkeley
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content cols-3">
+                    <div>
+                        <h5>Tools</h5>
+                        Figma<br>
+                        Zeplin<br>
+                        Notion<br>
+                        Airtable<br>
+                        Adobe Creative Suite<br>
+                        HTML + CSS<br>
+                        Liquid<br>
+                        Algolia<br>
+                        Contentful<br>
+                        Github<br>
+                        
+                    </div>
+                    <div>
+                        <h5>Areas of Focus</h5>
+                        Service design<br>
+                        Systems thinking<br>
+                        Journey mapping<br>
+                        Information architecture<br>
+                        Rapid prototyping<br>
+                        User flows & wireflows<br>
+                        Visual design<br>
+                        Responsive web design<br>
+                        Front-end development<br>
+                        Mentorship & coaching<br>
+                        Studio & documentary photography<br>
+              
+                    </div>
+					<div>
+						&nbsp;
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+
+    ul {
+        padding-left: 0;
+    }
+
+	li {
+		list-style-type: none;
+	}
+
+    .cols-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        grid-gap: 2em;
+    }
+
+	@media (min-width: 50em) {
+		.ctas {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+	}
+
+	.i {
+		font-style: italic;
+	}
+
+	p {
+		margin: 1em 0;
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

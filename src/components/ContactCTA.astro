@@ -4,7 +4,8 @@ import Icon from './Icon.astro';
 ---
 
 <aside>
-	<h2>Interested in working together?</h2>
+	<h2>I'd love to meet you :)<br><p class="desc">Let's talk design, dev, strategy, brand, and scrappy solutions to tough problems over a virtual coffee.</p></h2>
+	
 	<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry">
 		Say Hello 👋
 		<Icon icon="paper-plane-tilt" size="1.2em" />
@@ -27,7 +28,14 @@ import Icon from './Icon.astro';
 	h2 {
 		font-size: var(--text-xl);
 		text-align: center;
-		max-width: 15ch;
+		max-width: 16ch;
+	}
+
+	p.desc {
+		font-family: var(--font-body);
+		font-size:16px;
+		margin-top:.5em;
+		font-weight:normal;
 	}
 
 	@media (min-width: 50em) {

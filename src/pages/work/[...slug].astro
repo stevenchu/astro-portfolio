@@ -38,6 +38,9 @@ const { Content } = await entry.render();
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
 							</div>
+							<div class="tags">
+								{entry.data.role.map((t) => <Pill>{t}</Pill>)}
+							</div>
 							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
