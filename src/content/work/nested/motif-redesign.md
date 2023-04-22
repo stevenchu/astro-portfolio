@@ -1,14 +1,14 @@
 ---
-title: Unified Design System
+title: A photo book brand for everyday adventurers
 publishDate: 2020-03-04 00:00:00
-img: /assets/cover-motif.jpg
-img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
+img: /assets/case/cover-motif.jpg
+img_alt: Responsive web design for Motif
 description: |
   Brand identity and responsive website redesign for a photo book making app.
 tags:
-  - Design
-  - Dev
+  - Strategy
   - Branding
+  - Brand Experience
 role:
   - Stakeholder Workshop
   - User Interviews
@@ -18,7 +18,35 @@ role:
 year: asdfasdf
 ---
 
+  <style>
+      main p {
+        max-width: 65ch;
+      }
+  </style>
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+
+<figure><img src="/assets/case/motif1.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif2.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif3.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif4.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif5.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif6.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif7.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif8.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif9.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif10.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif11.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif12.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif13.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif14.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif15.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif16.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif17.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif18.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif19.jpg" alt="Motif Slide"></figure>
+<figure><img src="/assets/case/motif20.jpg" alt="Motif Slide"></figure>
+
 
 Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
 

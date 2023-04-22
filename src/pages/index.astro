@@ -29,6 +29,39 @@ const projects = (await getCollection('work'))
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
+
+
+				<Hero
+					title="Connecting people with their curiosity to explore."
+					tagline="Through product design, front-end coding, and brand strategy– I build and connect people to tools to explore their creativity and build new skillsets."
+					align="start"
+				>
+
+				
+				<!--p>Currently leading Brand Experience Design at Motif Photos. Previously, he spent time at Uniqlo, Marie Forleo, building e-commerce stores as a Shopify expert, and freelancing at agencies.</p> 
+				<p>I studied Psychology and Business at the Haas School of Business at UC Berkeley.</p>
+				<p>In doing so, he's helped a variety of brands and products build trust, drive preference and create affinity with their users.</p>
+			-->
+				<!--div class="roles">
+						<Pill><Icon icon="pencil-line" size="1.33em" /> Designer</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
+						<Pill><Icon icon="microphone-stage" size="1.33em" /> Strategist</Pill>
+					</div-->
+
+				<div class="ctas">
+						<CallToAction href="/about" style="inverse small">
+							Learn More
+						</CallToAction>
+						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
+							Say Hello 
+							<Icon icon="paper-plane-tilt" size="1.2em" />
+						</CallToAction>
+					</div>	
+
+					
+					
+				</Hero>
+
 				<img
 					alt="Steven Chu smiling in a white shirt, custom overalls, and oxford dress shoes"
 					width="480"
@@ -36,31 +69,6 @@ const projects = (await getCollection('work'))
 					src="./assets/portrait.jpg"
 				/>
 				
-				<Hero
-					title="👋 I'm Steven, a Product Designer based in NYC."
-					tagline="I'm currently at Motif Photos where I'm helping people explore their creativity and develop new skillsets."
-					align="start"
-				>
-					<!--div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
-					</div-->
-
-					<div class="ctas">
-						<CallToAction href="/about" style="inverse small">
-							Learn more
-						</CallToAction>
-						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
-							Say Hello 
-							<Icon icon="paper-plane-tilt" size="1.2em" />
-						</CallToAction>
-					</div>
-
-					
-					
-				</Hero>
-
 				
 			</header>
 
@@ -143,7 +151,7 @@ const projects = (await getCollection('work'))
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
-			grid-template-columns: 4fr 6fr;
+			grid-template-columns: 6fr 4fr;
 			padding-inline: 2.5rem;
 			gap: 3.75rem;
 		}
