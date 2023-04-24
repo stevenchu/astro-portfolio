@@ -15,7 +15,7 @@ role:
   - Interface Design
   - End to end Visual Design
   - User Testing
-year: 2021
+year: "2021"
 ---
 
   <style>

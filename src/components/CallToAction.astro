@@ -30,10 +30,16 @@ const { href, size, style } = Astro.props;
 
 	a.inverse {
 		background: var(--accent-text-over);
-		color: var(--gradient-accent-orange);
-		border-color: var(--gradient-accent-orange);
+		color: var(--gray-0);
+		border-color: var(--gray-0);
 		border-width: 1px;
 		border-style: solid;
+	}
+
+	:root.theme-dark a.inverse {
+		background: var(--gray-999);
+		color: var(--gray-0);
+		border-color: var(--gray-0);
 	}
 
 	a.small {
@@ -42,7 +48,7 @@ const { href, size, style } = Astro.props;
 
 	@media (min-width: 20em) {
 		a {
-			font-size: var(--text-lg);
+			font-size: var(--text-md);
 		}
 	}
 
