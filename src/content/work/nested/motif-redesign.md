@@ -1,6 +1,6 @@
 ---
 title: A photo book brand for everyday adventurers
-publishDate: 2020-03-04 00:00:00
+publishDate: 2021-09-04 00:00:00
 img: /assets/case/cover-motif.jpg
 img_alt: Responsive web design for Motif
 description: |
@@ -15,7 +15,7 @@ role:
   - Interface Design
   - End to end Visual Design
   - User Testing
-year: asdfasdf
+year: 2021
 ---
 
   <style>
