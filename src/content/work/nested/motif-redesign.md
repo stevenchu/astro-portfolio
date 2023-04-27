@@ -1,7 +1,7 @@
 ---
 title: Photo books for everyday adventurers
 publishDate: 2021-09-04 00:00:00
-img: /assets/case/cover-motif-wide.png
+img: /images/case/cover-motif-wide.png
 img_alt: Responsive web design for Motif
 description: |
   Brand identity and responsive website redesign for a photo book making app.
@@ -51,25 +51,25 @@ Improved conversion by 12% on key funnel pages through continuous testing and op
 
 --
 
-<figure><img src="/assets/case/motif1.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif2.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif3.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif4.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif5.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif6.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif7.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif8.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif9.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif10.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif11.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif12.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif13.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif14.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif15.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif16.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif17.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif18.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif19.jpg" alt="Motif Slide"></figure>
-<figure><img src="/assets/case/motif20.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif1.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif2.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif3.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif4.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif5.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif6.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif7.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif8.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif9.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif10.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif11.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif12.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif13.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif14.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif15.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif16.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif17.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif18.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif19.jpg" alt="Motif Slide"></figure>
+<figure><img src="/images/case/motif20.jpg" alt="Motif Slide"></figure>
 
 

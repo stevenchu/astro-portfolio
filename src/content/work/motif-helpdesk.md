@@ -1,7 +1,7 @@
 ---
 title: Improving self-service options in the account dashboard
 publishDate: 2019-10-02 00:00:00
-img: /assets/stock-4.jpg
+img: /images/stock-4.jpg
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   Enabling users to take care of the most frequent account issues themselves- reducing support tickets for CS agents by 20% 

@@ -1,7 +1,7 @@
 ---
 title: Marie Forleo
 publishDate: 2015-10-01 00:00:00
-img: /assets/stock-2.jpg
+img: /images/stock-2.jpg
 img_alt: Freemium user experience for entrepreneurship bootcamp
 description: |
   Designed the Free User's experience for an online women's entrepreneurship bootcamp.

@@ -1,7 +1,7 @@
 ---
 title: Sidewalk haircuts for art 
 publishDate: 2020-03-02 00:00:00
-img: /assets/case/cover-uniqlo.jpg
+img: /images/case/cover-uniqlo.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
   Developed an internal tool for Uniqlo that cut the time it took their designers to turn email designs to production ready & QA'd code from 40 minutes to 5 minutes; freeing up the bandwidth for them to create personalized content and deliver a better customer experience.
