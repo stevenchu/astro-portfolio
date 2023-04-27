@@ -118,8 +118,8 @@
 
 @font-face {
     font-family: 'PP Neue Machina Inktrap';
-    src: url('PPNeueMachina-InktrapLight.woff2') format('woff2'),
-        url('PPNeueMachina-InktrapLight.woff') format('woff');
+    src: url('./fonts/PPNeueMachina-InktrapLight.woff2') format('woff2'),
+        url('./fonts/PPNeueMachina-InktrapLight.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -127,8 +127,8 @@
 
 @font-face {
     font-family: 'PP Neue Machina Inktrap Ulbold';
-    src: url('PPNeueMachina-InktrapUltrabold.woff2') format('woff2'),
-        url('PPNeueMachina-InktrapUltrabold.woff') format('woff');
+    src: url('./fonts/PPNeueMachina-InktrapUltrabold.woff2') format('woff2'),
+        url('./fonts/PPNeueMachina-InktrapUltrabold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
