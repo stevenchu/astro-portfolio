@@ -14,7 +14,6 @@ import PortfolioPreview from '../components/PortfolioPreview-full.astro';
 
 // Page section components
 import ContactCTA from '../components/ContactCTA.astro';
-import Skills from '../components/Skills.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -26,29 +25,29 @@ const projects = (await getCollection('work'))
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
+	<div class="stack">
+		<div class="wrapper stack">
 			<header class="hero">
 
-
 				<Hero
-					title="Connecting people with their curiosity to explore."
+					title="Product designer connecting people with their curiosity to explore."
 					tagline="Through product design, front-end coding, and brand strategy– I build and connect people to tools to explore their creativity and build new skillsets."
 					align="start"
 				>
 
 				
-				<!--p>Currently leading Brand Experience Design at Motif Photos. Previously, he spent time at Uniqlo, Marie Forleo, building e-commerce stores as a Shopify expert, and freelancing at agencies.</p> 
-				<p>I studied Psychology and Business at the Haas School of Business at UC Berkeley.</p>
-				<p>In doing so, he's helped a variety of brands and products build trust, drive preference and create affinity with their users.</p>
-			-->
-				<!--div class="roles">
+					<!--p>Currently leading Brand Experience Design at Motif Photos. Previously, he spent time at Uniqlo, Marie Forleo, building e-commerce stores as a Shopify expert, and freelancing at agencies.</p> 
+					<p>I studied Psychology and Business at the Haas School of Business at UC Berkeley.</p>
+					<p>In doing so, he's helped a variety of brands and products build trust, drive preference and create affinity with their users.</p>
+				-->
+					<!--div class="roles">
 						<Pill><Icon icon="pencil-line" size="1.33em" /> Designer</Pill>
 						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
 						<Pill><Icon icon="microphone-stage" size="1.33em" /> Strategist</Pill>
 					</div-->
+				
 
-				<div class="ctas">
+					<div class="ctas">
 						<CallToAction href="/about" style="inverse small">
 							Learn More
 						</CallToAction>
@@ -57,7 +56,6 @@ const projects = (await getCollection('work'))
 							<Icon icon="paper-plane-tilt" size="1.2em" />
 						</CallToAction>
 					</div>	
-
 					
 					
 				</Hero>
@@ -72,14 +70,14 @@ const projects = (await getCollection('work'))
 				
 			</header>
 
-			<Skills />
+		
 		</div>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
+		<main class="wrapper stack ">
 			<section class="section with-background with-cta">
-				<header class="section-header stack gap-2 lg:gap-4">
+				<!--header class="section-header stack gap-2 lg:gap-4">
 					<h3>Work</h3>
-				</header>
+				</header-->
 
 				<div class="gallery">
 					<Grid variant="full">
@@ -93,15 +91,15 @@ const projects = (await getCollection('work'))
 					</Grid>
 				</div>
 
-				<div class="cta">
+				<!--div class="cta">
 					<CallToAction href="/work/">
 						View All
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
-				</div>
+				</div-->
 			</section>
 
-			<section class="section with-background bg-variant">
+			<!--section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Mentions</h3>
 					<p>
@@ -121,7 +119,7 @@ const projects = (await getCollection('work'))
 						}
 					</Grid>
 				</div>
-			</section>
+			</section-->
 		</main>
 
 		<ContactCTA />
@@ -134,6 +132,9 @@ const projects = (await getCollection('work'))
 		flex-direction: column;
 		align-items: center;
 		gap: 2rem;
+		border: 1px solid var(--gray-0);
+		border-radius: 0.75rem;
+		padding: 4rem 2rem;
 	}
 
 	.roles {
@@ -152,7 +153,9 @@ const projects = (await getCollection('work'))
 		.hero {
 			display: grid;
 			grid-template-columns: 6fr 4fr;
-			padding-inline: 2.5rem;
+			padding-inline: 4.5rem;
+			padding: 8rem 5rem;
+			border-radius: 4.5rem;
 			gap: 3.75rem;
 		}
 
@@ -218,7 +221,7 @@ const projects = (await getCollection('work'))
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';
-			gap: 5rem;
+			gap: 0rem;
 		}
 
 		.section.with-cta {

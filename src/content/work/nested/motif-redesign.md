@@ -1,14 +1,14 @@
 ---
-title: A photo book brand for everyday adventurers
+title: Photo books for everyday adventurers
 publishDate: 2021-09-04 00:00:00
-img: /assets/case/cover-motif.jpg
+img: /assets/case/cover-motif.png
 img_alt: Responsive web design for Motif
 description: |
   Brand identity and responsive website redesign for a photo book making app.
 tags:
-  - Strategy
   - Branding
-  - Brand Experience
+  - Design System
+  - Responsive Web Design
 role:
   - Stakeholder Workshop
   - User Interviews

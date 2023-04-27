@@ -12,11 +12,7 @@ const textLinks: { label: string; href: string }[] = [
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	{ label: 'Twitter', href: 'https://twitter.com/ChuubieTaco', icon: 'twitter-logo' },
-	{ label: 'Twitch', href: 'https://twitch.tv/me', icon: 'twitch-logo' },
-	{ label: 'GitHub', href: 'https://github.com/me', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/me', icon: 'codepen-logo' },
-	{ label: 'dribbble', href: 'https://dribbble.com/me', icon: 'dribbble-logo' },
-	{ label: 'YouTube', href: 'https://www.youtube.com/@me/', icon: 'youtube-logo' },
+	{ label: 'LinkedIn', href: 'https://linkedin.com/in/stevenchu', icon: 'linkedin-logo' },
 ];
 ---
 
@@ -337,14 +333,14 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 			border: 0;
 			padding: 0.5rem 0.5625rem;
 			/*background: radial-gradient(var(--gray-900), var(--gray-800) 150%);*/
-			box-shadow: var(--shadow-md);
+			box-shadow: var(--shadow-sm);
 		}
 
 		.nav-items::before {
 			position: absolute;
 			inset: -1px;
 			content: '';
-			background: var(--gradient-stroke);
+			background: var(--gray-0);
 			border-radius: 999rem;
 			z-index: -1;
 		}

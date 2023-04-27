@@ -6,9 +6,8 @@ img_alt: Email code generator tool for non-coding designers
 description: |
   Developed an internal tool for Uniqlo cutting the time it took designers to build email code from 40 minutes to 5 minutes; freeing up the bandwidth for them to create personalized content and deliver a better customer experience.
 tags:
-  - Design
-  - Dev
-  - User Testing
+  - Service Design
+  - Front-end Development
 role:
   - Research
   - User Interviews

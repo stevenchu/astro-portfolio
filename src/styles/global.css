@@ -17,10 +17,10 @@
 	--gray-999: #ffffff;
 	--tan-10: #f6f4ee;
 
-	--accent-light: #c561f6;
-	--accent-regular: #7611a6;
-	--accent-dark: #1c0056;
-	--accent-overlay: hsla(280, 89%, 67%, 0.33);
+	--accent-light: #f6bf61;
+	--accent-regular: #0b090c;
+	--accent-dark: #000;
+	--accent-overlay: hsla(40, 89%, 67%, 0.546);
 	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-999);
 
@@ -67,8 +67,8 @@
 	/* Fonts */
 	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: 'Public Sans', var(--font-system);
-	--font-brand: 'MuseoModerno', var(--font-system);
+	--font-body: 'PP Neue Machina Inktrap', var(--font-system);
+	--font-brand: 'PP Neue Machina Inktrap', var(--font-system);
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
@@ -116,10 +116,29 @@
 		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
+@font-face {
+    font-family: 'PP Neue Machina Inktrap';
+    src: url('PPNeueMachina-InktrapLight.woff2') format('woff2'),
+        url('PPNeueMachina-InktrapLight.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Neue Machina Inktrap Ulbold';
+    src: url('PPNeueMachina-InktrapUltrabold.woff2') format('woff2'),
+        url('PPNeueMachina-InktrapUltrabold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 html,
 body {
 	height: 100%;
 	overflow-x: hidden;
+	letter-spacing: -.02em;
 }
 
 body {
@@ -153,7 +172,7 @@ h4,
 h5 {
 	line-height: 1.1;
 	font-family: var(--font-brand);
-	font-weight: 600;
+	font-weight: 300;
 	color: var(--gray-100);
 }
 
