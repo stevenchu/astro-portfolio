@@ -18,7 +18,7 @@ const { href, size, style } = Astro.props;
 		text-align: center;
 		padding: 0.56em 2em;
 		gap: 0.8em;
-		color: var(--accent-text-over);
+		color: var(--gray-999);
 		text-decoration: none;
 		line-height: 1.1;
 		border-radius: 999rem;
@@ -29,7 +29,7 @@ const { href, size, style } = Astro.props;
 	}
 
 	a.inverse {
-		background: var(--accent-text-over);
+		background: transparent;
 		color: var(--gray-0);
 		border-color: var(--gray-0);
 		border-width: 1px;
@@ -37,7 +37,7 @@ const { href, size, style } = Astro.props;
 	}
 
 	:root.theme-dark a.inverse {
-		background: var(--gray-999);
+		background: transparent;
 		color: var(--gray-0);
 		border-color: var(--gray-0);
 	}

@@ -14,20 +14,53 @@ import Skills from '../components/Skills.astro';
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
+				title="About Steven"
 				tagline=""
 			>
 
 			</Hero>
 
-			<section>
+			<section class="gap-20 lg:gap-40">
 				<h2 class="section-title">Background</h2>
 				<div class="content">
-					<h5 style="max-width:54ch;font-weight:300;line-height:1.35;margin-bottom:.5em;color: var(--gray-200);font-family: var(--font-body);">
-						I've worked with startups, not-for-profits, and Fortune 500s to help make their digital products easier to use, communicate clear narratives, and streamline workflow processes.
-						I'm passionate about projects that help people explore their creativity and develop new skillsets.
+										
+					<h5 style="max-width:54ch;font-weight:300;line-height:1.35;margin-bottom:.5em;">
+						I’m a Product Designer excited about creative tools, education, and e-commerce. 
+						Since 2015, I’ve worked with startups, not-for-profits, and Fortune 500s to build the right products the first time around; leveraging experience design, research, prototyping, and data-driven testing. 
+						<!--I've worked with startups, not-for-profits, and Fortune 500s to help make their digital products easier to use, communicate clear narratives, and streamline workflow processes.
+						I'm passionate about projects that help people explore their creativity and develop new skillsets.-->
 					</h5>
 
+					<!--img
+					width="800"
+					height="450"
+					src="/assets/about-me.jpg"
+					alt="Steven Chu teaching kayaking"
+				/-->
+
+					<br>
+	
+					<p>Currently, I lead designOps and brand direction at Motif Photos. Previously, I solved internal workflow problems for Uniqlo, designed a women's entrepreneurship bootcamp's free user experience at Marie Forleo, and launched Shopify ecommerce stores for small businesses with my agency background in branding, marketing, and front-end development.
+					</p>
+					<p>	
+						In my design approach, I strive for inclusive and equitable solutions, early and frequent cross-functional collaboration with my teams, and data-backed decision-making. 
+					</p>
+					<!--p>  combined with my background in branding, marketing, and e-commerce . 
+						
+						I'm currently Design Lead at Motif Photos–– where I lead design on brand, web, and marketing.
+						Previously, I spent time at Uniqlo, Marie Forleo, designing and coding e-commerce stores, and freelancing at agencies.
+						— and am based in Brooklyn, NY. (a mac/iOS photo bookmaking app in 32 countries and #13 in the App Store)
+						Working together, I'll carry the design process end to end, from 0 to 1 and beyond. 
+					</p-->
+
+					<p>I'm an out and proud LGBTQ+ professional. 
+					I also love the outdoors, documentary photography, dance, and am a certified instructor for kayaking and pole sports.</p>
+					<img
+					width="800"
+					height="450"
+					src="/assets/about-me.jpg"
+					alt="Steven Chu teaching kayaking"
+				><br><br>	
 					<div class="ctas">
 						<CallToAction href="/resume" style="inverse small">
 							Resume
@@ -37,37 +70,13 @@ import Skills from '../components/Skills.astro';
 							<Icon icon="paper-plane-tilt" size="1.2em" />
 						</CallToAction>
 					</div>
-					<!--img
-					width="800"
-					height="450"
-					src="/assets/about-me.jpg"
-					alt="Steven Chu teaching kayaking"
-				/-->
-
-				<Skills />
 					<br>
-					<br>
-					<p>	
-						In my design approach, I strive for inclusive and equitable solutions, early and frequent cross-functional collaboration, and data-backed decision-making. 
-					</p>
-					<p> 
-						l leverage the power of experience and service design, research, prototyping, design operations, and front-end development- 
-						combined with my background in branding and marketing. 
-						Working together, I'll carry the design process end to end, from 0 to 1 and beyond. 
-					</p>
-					<p>
-						Prior to leading design at Motif Photos, I spent time at Uniqlo, Marie Forleo, designing and coding e-commerce stores, and freelancing at agencies.
-					</p>
-					<p>I'm an out and proud LGBTQ+ professional who believes in creating inclusivity and access to resources. 
-						</p>
-					<p>Teaching: I'm a certified L2 Pole Dancing instructor 
-						And L1 kayaking instructor</p>
-
-
+					
 				</div>
 			</section>
+
 			<section>
-				<h2 class="section-title">Former Clients</h2>
+				<h2 class="section-title">Past Clients</h2>
 				<div class="content cols-3">
                     <div>
 						<strong>Agencies</strong><br>
@@ -155,6 +164,8 @@ import Skills from '../components/Skills.astro';
 </BaseLayout>
 
 <style>
+	h5 {color: var(--gray-0);}
+
 	.about {
 		display: flex;
 		flex-direction: column;
@@ -171,7 +182,6 @@ import Skills from '../components/Skills.astro';
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		color: var(--gray-200);
 	}
 
 	.section-title {
@@ -209,6 +219,7 @@ import Skills from '../components/Skills.astro';
 
 	.content {
 		grid-column: 2 / 4;
+		max-width: 48ch;
 	}
 
 	.content :global(a) {

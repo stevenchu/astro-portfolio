@@ -20,11 +20,11 @@ const projects = (await getCollection('work')).sort(
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="My Work"
-				tagline="See my most recent projects below to get an idea of my past experience."
+				title="Work"
+				tagline=""
 				align="start"
 			/>
-			<Grid variant="offset">
+			<Grid variant="full">
 				{
 					projects.map((project) => (
 						<li>

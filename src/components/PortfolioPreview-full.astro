@@ -51,9 +51,9 @@ const { data, slug } = Astro.props.project;
 	}
 
 	.project img {
-		width: 200px;
+		width: 100%;
 		height: auto;
-		aspect-ratio: 1 / 1;
+		aspect-ratio: 5 / 3;
 		border-radius: 1.5rem;
 		object-fit: cover;
 	}
@@ -112,14 +112,14 @@ const { data, slug } = Astro.props.project;
 		flex-wrap: wrap;
 		text-transform: uppercase;
 		font-weight:bold;
-		font-size: var(--text-sm);
+		font-size: .8rem;
 		letter-spacing: .1em;
 		color: var(--gray-100);
 	}
 
 	li + li:before {
 		content: "+";
-		padding: 0 .5rem;
+		padding: 0 .1rem;
 	}
 
     strong {
@@ -131,7 +131,7 @@ const { data, slug } = Astro.props.project;
 	@media (min-width: 50em) {
 		.project {
 			display: grid;
-			grid-template-columns: 6fr 2fr 2fr;
+			grid-template-columns: 6fr 4fr;
 			padding-inline: 4.5rem;
 			gap: 3.75rem;
 		}
@@ -139,6 +139,10 @@ const { data, slug } = Astro.props.project;
 		.card {
 			height: auto;
 			border-radius: 4.5rem;
+		}
+
+		li + li:before {
+			padding: 0 .2rem;
 		}
 
 		.cols-3 {    
