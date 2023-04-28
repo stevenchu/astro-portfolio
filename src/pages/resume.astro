@@ -18,10 +18,6 @@ import Hero from '../components/Hero.astro';
 
             <div class="content cols-3">
                 <div>
-                    <small>Portfolio</small><br>
-                    stevenchustudio.com
-                </div>
-                <div>
                     <small>Email</small><br>
                     work@stevenchustudio.com<br>
                 </div>
@@ -35,30 +31,30 @@ import Hero from '../components/Hero.astro';
 				<h2 class="section-title">Experience</h2>
 				<div class="content">
 					<h5>Motif Photos</h5>
-                    <small>December 2018 - Present</small>
+                    <small>Design Lead (Brand, Web, Marketing), December 2018 - Present</small>
                     <p>
-						I'm currently building out design process + development infrastructure (designOps: tools, ways of working, design ethos) at Motif Photos, a mac & iOS photo bookmaking startup offered in 32 countries. Motif is the first consumer venture from the world's largest B2B printer, R.R. Donnelley- a Fortune 500 with 35K employees.
+						Built design process and development infrastructure (designOps: tools, ways of working, design ethos) at Motif Photos, a mac & iOS photo bookmaking startup offered in 32 countries. Motif is the first consumer venture from the world's largest B2B printer, R.R. Donnelley- a Fortune 500 with 35K employees.
 					</p>
                 </div>
                 <div class="content">
 					<h5>Uniqlo</h5>
-                    <small>Dec 2017 - Apr 2018</small>
+                    <small>Internal UX Consultant, Dec 2017 - Apr 2018</small>
                     <p>
-						As an internal UX consultant at UNIQLO, I developed a coding automation tool through contextual research and service design to help the 6 person team eliminate user error when developing emails, meet production goals, and increase email personalization.
+						Developed a coding automation tool through contextual research and service design to help the 6 person team eliminate user error when developing emails, meet production goals, and increase email personalization.
 					</p>
                 </div>
                 <div class="content">    
                     <h5>Marie Forleo</h5>
-                    <small>September 2015 - October 2015</small>
+                    <small>UX Consultant, September 2015 - October 2015</small>
                     <p>
-						As a UX consultant for Marie Forleo - a multimillion-dollar online education platform for entrepreneurship endorsed by Oprah & Richard Branson with students in 148 countries and 609+ job industries - I led strategy, information architecture, and wireframing to transform MarieForleo.com from a basic Wordpress blog into a fully-developed learning resource hub which has helped 55,000+ students pursue entrepreneurship. The site format quickly became a template replicated by industry competitors.
+						Marie Forleo is a multimillion-dollar online education platform for entrepreneurship endorsed by Oprah & Richard Branson with students in 148 countries and 609+ job industries - I led strategy, information architecture, and wireframing to transform MarieForleo.com from a basic Wordpress blog into a fully-developed learning resource hub which has helped 55,000+ students pursue entrepreneurship. The site format quickly became a template replicated by industry competitors.
 					</p>
                 </div>
                 <div class="content">
                     <h5>Steven Chu Studio</h5>
-                    <small>Mar 2009 - Dec 2018</small>
+                    <small>Web Designer, Developer, & Shopify E-commerce Consultant, Sept 2010 - Dec 2017</small>
                     <p>
-						Launched and managed e-commerce stores as a Shopify Expert for a client roster including: Marissa Webb, former Global Creative Director of Banana Republic and J. Crew; a gold and diamonds jeweler; and e-commerce consulting for Mary Kate & Ashley Olsen, MONSE, S. Rothschild, and Steven Alan.
+						Launched and managed Shopify stores for e-commerce brands including: Marissa Webb, former Global Creative Director of Banana Republic and J. Crew; a gold and diamonds jeweler; and consulted for Mary Kate & Ashley Olsen, MONSE, S. Rothschild, and Steven Alan.
 					</p>
 				</div>
 			</section>
@@ -66,7 +62,7 @@ import Hero from '../components/Hero.astro';
 				<h2 class="section-title">Education</h2>
 				<div class="content">
 					<h5>B.S. in Business Administration & Psychology</h5>
-                    <span class="i">Haas School of Business</span><br>
+                    <small class="i">Haas School of Business</small><br>
                     University of California, Berkeley
 				</div>
 			</section>
@@ -89,15 +85,21 @@ import Hero from '../components/Hero.astro';
                     </div>
                     <div>
                         <h5>Areas of Focus</h5>
-                        Service design<br>
-                        Systems thinking<br>
-                        Journey mapping<br>
-                        Information architecture<br>
-                        Rapid prototyping<br>
-                        User flows & wireflows<br>
-                        Visual design<br>
-                        Responsive web design<br>
-                        Front-end development<br>
+                        User experience design<br>
+						Service design<br>
+						Systems thinking<br>
+						Design systems<br>
+						User flows<br>
+						Journey mapping<br>
+						Information architecture<br>
+						Wireframes<br>
+						Rapid prototyping<br>
+						Visual design<br>
+						Responsive web design<br>
+						Brand strategy<br>
+						Front-end development<br>
+						A/B testing<br>
+						basic Motion graphics<br>
                         Mentorship & coaching<br>
                         Studio & documentary photography<br>
               
@@ -139,6 +141,9 @@ import Hero from '../components/Hero.astro';
 		color: var(--gray-0);
 	}
 
+	h5 {
+		color: var(--gray-0);
+	}
 
     ul {
         padding-left: 0;
@@ -168,10 +173,12 @@ import Hero from '../components/Hero.astro';
 
 	p {
 		margin: 1em 0;
+		color: var(--gray-0);
 	}
 
 	.content {
 		grid-column: 2 / 4;
+		max-width: 58ch;
 	}
 
 	.content :global(a) {

@@ -40,7 +40,7 @@ const { data, slug } = Astro.props.project;
 
 <style>
     section {
-        padding: 4.5rem;
+        padding: 4rem 2rem;
 	}
 
 	.project {
@@ -81,6 +81,10 @@ const { data, slug } = Astro.props.project;
 		color: var(--gray-200);
 		border-radius: 0.375rem;
 	}
+
+	h3 {
+			font-size: var(--text-xl);
+		}
 
 	h3>a {
 		text-decoration: none;
@@ -129,6 +133,9 @@ const { data, slug } = Astro.props.project;
     }
 
 	@media (min-width: 50em) {
+		section {
+			padding: 4.5rem;
+		}
 		.project {
 			display: grid;
 			grid-template-columns: 6fr 4fr;
@@ -139,6 +146,10 @@ const { data, slug } = Astro.props.project;
 		.card {
 			height: auto;
 			border-radius: 4.5rem;
+		}
+
+		h3 {
+			font-size: var(--text-3xl);
 		}
 
 		li + li:before {
