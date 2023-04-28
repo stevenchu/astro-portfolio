@@ -35,7 +35,6 @@ const { Content } = await entry.render();
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> work</a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
-							
 							<p class="description">{entry.data.description}</p>
 						</div>
 					</Hero>
@@ -56,36 +55,55 @@ const { Content } = await entry.render();
 							</ul>
 						</div>
 						<div>
-							<strong>Year</strong><br>
-							{entry.data.year}<br>
+							<strong>Result</strong><br>
+							{entry.data.result}<br>
+
 							
 						</div>
+						<div>
+							<strong>Year</strong><br>
+							{entry.data.year}<br>
+							<br>
+							<strong>Platforms</strong><br>
+							{entry.data.platforms}<br>
+							
+						</div>
+
 					</div>
 				</div>	
 		
 			</header>
 			{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					
-
-			<main class="wrapper">
-				<div class="stack gap-10 content">
-					<div class="content">
-						<Content />
-					</div>
-				</div>
-			</main>
 		</div>
+		<main class="wrapper">
+			<div class="stack gap-10 content">
+				<div class="content">
+					<Content />
+				</div>
+			</div>
+		</main>
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
+	
 	.project {
 		display: grid;
-		grid-template-columns: 6fr 4fr;
+		grid-template-columns: 1fr;
+      	grid-template-rows: 1fr;
 		padding-inline: 4.5rem;
 		gap: 3.75rem;
+	}	
+	
+	.project header {
+		order:2;
 	}
+	.project img {
+		order: 1;
+	}
+	
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
@@ -106,7 +124,7 @@ const { Content } = await entry.render();
 
 	.cols-3 {
         display: grid;
-        grid-template-columns: 40% 1fr 1fr 1fr;
+        grid-template-columns: 30% 40% 1fr;
         grid-gap: 3em;
 		font-size: 1rem;
         padding-top: 2.5rem;
@@ -128,13 +146,23 @@ const { Content } = await entry.render();
 		max-width: 54ch;
 	}
 
-	main p {
-      max-width: 65ch;
-      margin-inline: auto;
-    }
+	.wrapper {
+		display: flex;
+	}
 
 	.content {
 		margin-inline: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+
+	.content :global(p),
+	.content :global(ul),
+	.content :global(ol) {
+		width: 100%;
+		max-width: 65ch;
 	}
 
 	.content > :global(* + *) {
@@ -147,14 +175,24 @@ const { Content } = await entry.render();
 	.content :global(h4),
 	.content :global(h5) {
 		margin: 1.5rem 0;
+		font-weight: bold;
+		line-height: 1.13;
 	}
 
-	.content :global(img) {
+	.content :global(h1),
+	.content :global(h2) {
+		text-align: center;
+	}
+
+	.content :global(h6) {
+		width: 100%;
+	}
+	/*.content :global(img) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
-	}
+	}*/
 
 	.content :global(blockquote) {
 		font-size: var(--text-lg);
@@ -181,6 +219,19 @@ const { Content } = await entry.render();
 	}
 
 	@media (min-width: 50em) {
+		
+		.project {
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 4.5rem;
+		}
+
+		.project header {
+			order: 1;
+		}
+		.project img {
+			order: 2;
+		}
+
 		.back-link {
 			display: block;
 			align-self: flex-start;

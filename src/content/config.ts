@@ -11,6 +11,8 @@ export const collections = {
 			img_alt: z.string().optional(),
 			role: z.array(z.string()).optional(),
 			year: z.string().optional(),
+			platforms: z.string().optional(),
+			result: z.string().optional(),
 		}),
 	}),
 	projects: defineCollection({
