@@ -179,6 +179,28 @@ With emails now built in 5 minutes instead of 40, Emmy gained bandwidth to devel
 ##### Lessons
 - Frictions faced by internal teams can greatly impact front stage experience without end users ever knowing why
 
+Below are slides of the content from above.
+
+<figure><img src="/images/case/uniqlo1.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo2.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo3.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo4.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo5.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo6.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo7.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo8.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo9.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo10.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo11.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo12.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo13.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo14.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo15.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo16.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo17.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo18.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo19.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="/images/case/uniqlo20.jpg" alt="Uniqlo Slide"></figure>
 
 
 

@@ -15,6 +15,9 @@ role:
   - Interface Design
   - End to end Visual Design
   - User Testing
+platforms: Desktop, Tablet, Mobile
+result: |
+  55% increase in organic downloads among 25-34 year olds.
 year: "2021"
 ---
 
@@ -50,6 +53,8 @@ Rapidly prototyped motion and design concepts in low and hi fidelity in order to
 Improved conversion by 12% on key funnel pages through continuous testing and optimization. Creating a feedback cycle empowered business stakeholders with data-driven decision-making, and in turn garnered business support for the process of iterative design, rapid prototyping, and re-testing of ideas.
 
 --
+
+Below are slides discussing the various challenges and best practices associated with setting up a new design system and rebranding.
 
 <figure><img src="/images/case/motif1.jpg" alt="Motif Slide"></figure>
 <figure><img src="/images/case/motif2.jpg" alt="Motif Slide"></figure>
