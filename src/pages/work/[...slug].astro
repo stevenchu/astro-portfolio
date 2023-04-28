@@ -33,14 +33,14 @@ const { Content } = await entry.render();
 			<header>
 				<div class="wrapper stack gap-2 lg:gap-10">
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> work</a>
-					<Hero title={entry.data.title} align="start">
-						<div class="details">
-							<p class="description">{entry.data.description}</p>
-						</div>
-					</Hero>
-				
-
-				
+					<div class="project-header"> 
+						<Hero title={entry.data.title} align="start">
+							<div class="details">
+								<p class="description">{entry.data.description}</p>
+							</div>
+						</Hero>
+						{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					</div>
 					<div class="cols-3">
 						<div>
 							<strong>Role</strong><br>
@@ -54,13 +54,11 @@ const { Content } = await entry.render();
 								}
 							</ul>
 						</div>
-						<div>
+						<div id="result">
 							<strong>Result</strong><br>
 							{entry.data.result}<br>
-
-							
 						</div>
-						<div>
+						<div id="year">
 							<strong>Year</strong><br>
 							{entry.data.year}<br>
 							<br>
@@ -73,7 +71,7 @@ const { Content } = await entry.render();
 				</div>	
 		
 			</header>
-			{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+			
 					
 		</div>
 		<main class="wrapper">
@@ -89,21 +87,34 @@ const { Content } = await entry.render();
 
 <style>
 	
-	.project {
+	.project-header {
 		display: grid;
 		grid-template-columns: 1fr;
       	grid-template-rows: 1fr;
-		padding-inline: 4.5rem;
+		padding-inline: 0;
 		gap: 3.75rem;
 	}	
 	
-	.project header {
+	.project-header :global(.hero) {
 		order:2;
 	}
-	.project img {
+
+	.project-header > img {
 		order: 1;
+		aspect-ratio: 3 / 2;
+		object-fit: cover;
+		object-position: top;
 	}
-	
+
+	#result {
+		order: 3;
+		grid-column: 1 / 3;
+	}
+
+	#year {
+		order: 2;
+	}
+
 	header {
 		padding-bottom: 2.5rem;
 		border-bottom: 1px solid var(--gray-800);
@@ -124,7 +135,7 @@ const { Content } = await entry.render();
 
 	.cols-3 {
         display: grid;
-        grid-template-columns: 30% 40% 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 3em;
 		font-size: 1rem;
         padding-top: 2.5rem;
@@ -156,6 +167,11 @@ const { Content } = await entry.render();
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+		max-width:100%;
+	}
+
+	:global(.hero) {
+		max-width: 54ch;
 	}
 
 	.content :global(p),
@@ -167,6 +183,10 @@ const { Content } = await entry.render();
 
 	.content > :global(* + *) {
 		margin-top: 1rem;
+	}
+
+	.content > :global(*) {
+		max-width: 100%;
 	}
 
 	.content :global(h1),
@@ -182,6 +202,10 @@ const { Content } = await entry.render();
 	.content :global(h1),
 	.content :global(h2) {
 		text-align: center;
+	}
+
+	.content :global(h2) {
+		font-size: var(--text-xl);
 	}
 
 	.content :global(h6) {
@@ -220,16 +244,31 @@ const { Content } = await entry.render();
 
 	@media (min-width: 50em) {
 		
-		.project {
+		.project-header {
 			grid-template-columns: 6fr 4fr;
-			padding-inline: 4.5rem;
+			padding-inline: 0rem;
 		}
 
-		.project header {
+		.project-header > .hero {
 			order: 1;
 		}
-		.project img {
+
+		.project-header > img {
 			order: 2;
+			aspect-ratio: 5 / 3;
+		}
+
+		.cols-3 {
+			grid-template-columns: 30% 40% 1fr;
+		}
+
+		#result {
+			order: 2;
+			grid-column: 2 / 3;
+		}
+
+		#year {
+			order: 3;
 		}
 
 		.back-link {
@@ -242,8 +281,13 @@ const { Content } = await entry.render();
 			gap: 2.5rem;
 		}
 
+		.content :global(h2) {
+			font-size: var(--text-4xl);
+		}
+
 		.content :global(blockquote) {
 			font-size: var(--text-2xl);
 		}
+
 	}
 </style>
