@@ -1,10 +1,10 @@
 ---
-title: Sidewalk haircuts for art 
+title: Hourships 
 publishDate: 2020-03-02 00:00:00
 img: /images/case/cover-uniqlo.jpg
 img_alt: Iridescent ripples of a bright blue and pink liquid
 description: |
-  Haircuts make the wo-man.
+  Hour-long apprenticeships for kids to explore new interests.
 tags:
   - socially engaged art
 role:
