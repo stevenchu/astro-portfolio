@@ -1,6 +1,6 @@
 ---
 title: Solution for iOS Video Library Management
-publishDate: 2020-02-02 00:00:00
+publishDate: 2020-01-02 00:00:00
 img: /images/stock-3.jpg
 img_alt: Solution for iOS Video Library Management
 description: |
