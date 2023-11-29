@@ -1,10 +1,10 @@
 ---
 title: The North Face E-commerce Redesign
-publishDate: 2020-01-02 00:00:00
+publishDate: 2021-02-02 00:00:00
 img: /images/case/tnf/cover-the_north_face.jpg
 img_alt: UI Redesign porting over TNF's in-store visual language to their web presence.
 description: |
-  While TNF meticulously defines their brand storytelling language in-store and in media, their e-commerce UI is a drastic departure. In this personal exploration (as an avid outdoor enthusiast!), I tackle their missed opportunities and present my solution of unifying their UI language across point of sale channels.
+  As an avid outdoor enthusiast, I noticed TNF's e-commerce channel was a drastic departure from their more typical meticulous and immersive brand storytelling no matter the channel–– from in-store to TNF's feature film documentaries. This is a personal dive into their missed opportunities and my approach to how to unify their design language across points of sale.
 tags:
   - Design System
   - Responsive Web Design
