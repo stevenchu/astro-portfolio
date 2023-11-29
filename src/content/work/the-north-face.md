@@ -1,10 +1,10 @@
 ---
-title: The North Face E-commerce Redesign
+title: Aligning The North Face ecommerce UI with adventure
 publishDate: 2021-02-02 00:00:00
 img: /images/case/tnf/cover-the_north_face.jpg
 img_alt: UI Redesign porting over TNF's in-store visual language to their web presence.
 description: |
-  As an avid outdoor enthusiast, I noticed TNF's e-commerce channel was a drastic departure from their more typical meticulous and immersive brand storytelling no matter the channel–– from in-store to TNF's feature film documentaries. This is a personal dive into their missed opportunities and my approach to how to unify their design language across points of sale.
+  TNF is known as much for their sharp gear as they are for their immersive in-store experiences and documentary adventure films. Their ecommerce channel however felt like an afterthought to their otherwise meticulous and bold world. In this personal project (and as an outdoor enthusiast myself), I took a dive into their missed opportunities and how I'd approach unifying their design language across points of engagement.
 tags:
   - Design System
   - Responsive Web Design

@@ -1,5 +1,5 @@
 ---
-title: Venture Capital Brand Communications
+title: Growing a venture capital firm's brand fabric
 publishDate: 2022-01-02 00:00:00
 img: /images/case/venture-capital/cover-venture-capital-wide.png
 img_alt: Brand communications design for a venture capital firm.
