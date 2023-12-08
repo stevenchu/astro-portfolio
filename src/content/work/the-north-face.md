@@ -1,5 +1,5 @@
 ---
-title: Aligning The North Face ecommerce UI with adventure
+title: Adventure-aligned ecommerce UI for The North Face
 publishDate: 2021-02-02 00:00:00
 img: /images/case/tnf/cover-the_north_face.jpg
 img_alt: UI Redesign porting over TNF's in-store visual language to their web presence.

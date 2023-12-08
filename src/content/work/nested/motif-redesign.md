@@ -1,7 +1,7 @@
 ---
-title: Photo books for everyday adventurers
+title: Brand personality & design system for a photo-project printing app on iOS
 publishDate: 2021-09-04 00:00:00
-img: /images/case/cover-motif-wide.png
+img: /images/case/cover-design_language_system-print_photo_memories.png
 img_alt: Responsive web design for Motif
 description: |
   Brand identity and responsive website redesign for a photo book making app.
@@ -9,6 +9,7 @@ tags:
   - Branding
   - Design System
   - Responsive Web Design
+  - Visual Design
 role:
   - Stakeholder Workshop
   - User Interviews

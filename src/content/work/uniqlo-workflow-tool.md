@@ -1,5 +1,5 @@
 ---
-title: A tool that autocodes email designs for Uniqlo's email designers
+title: A workflow tool to quickly generate code for Uniqlo's email designers
 publishDate: 2021-03-02 00:00:00
 img: /images/case/cover-uniqlo-wide.png
 img_alt: Email code generator tool for non-coding designers
