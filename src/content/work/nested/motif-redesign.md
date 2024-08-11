@@ -6,7 +6,6 @@ img_alt: Design System & Responsive web design for Motif
 description: |
   Motif is a print-on-demand service for custom photo products, available on iOS and Mac in 32 countries. At it's peak, it ranked #12 in Photo & Video apps on the App Store. Created by the world's largest B2B printer, R.R. Donnelley, a Fortune 500 company.
 tags:
-  - Branding
   - Design System
   - Responsive Web Design
   - Visual Design

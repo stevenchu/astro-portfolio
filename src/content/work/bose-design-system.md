@@ -1,5 +1,5 @@
 ---
-title: Bose Design System
+title: Bose Design System—Rethinking the foundational structure
 publishDate: 2024-08-09 00:00:00
 img: /images/case/bose/cover-bose-design-system-strike2.png
 img_alt: Brand communications design for a venture capital firm.

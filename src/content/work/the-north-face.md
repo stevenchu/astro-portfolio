@@ -6,8 +6,8 @@ img_alt: UI Redesign porting over TNF's in-store visual language to their web pr
 description: |
   TNF is known as much for their sharp gear as they are for their immersive in-store experiences and documentary adventure films. Their ecommerce channel however felt like an afterthought to their otherwise meticulous and bold world. In this personal project (and as an outdoor enthusiast myself), I took a dive into their missed opportunities and how I'd approach unifying their design language across points of engagement.
 tags:
-  - Design System
   - Responsive Web Design
+  - UI Kit
 role:
   - Secondary Research
   - UI Design
