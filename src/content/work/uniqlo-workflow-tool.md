@@ -9,11 +9,8 @@ tags:
   - Service Design
   - Front-end Development
 role:
-  - Internal UX Consultant
-  - Service Design
-  - Research
-  - User Interviews
-  - Journey Mapping
+  - UX Engineer
+  - User Research
   - Front-end Development
 platforms: Internal Tool
 result: |

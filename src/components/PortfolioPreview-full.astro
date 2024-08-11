@@ -83,13 +83,14 @@ const { data, slug } = Astro.props.project;
 	}
 
 	h3 {
-			font-size: var(--text-xl);
+		font-size: var(--text-xl);
 		}
 
 	h3>a {
 		text-decoration: none;
 		color: var(--gray-0);
-		font-weight:bold;
+		font-weight:500;
+		letter-spacing:-.03em;
 	}
 
 	img {
@@ -114,11 +115,9 @@ const { data, slug } = Astro.props.project;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
-		text-transform: uppercase;
-		font-weight:bold;
-		font-size: .8rem;
-		letter-spacing: .1em;
-		color: var(--gray-100);
+		font-weight: 500;
+		letter-spacing: -.01em;
+		color: var(--gray-0);
 	}
 
 	li + li:before {

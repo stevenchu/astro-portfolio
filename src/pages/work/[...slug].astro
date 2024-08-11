@@ -33,41 +33,41 @@ const { Content } = await entry.render();
 			<header>
 				<div class="wrapper stack gap-2 lg:gap-10">
 					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> work</a>
-					<div class="project-header"> 
-						<Hero title={entry.data.title} align="start">
-							<div class="details">
-								<p class="description">{entry.data.description}</p>
+						<div class="project-header"> 
+							<Hero title={entry.data.title} align="start">
+								<div class="details">
+									<p class="description">{entry.data.description}</p>
+								</div>
+							</Hero>
+							{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+						</div>
+						<div class="cols-3">
+							<div>
+								<strong>Role</strong><br>
+								<ul>
+									{
+										entry.data.role.map((project) => (
+											<li>
+												{project}
+											</li>
+										))
+									}
+								</ul>
 							</div>
-						</Hero>
-						{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-					</div>
-					<div class="cols-3">
-						<div>
-							<strong>Role</strong><br>
-							<ul>
-								{
-									entry.data.role.map((project) => (
-										<li>
-											{project}
-										</li>
-									))
-								}
-							</ul>
-						</div>
-						<div id="result">
-							<strong>Result</strong><br>
-							{entry.data.result}<br>
-						</div>
-						<div id="year">
-							<strong>Year</strong><br>
-							{entry.data.year}<br>
-							<br>
-							<strong>Platforms</strong><br>
-							{entry.data.platforms}<br>
-							
-						</div>
+							<div id="result">
+								<strong>Result</strong><br>
+								{entry.data.result}<br>
+							</div>
+							<div id="year">
+								<strong>Year</strong><br>
+								{entry.data.year}<br>
+								<br>
+								<strong>Platforms</strong><br>
+								{entry.data.platforms}<br>
+								
+							</div>
 
-					</div>
+						</div>
 				</div>	
 		
 			</header>
@@ -127,7 +127,7 @@ const { Content } = await entry.render();
 	.details {
 		display: flex;
 		flex-direction: column;
-		padding: 0.5rem;
+		padding: 0.5rem 0 2rem;
 		gap: 1.5rem;
 		justify-content: space-between;
 		align-items: center;
@@ -153,7 +153,7 @@ const { Content } = await entry.render();
 	}
 
 	.description {
-		font-size: var(--text-lg);
+		font-size: var(--text-md);
 		max-width: 54ch;
 	}
 
@@ -164,10 +164,10 @@ const { Content } = await entry.render();
 	.content {
 		margin-inline: auto;
 		display: flex;
-		align-items: center;
+		align-items: start;
 		justify-content: center;
 		flex-direction: column;
-		max-width:100%;
+		max-width:74rem;
 	}
 
 	:global(.hero) {
@@ -176,9 +176,18 @@ const { Content } = await entry.render();
 
 	.content :global(p),
 	.content :global(ul),
-	.content :global(ol) {
+	.content :global(ol),
+	.content :global(li) {
 		width: 100%;
 		max-width: 65ch;
+		margin-top: 16px;
+	}
+
+	.content :global(ul) {
+	padding-inline-start: 0;
+	}
+	.content :global(ul ul) {
+	padding-inline-start: 1.5rem;
 	}
 
 	.content > :global(* + *) {
@@ -194,7 +203,7 @@ const { Content } = await entry.render();
 	.content :global(h3),
 	.content :global(h4),
 	.content :global(h5) {
-		margin: 1.5rem 0;
+		margin: 2.5rem 0 1.5rem;
 		font-weight: bold;
 		line-height: 1.13;
 	}
@@ -211,6 +220,8 @@ const { Content } = await entry.render();
 	.content :global(h6) {
 		width: 100%;
 	}
+
+	
 	/*.content :global(img) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
@@ -281,8 +292,8 @@ const { Content } = await entry.render();
 			gap: 2.5rem;
 		}
 
-		.content :global(h2) {
-			font-size: var(--text-4xl);
+		.content :global(h2), .hero .title {
+			font-size: var(--text-3xl);
 		}
 
 		.content :global(blockquote) {
@@ -290,4 +301,5 @@ const { Content } = await entry.render();
 		}
 
 	}
+
 </style>
