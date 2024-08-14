@@ -4,7 +4,7 @@ publishDate: 2024-08-09 00:00:00
 img: /images/case/bose/cover-bose-design-system-strike2.png
 img_alt: Brand communications design for a venture capital firm.
 description: |
-    Led design system debt remediation and optimization initiatives for Bose.com, collaborating closely with design, engineering, and content teams to address critical blockers and standardize components
+    Led design system debt remediation and optimization initiatives for Bose.com, collaborating closely with design, engineering, and content teams to address critical blockers and standardize components. 
 tags:
   - Design System
   - Responsive Web Design
@@ -32,6 +32,11 @@ year: "2024 - Current"
         margin: 4rem 0 3rem !important;
     }
     </style> 
+
+> ###### [Abridged for confidentiality]
+
+<br>
+
 
 ###### 01. Background
 #### Context
