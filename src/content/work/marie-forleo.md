@@ -8,7 +8,7 @@ description: |
 tags:
   - UX Strategy
   - Information Architecture
-  - Education Design
+  - Content Design
 role:
   - UX Consultant
   - IA & Content Strategist
