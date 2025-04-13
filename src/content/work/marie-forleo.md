@@ -12,9 +12,8 @@ tags:
 role:
   - UX Consultant
   - IA & Content Strategist
-Result: Tripled content discovery via MarieTV, improved onboarding for 30%+ of blog visitors, and delivered a UX architecture still supporting platform growth 10 years later.
+result: Tripled content discovery via MarieTV, improved onboarding for 30%+ of blog visitors, and delivered a UX architecture still supporting platform growth 10 years later.
 platforms: Responsive Web
-year: "2015"
 ---
 
 With over 1M YouTube subscribers and endorsements from Oprah and Richard Branson, Marie Forleo stands alongside peers like Seth Godin, Tim Ferriss, and Elizabeth Gilbert in shaping the conversation around entrepreneurship and personal growth. I joined during a pivotal platform transformation to unify her digital ecosystem—designing an experience that empowered women to move from inspiration to taking action, and begin their entrepreneurial journey.
@@ -38,6 +37,10 @@ The goal was to design an experience that moved first-time entrepreneurs from di
 * User-Centered Learning Design: Applied scaffolding principles from educational psychology to guide users through a thoughtful learning journey—reducing overwhelm and encouraging self-directed exploration.
 * Scalable UX Foundation: Delivered a long-term architecture that enabled sustained platform growth—including evergreen product launches, seasonal promotions, and international reach.
 
+<figure><img src="/images/case/marie_forleo-content_strategy-title.png" alt="Designing for Momentum: Nurturing action through content nudges" style="max-width:400px;border-radius:0!important;margin-top:80px;"></figure>
+
+<figure><img src="/images/case/marie_forleo-content_strategy.png" alt="MarieTV content strategy"></figure>
+
 ⸻
 
 #### 📈 Results & Impact
@@ -50,4 +53,4 @@ The goal was to design an experience that moved first-time entrepreneurs from di
 
 #### 💬 Reflection
 
-This project came just two years after launching my own startup, where I saw firsthand how overwhelming it can be to take that first step into entrepreneurship—especially without clear guidance or relatable tools. Bringing that perspective to Marie Forleo’s platform gave me a deep sense of purpose: helping others feel empowered, informed, and capable of starting something on their own terms. Nearly a decade later, I’m proud that the systems I designed continue to support that mission.
+This project came just two years after launching my own startup, where I saw firsthand how overwhelming it can be to take that first step into entrepreneurship—especially without clear guidance or relatable tools. Bringing that perspective to Marie Forleo’s platform gave me a deep sense of purpose: helping others feel empowered, informed, and capable of starting something on their own terms. Years later, I’m proud that the systems I designed continue to support that mission.
