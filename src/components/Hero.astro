@@ -13,7 +13,9 @@ const { align = 'center', tagline, title } = Astro.props;
 	<div class="stack gap-8">
 		<slot name="pre-title"/>
 		<h1 class="title">{title}</h1>
-		{tagline && <p class="tagline">{tagline}</p>}
+		<!--{tagline && <p class="tagline">{tagline}</p>}-->
+		{tagline && <p class="tagline" set:html={tagline} />}
+
 	</div>
 	<slot />
 </header>
