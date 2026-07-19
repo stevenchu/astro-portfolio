@@ -37,9 +37,9 @@ The goal was to design an experience that moved first-time entrepreneurs from di
 * User-Centered Learning Design: Applied scaffolding principles from educational psychology to guide users through a thoughtful learning journey—reducing overwhelm and encouraging self-directed exploration.
 * Scalable UX Foundation: Delivered a long-term architecture that enabled sustained platform growth—including evergreen product launches, seasonal promotions, and international reach.
 
-<figure><img src="/images/case/marie_forleo-content_strategy-title.png" alt="Designing for Momentum: Nurturing action through content nudges" style="max-width:400px;border-radius:0!important;margin-top:80px;"></figure>
+<figure><img src="images/case/marie_forleo-content_strategy-title.png" alt="Designing for Momentum: Nurturing action through content nudges" style="max-width:400px;border-radius:0!important;margin-top:80px;"></figure>
 
-<figure><img src="/images/case/marie_forleo-content_strategy.png" alt="MarieTV content strategy"></figure>
+<figure><img src="images/case/marie_forleo-content_strategy.png" alt="MarieTV content strategy"></figure>
 
 ⸻
 

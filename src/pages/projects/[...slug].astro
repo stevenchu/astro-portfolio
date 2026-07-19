@@ -25,6 +25,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const imagePath = entry.data.img.replace(/^\//, '');
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -32,7 +33,7 @@ const { Content } = await render(entry);
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/projects/"><Icon icon="arrow-left" /> projects</a>
+					<a class="back-link" href="projects/"><Icon icon="arrow-left" /> projects</a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							
@@ -41,7 +42,7 @@ const { Content } = await render(entry);
 					</Hero>
 				</div>
 			</header>
-			{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
+			{entry.data.img && <img src={imagePath} alt={entry.data.img_alt || ''} />}
 					
 			<section>
 					

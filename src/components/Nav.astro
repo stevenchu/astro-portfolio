@@ -3,11 +3,12 @@ import Icon, { Props as IconProps } from './Icon.astro';
 import ThemeToggle from './ThemeToggle.astro';
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
+const textLinks: { label: string; href: string; path: string }[] = [
+	{ label: 'Home', href: '', path: '/' },
+	{ label: 'Work', href: 'work/', path: '/work/' },
+	{ label: 'About', href: 'about/', path: '/about/' },
 ];
+const currentPath = Astro.url.pathname.slice(import.meta.env.BASE_URL.length - 1);
 
 /** Icon links to social media — edit these with links to your profiles! */
 const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
@@ -18,7 +19,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 
 <nav>		
 	<div class="menu-header">
-		<a href="/" class="site-title">
+		<a href="" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
 			Steven Chu
 		</a>
@@ -34,16 +35,16 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	<div id="menu-content">
 		<ul class="nav-items">
 			{
-				textLinks.map(({ label, href }) => (
+				textLinks.map(({ label, href, path }) => (
 					<li>
 						<a
-							aria-current={Astro.url.pathname === href}
+							aria-current={currentPath === path}
 							class:list={[
 								'link',
 								{
 									active:
-										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										currentPath === path ||
+										(path !== '/' && currentPath.startsWith(path)),
 								},
 							]}
 							href={href}

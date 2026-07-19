@@ -25,6 +25,8 @@ jobs:
         uses: withastro/action@v6
         with:
           node-version: 24
+        env:
+          GITHUB_PAGES: true
 
   deploy:
     name: Deploy

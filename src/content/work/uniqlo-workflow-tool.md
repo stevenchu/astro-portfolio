@@ -31,7 +31,7 @@ year: "2018"
 Uniqlo's email team faced a frustrating production bottleneck where buggy code interfered daily with their launch calendar and efforts to improve their reader experience through personalized content. In a two-week service redesign, I worked on-site at the Uniqlo NYC headquarters to build an internal tool that gave designers production-ready email code in under 5 minutes. By removing the designer's need to manually code, I gave them clarity and confidence over their formerly unpredictable email launch cadence as well as the bandwidth to develop personalized content.
 
 
-<figure><img src="/images/case/uniqlo-timeline.png" alt="Process Timeline">
+<figure><img src="images/case/uniqlo-timeline.png" alt="Process Timeline">
 </figure>
 
 ###### DISCOVERY
@@ -70,7 +70,7 @@ The new system significantly improved speed and accuracy, reducing email build t
 
 <figure style="text-align:center;">
 <figcaption>The same email is sent despite regional weather differences.</figcaption>
-<img src="/images/case/uniqlo-overview-personalization.png" alt="Uniqlo personalization" width="400">
+<img src="images/case/uniqlo-overview-personalization.png" alt="Uniqlo personalization" width="400">
 </figure>
 
 Uniqlo's current state did not have the capability to personalize content for their customer messaging. 
@@ -178,26 +178,26 @@ With emails now built in 5 minutes instead of 40, Emmy gained bandwidth to devel
 
 Below are slides of the content from above.
 
-<figure><img src="/images/case/uniqlo1.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo2.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo3.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo4.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo5.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo6.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo7.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo8.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo9.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo10.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo11.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo12.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo13.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo14.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo15.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo16.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo17.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo18.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo19.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="/images/case/uniqlo20.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo1.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo2.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo3.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo4.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo5.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo6.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo7.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo8.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo9.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo10.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo11.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo12.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo13.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo14.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo15.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo16.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo17.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo18.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo19.jpg" alt="Uniqlo Slide"></figure>
+<figure><img src="images/case/uniqlo20.jpg" alt="Uniqlo Slide"></figure>
 
 
 

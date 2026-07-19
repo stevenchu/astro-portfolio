@@ -6,12 +6,13 @@ interface Props {
 }
 
 const { data, id } = Astro.props.project;
+const imagePath = data.img.replace(/^\//, '');
 ---
 
-<a class="card" href={`/work/${id}`}>
+<a class="card" href={`work/${id}`}>
 	<span class="title">{data.title}<br>
 	<small>{data.description}</small></span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 </a>
 
 <style>

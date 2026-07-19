@@ -6,6 +6,7 @@ interface Props {
 }
 
 const { data, id } = Astro.props.project;
+const imagePath = data.img.replace(/^\//, '');
 ---
 
 
@@ -22,12 +23,12 @@ const { data, id } = Astro.props.project;
                     ))
                 }
             </ul>
-			<h3 class="section-title"><a href={`/work/${id}`}>{data.title}</a></h3>
+			<h3 class="section-title"><a href={`work/${id}`}>{data.title}</a></h3>
 
 	</div>
 	<div class="stack gap-2 lg:gap-4">
-		<a href={`/work/${id}`}>
-			<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+		<a href={`work/${id}`}>
+			<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 		</a>  
 	</div>
 

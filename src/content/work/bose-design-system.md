@@ -74,7 +74,7 @@ On the design side, inconsistencies across platforms and a lack of standardizati
 #### Focusing on standardization, scalability, and enhanced collaboration between design and engineering and content authors,
 I led a cross-functional team to overhaul the design system. By using adaptive layouts, responsive components, variables and tokens, and stronger governance protocols, we ensured that the system was both robust and flexible for future growth.
 
-<figure><img src="/images/case/bose/global component spacing - initial sketch.png" alt="Global spacing proposal"></figure>
+<figure><img src="images/case/bose/global component spacing - initial sketch.png" alt="Global spacing proposal"></figure>
 
 <br>
 
