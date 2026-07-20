@@ -1,8 +1,8 @@
 ---
-title: Design system, rebranding, and platform migration for a photo-printing app
+title: Motif Photos
 publishDate: 2021-09-04 00:00:00
 img: /images/case/cover-design_language_system-print_photo_memories.png
-img_alt: Design System & Responsive web design for Motif
+img_alt: Motif photo-printing product and design-system work.
 description: |
   Motif is a print-on-demand service for custom photo products, available on iOS and Mac in 32 countries. At it's peak, it ranked #12 in Photo & Video apps on the App Store. Created by the world's largest B2B printer, R.R. Donnelley, a Fortune 500 company.
 tags:
@@ -18,6 +18,10 @@ platforms: Desktop web, Mobile web, iOS, macOS
 result: |
   55% increase in organic downloads among 25-34 year olds.
 year: "2021"
+eyebrow: MOTIF · PRODUCT, BRAND & SYSTEMS
+showcaseArgument: As R.R. Donnelley moved from B2B printing into direct-to-consumer photo products, Motif needed a brand and digital system that could support a growing global experience across its app, web, and marketing channels. I led the redesign and built shared design and content systems that brought those touchpoints into a more consistent model. By introducing component-based content architecture, I reduced web production time by 98.7% and saved approximately $200K annually.
+homepageOrder: 5
+ctaLabel: View project
 ---
 
 <style>
@@ -95,5 +99,3 @@ Improved conversion by 12% on key funnel pages through continuous testing and op
 <figure><img src="images/case/motif18.jpg" alt="Motif Slide"></figure>
 <figure><img src="images/case/motif19.jpg" alt="Motif Slide"></figure>
 <figure><img src="images/case/motif20.jpg" alt="Motif Slide"></figure>
-
-

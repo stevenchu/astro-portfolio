@@ -1,8 +1,8 @@
 ---
-title: Designing the freemium content experience for an entrepreneurial education platform
+title: Marie Forleo
 publishDate: 2015-10-01 00:00:00
 img: /images/case/cover-marie_forleo.jpg
-img_alt: Responsive UX for women’s entrepreneurship platform
+img_alt: Responsive content and learning experience designed for Marie Forleo.
 description: |
   Scaled a globally recognized personal development platform that has inspired over 80,000 students across 650+ industries and 171 countries to pursue entrepreneurship.
 tags:
@@ -14,6 +14,10 @@ role:
   - IA & Content Strategist
 result: Tripled content discovery via MarieTV, improved onboarding for 30%+ of blog visitors, and delivered a UX architecture still supporting platform growth 10 years later.
 platforms: Responsive Web
+eyebrow: MARIE FORLEO · UX STRATEGY & INFORMATION ARCHITECTURE
+showcaseArgument: Marie Forleo’s audience often arrived through isolated blog posts or videos, but the site did not yet guide aspiring entrepreneurs from inspiration toward the confidence and readiness to enroll in B-School. I restructured the content ecosystem and designed pathways across MarieTV, editorial content, and course experiences that supported discovery, trust, and action. The resulting architecture tripled entry points to MarieTV and continues to support the platform’s growth more than a decade later.
+homepageOrder: 7
+ctaLabel: View project
 ---
 
 With over 1M YouTube subscribers and endorsements from Oprah and Richard Branson, Marie Forleo stands alongside peers like Seth Godin, Tim Ferriss, and Elizabeth Gilbert in shaping the conversation around entrepreneurship and personal growth. I joined during a pivotal platform transformation to unify her digital ecosystem—designing an experience that empowered women to move from inspiration to taking action, and begin their entrepreneurial journey.
