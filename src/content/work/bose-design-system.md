@@ -1,16 +1,13 @@
 ---
-title: Bose Design System—Rethinking the foundational structure
+title: Bose Design System
 publishDate: 2024-08-09 00:00:00
 img: /images/case/bose/cover-bose-design-system-strike2.png
-img_alt: Brand communications design for a venture capital firm.
-featuredOrder: 3
+img_alt: A visual overview of the Bose design-system foundation.
+homepageOrder: 3
 eyebrow: BOSE · DESIGN SYSTEMS
-showcaseHeadline: Bose Design System—Rearchitecting the foundation behind Bose.com
-showcaseSummary: Rearchitected the Bose.com design system into tokenized Foundations, Components, and Patterns libraries, creating a clearer shared structure for 14+ design, content, and engineering teams.
-roleSummary: Product Design Lead · Site Experience & Design Systems
-resultSummary: A shared foundation for consistent, accessible, responsive site experiences
-primaryCta: View case study
+showcaseArgument: Bose teams were designing and shipping across a growing ecosystem of commerce experiences without a sufficiently shared product foundation. I owned the design system and developed the foundations, components, and patterns that helped design, content, and engineering teams work from a more consistent model.
 detailAvailability: internal
+ctaLabel: View project
 description: |
     Led design system debt remediation and optimization initiatives for Bose.com, collaborating closely with design, engineering, and content teams to address critical blockers and standardize components. 
 tags:

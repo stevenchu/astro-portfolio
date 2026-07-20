@@ -1,14 +1,12 @@
 ---
-title: Financial-services design systems
+title: Financial-services platform
 description: Designed a configurable theming system that balanced institutional brand expression, accessibility, and product consistency across a shared platform.
 tags:
   - Design systems
-img: /images/stock-4.jpg
-img_alt: Abstract blue and pink artwork representing a configurable visual system.
-featuredOrder: 2
+img: /images/case/cover-financial-services.png
+img_alt: Adaptive banking
+homepageOrder: 2
 eyebrow: FINANCIAL SERVICES · DESIGN SYSTEMS
-showcaseHeadline: Architected institution-level theming
-showcaseSummary: Designed a configurable theming system that balanced institutional brand expression, accessibility, and product consistency across a shared platform.
-roleSummary: Theming architecture · Design systems · Accessibility · Prototyping
+showcaseArgument: A shared banking platform needed to reflect the identities of independent banks and credit unions without fragmenting into separate products. I architected institution-level theming logic that could translate each institution’s palette into accessible semantic roles while preserving one shared product foundation.
 detailAvailability: interview-only
 ---

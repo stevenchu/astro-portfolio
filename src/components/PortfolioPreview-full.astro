@@ -5,102 +5,39 @@ interface Props {
 	project: CollectionEntry<'work'>;
 }
 
-const { data, id } = Astro.props.project;
+const { data } = Astro.props.project;
 const imagePath = data.img.replace(/^\//, '');
-const hasShowcaseContent = Boolean(data.eyebrow && data.showcaseHeadline && data.showcaseSummary);
-const internalUrl = `work/${id}`;
 ---
 
-{
-	hasShowcaseContent ? (
-		<section class="project showcase-card">
-			<div class="showcase-content stack gap-4">
-				<p class="eyebrow">{data.eyebrow}</p>
-				<h3>{data.showcaseHeadline}</h3>
-				<p class="showcase-summary">{data.showcaseSummary}</p>
-				<dl class="showcase-metadata" aria-label="Project details">
-					{data.roleSummary && (
-						<div>
-							<dt>Role</dt>
-							<dd>{data.roleSummary}</dd>
-						</div>
-					)}
-					{data.resultSummary && (
-						<div>
-							<dt>Launch result</dt>
-							<dd>{data.resultSummary}</dd>
-						</div>
-					)}
-				</dl>
-				{data.detailAvailability === 'interview-only' ? (
-					<p class="detail-availability">Details available in interview.</p>
-				) : data.primaryCta && (
-					data.externalUrl ? (
-						<a class="showcase-cta" href={data.externalUrl} target="_blank" rel="noreferrer">
-							{data.primaryCta}<span aria-hidden="true">↗</span>
-						</a>
-					) : (
-						<a class="showcase-cta" href={internalUrl}>{data.primaryCta}</a>
-					)
-				)}
-			</div>
-			<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-		</section>
-	) : (
-		<section class="project card">
-			<div class="stack gap-2 lg:gap-4">
-				<ul>
-					{data.tags.map((tag) => <li>{tag}</li>)}
-				</ul>
-				<h3 class="section-title"><a href={internalUrl}>{data.title}</a></h3>
-			</div>
-			<div class="stack gap-2 lg:gap-4">
-				<a href={internalUrl}>
-					<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-				</a>
-			</div>
-		</section>
-	)
-}
-
-
-
-
-
+<section class="project showcase-card">
+	<div class="showcase-content">
+		<p class="eyebrow">{data.eyebrow}</p>
+		<h3>{data.title}</h3>
+		<p class="showcase-argument">{data.showcaseArgument}</p>
+	</div>
+	<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+</section>
 
 <style>
-    section {
-        padding: 4rem 2rem;
+	section {
+		padding: 3rem 1.5rem;
 	}
 
 	.project {
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
 		gap: 2rem;
-	}
-
-	.showcase-card {
-		grid-template-areas: 'content' 'image';
 		border: 1px solid var(--border-strong);
-		border-radius: 4.5em;
+		border-radius: 0.75rem;
 	}
 
 	.showcase-content {
-		grid-area: content;
 		max-width: 46rem;
-	}
-
-	.showcase-card > img {
-		grid-area: image;
-		width: 100%;
-		aspect-ratio: 5 / 3;
-		border-radius: 1.5rem;
-		object-fit: cover;
 	}
 
 	/* eyebrow role */
 	.eyebrow {
+		margin: 0 0 0.9rem;
 		font-family: var(--font-display);
 		font-size: var(--role-eyebrow-size);
 		font-weight: var(--weight-bold);
@@ -111,19 +48,22 @@ const internalUrl = `work/${id}`;
 	}
 
 	/* title role */
-	.showcase-card h3 {
+	h3 {
+		max-width: 22ch;
+		margin: 0;
 		font-family: var(--font-display);
 		font-size: var(--role-title-size);
 		font-weight: var(--weight-display);
-		max-width: 20ch;
-		line-height: 1.1;
 		letter-spacing: -0.03em;
+		line-height: 1.1;
 		text-wrap: balance;
+		color: var(--text-primary);
 	}
 
 	/* body role */
-	.showcase-summary {
+	.showcase-argument {
 		max-width: 64ch;
+		margin: 0.9rem 0 0;
 		font-size: var(--role-body-size);
 		font-weight: var(--weight-body);
 		letter-spacing: var(--track-body);
@@ -131,72 +71,7 @@ const internalUrl = `work/${id}`;
 		color: var(--text-secondary);
 	}
 
-	.showcase-metadata {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-		gap: 1rem 1.5rem;
-		max-width: 42rem;
-		margin: 0;
-		padding: 1.25rem 0;
-		border-block: 1px solid var(--gray-700) /* deliberately brighter than --border-subtle; not yet unified */;
-	}
-
-	.showcase-metadata div {
-		display: grid;
-		gap: 0.35rem;
-	}
-
-	/* eyebrow-scale label */
-	.showcase-metadata dt {
-		font-family: var(--font-display);
-		font-size: var(--role-eyebrow-size);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--text-tertiary);
-	}
-
-	/* meta role */
-	.showcase-metadata dd {
-		margin: 0;
-		font-size: var(--role-meta-size);
-		letter-spacing: var(--track-body);
-		line-height: 1.5;
-		color: var(--gray-100);
-	}
-
-	.showcase-cta {
-		display: inline-flex;
-		align-items: center;
-		align-self: flex-start;
-		gap: 0.5rem;
-		padding: 0.625rem 1rem;
-		border: 1px solid var(--border-strong);
-		border-radius: 999rem;
-		background: var(--gray-0);
-		color: var(--gray-999);
-		font-size: var(--role-body-size);
-		font-weight: var(--weight-emphasis);
-		letter-spacing: var(--track-body);
-		text-decoration: none;
-	}
-
-	/* meta role */
-	.detail-availability {
-		font-size: var(--role-meta-size);
-		letter-spacing: var(--track-body);
-		line-height: 1.5;
-		color: var(--gray-300);
-	}
-
-	.showcase-cta:focus-visible,
-	h3 > a:focus-visible,
-	.project a:focus-visible {
-		outline: 3px solid var(--accent-light);
-		outline-offset: 4px;
-	}
-
-	.project img {
+	.project > img {
 		width: 100%;
 		height: auto;
 		aspect-ratio: 5 / 3;
@@ -204,157 +79,22 @@ const internalUrl = `work/${id}`;
 		object-fit: cover;
 	}
 
-	.card {
-		display: grid;
-		height: auto;
-		border: 1px solid var(--border-strong);
-		border-radius: 0.75rem;
-		overflow: hidden;
-		box-shadow: var(--shadow-sm);
-		text-decoration: none;
-	}
-
-	.card:hover {
-		box-shadow: var(--shadow-md);
-	}
-
-	.title {
-		grid-area: 3 / 1 / 3 / 2;
-		z-index: 1;
-		margin: 0.5rem;
-		padding: 0.5rem 1rem;
-		background: var(--surface-page);
-		color: var(--text-secondary);
-		border-radius: 0.375rem;
-	}
-
-	/* title role */
-	h3 {
-		font-family: var(--font-display);
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-display);
-		line-height: 1.1;
-		letter-spacing: -0.03em;
-	}
-
-	h3 > a {
-		text-decoration: none;
-		color: var(--text-primary);
-	}
-
-	img {
-		grid-area: 1 / 1 / 3 / 3;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-    .cols-3 {
-        display: grid;
-        grid-template-columns: 40% 1fr 1fr 1fr;
-        grid-gap: 3em;
-		font-size: 1rem;
-        padding-top: 2.5rem;
-        border-top: 1px solid var(--gray-200);
-    }
-
-    ul {
-        list-style: none;
-        padding-left: 0;
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		font-size: var(--role-eyebrow-size);
-		font-weight: var(--weight-body);
-		letter-spacing: -.01em;
-		color: var(--text-primary);
-	}
-
-	li + li:before {
-		content: "+";
-		padding: 0 .1rem;
-	}
-
-    strong {
-        color: var(--gray-100);
-        display: inline-block;
-        padding-bottom: 1.5rem;
-    }
-
 	@media (min-width: 50em) {
 		section {
 			padding: 4.5rem;
 		}
+
 		.project {
 			display: grid;
 			grid-template-columns: 6fr 4fr;
-			padding-inline: 4.5rem;
-			gap: 3.75rem;
-		}
-
-		.showcase-card {
-			grid-template-columns: 6fr 4fr;
-			grid-template-areas: 'content image';
 			align-items: center;
-		}
-
-		.showcase-card > img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-		}
-		
-		.card {
-			height: auto;
+			gap: 3.75rem;
 			border-radius: 4.5rem;
 		}
 
-		.showcase-card h3 {
-			max-width: 18ch;
-		}
-
-		li + li:before {
-			padding: 0 .2rem;
-		}
-
-		.cols-3 {    
-			display: flex;
-			flex-direction: column;
-			align-items: left;
-		}
-
-		.cols-3 img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
-		}
-
-		.title {
-			border-radius: 0.9375rem;
-		}
-	}
-
-	@media (max-width: 50em) {
-		.cols-3 {    
-			display: flex;
-			flex-direction: column;
-			align-items: left;
-		}
-
-		.grid {
-			grid-auto-rows: 0fr;
-		}
-		section {
-			padding: 3rem 1.5rem;
-		}
-
-		.showcase-metadata {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.card {
-			transition: none;
+		.project > img {
+			aspect-ratio: 5 / 3;
+			/*border-radius: 4.5rem;*/
 		}
 	}
 </style>

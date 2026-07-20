@@ -1,8 +1,8 @@
 ---
-title: Design system growth for a venture capital firm's new media channels
+title: Alpaca VC General Meeting
 publishDate: 2022-01-02 00:00:00
-img: /images/case/venture-capital/cover-venture-capital-wide.png
-img_alt: Brand communications design for a venture capital firm.
+img: /images/case/venture-capital/AGM-1.jpg
+img_alt: Temporary placeholder for the Alpaca VC General Meeting branded environment.
 description: |
   Presentation Layout, Social Media, and Conference Materials Design.
 tags:
@@ -15,6 +15,9 @@ platforms: Desktop, Tablet, Mobile
 result: |
   Growing, extending, and updating the firm's design system.  
 year: "2022 - Current"
+eyebrow: ALPACA VC · BRANDED ENVIRONMENT
+showcaseArgument: Alpaca VC brought founders, investors, and partners together for its 2025 General Meeting and needed the space to feel like a coherent expression of the firm rather than a collection of event graphics. I translated the brand into a spatial system across the stage, signage, lounges, murals, and storytelling moments, creating an environment that guided guests through the event while giving the gathering a distinctive visual identity.
+homepageOrder: 4
 ---
 
 
@@ -31,4 +34,3 @@ year: "2022 - Current"
 
 ##### Advocacy & Outreach Infographic on BIPOC, LGBTQ, and Women-led-startups
 <figure><img src="images/case/venture-capital/venture_capital-statistics_outreach_diversity-BIPOC-LGBTQ-women.png" alt="Venture Capital Advocacy & Outreach - BIPOC - LGBTQ – Women - led-startups"></figure>
-

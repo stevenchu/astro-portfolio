@@ -8,15 +8,9 @@ import PortfolioPreview from '../components/PortfolioPreview-full.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
 
-const projects = (await getCollection('work')).sort((a, b) => {
-	const featuredOrderA = a.data.featuredOrder ?? Number.POSITIVE_INFINITY;
-	const featuredOrderB = b.data.featuredOrder ?? Number.POSITIVE_INFINITY;
-
-	return (
-		featuredOrderA - featuredOrderB ||
-		(b.data.publishDate?.valueOf() ?? 0) - (a.data.publishDate?.valueOf() ?? 0)
-	);
-});
+const projects = (await getCollection('work'))
+	.filter((project) => project.data.homepageOrder !== undefined)
+	.sort((a, b) => a.data.homepageOrder! - b.data.homepageOrder!);
 ---
 
 <BaseLayout

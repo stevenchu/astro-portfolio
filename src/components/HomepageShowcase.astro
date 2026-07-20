@@ -1,51 +1,56 @@
 ---
-import type { HomepageShowcase } from '../data/homepageShowcases';
+import type { CollectionEntry } from 'astro:content';
 
 interface Props {
-	showcase: HomepageShowcase;
+	project: CollectionEntry<'work'>;
 }
 
-const { showcase } = Astro.props;
+const { project } = Astro.props;
+const { data, id } = project;
+const imagePath = data.img.replace(/^\//, '');
+const href = data.externalUrl ?? `/work/${id}`;
+const isExternal = Boolean(data.externalUrl);
 ---
 
 <article class="showcase">
 	<header class="showcase-copy">
-		<p class="eyebrow">{showcase.eyebrow}</p>
-		<h2>{showcase.projectTitle}</h2>
-		<p class="context">{showcase.projectContext}</p>
+		<p class="eyebrow">{data.eyebrow}</p>
+		<h2>{data.title}</h2>
+		<p class="context">{data.showcaseArgument}</p>
 
 		{
-			showcase.detailNote ? (
-				<p class="detail-note">{showcase.detailNote}</p>
-			) : showcase.href && showcase.ctaLabel ? (
+			data.detailAvailability === 'interview-only' ? (
+				<p class="detail-note">Details available in interview.</p>
+			) : data.ctaLabel ? (
 				<a
 					class="showcase-link"
-					href={showcase.href}
-					target={showcase.external ? '_blank' : undefined}
-					rel={showcase.external ? 'noreferrer' : undefined}
+					href={href}
+					target={isExternal ? '_blank' : undefined}
+					rel={isExternal ? 'noreferrer' : undefined}
 				>
-					{showcase.ctaLabel}
-					{showcase.external && <span aria-hidden="true">↗</span>}
+					{data.ctaLabel}
+					{isExternal && <span aria-hidden="true">↗</span>}
 				</a>
 			) : null
 		}
 	</header>
 
-	<img src={showcase.image} alt={showcase.imageAlt} loading="lazy" decoding="async" />
+	<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
 </article>
 
 <style>
 	.showcase {
 		display: grid;
 		gap: 2rem;
-		padding: 3.5rem 0;
-		border-top: 1px solid var(--gray-700); /* deliberately brighter than --border-subtle for this divider; not yet unified */
+		padding: 3rem 1.5rem;
+		border: 1px solid var(--border-strong);
+		border-radius: 0.75rem;
 	}
 
 	.showcase-copy {
 		display: grid;
 		gap: 0.9rem;
-		max-width: 52rem;
+		max-width: 46rem;
 	}
 
 	/* eyebrow role */
@@ -110,7 +115,7 @@ const { showcase } = Astro.props;
 		display: block;
 		width: 100%;
 		height: auto;
-		aspect-ratio: 16 / 10;
+		aspect-ratio: 5 / 3;
 		border-radius: 1.5rem;
 		object-fit: cover;
 		box-shadow: var(--shadow-sm);
@@ -118,31 +123,16 @@ const { showcase } = Astro.props;
 
 	@media (min-width: 50em) {
 		.showcase {
-			gap: 2.75rem;
-			padding: 5rem 0;
-		}
-
-		.showcase-copy {
-			grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 2fr);
-			column-gap: 2.5rem;
-			max-width: none;
-		}
-
-		.eyebrow {
-			grid-column: 1;
-			grid-row: 1 / span 3;
-			padding-top: 0.35rem;
-		}
-
-		h2,
-		.context,
-		.detail-note,
-		.showcase-link {
-			grid-column: 2;
+			grid-template-columns: 6fr 4fr;
+			align-items: center;
+			gap: 3.75rem;
+			padding: 4.5rem;
+			border-radius: 4.5rem;
 		}
 
 		img {
-			border-radius: 2.25rem;
+			aspect-ratio: 5 / 3;
+			/*border-radius: 4.5rem;*/
 		}
 	}
 </style>
