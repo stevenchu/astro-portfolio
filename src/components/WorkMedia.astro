@@ -1,0 +1,47 @@
+---
+interface Props {
+	src: string;
+	alt?: string;
+	mediaType?: 'image' | 'video';
+	poster?: string;
+}
+
+const { src, alt, mediaType = 'image', poster } = Astro.props;
+---
+
+<div class="work-media">
+	{
+		mediaType === 'video' ? (
+			<video
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="metadata"
+				poster={poster}
+				aria-label={alt || undefined}
+			>
+				<source src={src} type="video/mp4" />
+			</video>
+		) : (
+			<img src={src} alt={alt || ''} loading="lazy" decoding="async" />
+		)
+	}
+</div>
+
+<style>
+	.work-media {
+		width: 100%;
+		aspect-ratio: 5 / 3;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.work-media > :is(img, video) {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+</style>
