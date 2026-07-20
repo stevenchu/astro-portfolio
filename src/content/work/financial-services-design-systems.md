@@ -1,5 +1,6 @@
 ---
 title: Financial-services platform
+publishDate: 2026-05-01 00:00:00
 description: Designed a configurable theming system that balanced institutional brand expression, accessibility, and product consistency across a shared platform.
 tags:
   - Design systems

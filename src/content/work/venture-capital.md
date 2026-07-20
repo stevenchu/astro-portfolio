@@ -1,6 +1,6 @@
 ---
 title: Alpaca VC General Meeting
-publishDate: 2022-01-02 00:00:00
+publishDate: 2025-09-01 00:00:00
 img: /images/case/venture-capital/AGM-1.jpg
 img_alt: Temporary placeholder for the Alpaca VC General Meeting branded environment.
 description: |
@@ -17,7 +17,6 @@ result: |
 year: "2022 - Current"
 eyebrow: ALPACA VC · BRANDED ENVIRONMENT
 showcaseArgument: Alpaca VC brought founders, investors, and partners together for its 2025 General Meeting and needed the space to feel like a coherent expression of the firm rather than a collection of event graphics. I translated the brand into a spatial system across the stage, signage, lounges, murals, and storytelling moments, creating an environment that guided guests through the event while giving the gathering a distinctive visual identity.
-homepageOrder: 4
 ---
 
 
