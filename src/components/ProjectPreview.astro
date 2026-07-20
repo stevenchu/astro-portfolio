@@ -21,14 +21,11 @@ const imagePath = data.img.replace(/^\//, '');
 		grid-template: auto 1fr / auto 1fr;
 		height: 11rem;
 		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--border-subtle);
 		border-radius: 0.75rem;
 		overflow: hidden;
 		box-shadow: var(--shadow-sm);
 		text-decoration: none;
-		font-family: var(--font-brand);
-		font-size: var(--text-lg);
-		font-weight: 500;
 		transition: box-shadow var(--theme-transition);
 	}
 
@@ -36,14 +33,26 @@ const imagePath = data.img.replace(/^\//, '');
 		box-shadow: var(--shadow-md);
 	}
 
+	/* heading role */
 	.title {
 		grid-area: 1 / 1 / 2 / 2;
 		z-index: 1;
 		margin: 0.5rem;
 		padding: 0.5rem 1rem;
-		background: var(--gray-999);
-		color: var(--gray-200);
+		font-family: var(--font-display);
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		background: var(--surface-page);
+		color: var(--text-secondary);
 		border-radius: 0.375rem;
+	}
+
+	.title small {
+		display: inline-block;
+		margin-top: 0.25rem;
+		color: var(--text-tertiary);
 	}
 
 	img {

@@ -186,7 +186,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		z-index: 9999;
 		position: relative;
 		font-family: var(--font-brand);
-		font-weight: 500;
+		font-weight: 300;
 		margin-bottom: 0;
 	}
 
@@ -202,7 +202,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		gap: 0.5rem;
 		align-items: center;
 		line-height: 1.1;
-		color: var(--gray-0);
+		color: var(--text-primary);
 		text-decoration: none;
 	}
 
@@ -219,7 +219,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	}
 
 	.menu-button[aria-expanded='true'] {
-		color: var(--gray-0);
+		color: var(--text-primary);
 		/*background: linear-gradient(180deg, var(--gray-600), transparent),
 			radial-gradient(var(--gray-900), var(--gray-800) 150%);*/
 	}
@@ -252,8 +252,8 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		line-height: 1.2;
 		list-style: none;
 		padding: 2rem;
-		background-color: var(--gray-999);
-		border-bottom: 1px solid var(--gray-800);
+		background-color: var(--surface-page);
+		border-bottom: 1px solid var(--border-subtle);
 	}
 
 	.link {
@@ -263,7 +263,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 	}
 
 	.link.active {
-		color: var(--gray-0);
+		color: var(--text-primary);
 	}
 
 	.menu-footer {
@@ -274,7 +274,7 @@ const iconLinks: { label: string; href: string; icon: IconProps['icon'] }[] = [
 		justify-content: space-between;
 		gap: 0.75rem;
 		padding: 1.5rem 2rem 1.5rem 1.5rem;
-		background-color: var(--gray-999);
+		background-color: var(--surface-page);
 		border-radius: 0 0 0.75rem 0.75rem;
 		box-shadow: var(--shadow-lg);
 	}

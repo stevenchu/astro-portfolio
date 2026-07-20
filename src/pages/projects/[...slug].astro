@@ -34,7 +34,7 @@ const imagePath = entry.data.img.replace(/^\//, '');
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href="projects/"><Icon icon="arrow-left" /> projects</a>
-					<Hero title={entry.data.title} align="start">
+					<Hero title={entry.data.title} align="start" size="page">
 						<div class="details">
 							
 							<p class="description">{entry.data.description}</p>
@@ -81,7 +81,7 @@ const imagePath = entry.data.img.replace(/^\//, '');
 <style>
 	header {
 		padding-bottom: 2.5rem;
-		border-bottom: 1px solid var(--gray-800);
+		border-bottom: 1px solid var(--border-subtle);
 	}
 
 	.back-link {
@@ -116,8 +116,13 @@ const imagePath = entry.data.img.replace(/^\//, '');
 		gap: 0.5rem;
 	}
 
+	/* subhead role */
 	.description {
-		font-size: var(--text-lg);
+		font-size: var(--role-subhead-size);
+		font-weight: var(--weight-body);
+		letter-spacing: var(--track-body);
+		line-height: 1.5;
+		color: var(--text-secondary);
 		max-width: 54ch;
 	}
 
@@ -134,29 +139,53 @@ const imagePath = entry.data.img.replace(/^\//, '');
 		margin-top: 1rem;
 	}
 
+	.content :global(p),
+	.content :global(li) {
+		color: var(--text-secondary);
+	}
+
+	.content :global(strong) {
+		font-weight: var(--weight-emphasis);
+		color: var(--text-primary);
+	}
+
+	/* Vertical rhythm only — type identity (size/weight/color) lives in
+	   global.css so both stay independently tunable. */
 	.content :global(h1),
 	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(h5) {
+	.content :global(h3) {
 		margin: 1.5rem 0;
+	}
+
+	.content :global(h4) {
+		margin: 2rem 0 0.5rem;
+	}
+
+	.content :global(h5),
+	.content :global(h6) {
+		margin: 1.5rem 0 0.5rem;
 	}
 
 	.content :global(img) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
-		border: 1px solid var(--gray-800);
+		border: 1px solid var(--border-subtle);
 	}
 
+	/* This template's blockquote is a genuine pull-quote (see haircuts,
+	   hourships, preschool-mastermind), unlike work/[...slug]'s use as a
+	   confidentiality/editorial callout — so it keeps the display-face
+	   emphasis treatment rather than the small muted callout style. */
 	.content :global(blockquote) {
-		font-size: var(--text-lg);
-		font-family: var(--font-brand);
-		font-weight: 600;
-		line-height: 1.1;
+		font-family: var(--font-display);
+		font-size: var(--role-subhead-size);
+		font-weight: var(--weight-display);
+		line-height: 1.3;
+		letter-spacing: -0.01em;
 		padding-inline-start: 1.5rem;
 		border-inline-start: 0.25rem solid var(--accent-dark);
-		color: var(--gray-0);
+		color: var(--text-primary);
 	}
 
 	.back-link,
@@ -182,10 +211,6 @@ const imagePath = entry.data.img.replace(/^\//, '');
 		.details {
 			flex-direction: row;
 			gap: 2.5rem;
-		}
-
-		.content :global(blockquote) {
-			font-size: var(--text-2xl);
 		}
 	}
 </style>

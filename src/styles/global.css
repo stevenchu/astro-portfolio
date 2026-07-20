@@ -26,6 +26,23 @@
 
 	--link-color: var(--accent-regular);
 
+	/* Semantic tokens — name what a color MEANS, not which step of the
+	   scale it happens to be. Each resolves through the --gray-* scale
+	   above, which already flips under :root.theme-dark, so these need no
+	   separate dark-mode override — the indirection carries the theme
+	   switch through automatically. --accent is the one exception: it
+	   mirrors --link-color, which already selects a different ramp
+	   position per theme (regular in light, dark in dark) rather than a
+	   fixed step, so it can't be a plain 1:1 alias. */
+	--surface-page: var(--gray-999);
+	--surface-raised: var(--gray-999_40);
+	--text-primary: var(--gray-0);
+	--text-secondary: var(--gray-200);
+	--text-tertiary: var(--gray-400);
+	--border-subtle: var(--gray-800);
+	--border-strong: var(--gray-0);
+	--accent: var(--link-color);
+
 	/* Gradients */
 	--gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
@@ -54,6 +71,7 @@
 		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
 
 	/* Text Sizes */
+	--text-xs: 0.75rem;
 	--text-sm: 0.875rem;
 	--text-base: 1rem;
 	--text-md: 1.125rem;
@@ -67,8 +85,32 @@
 	/* Fonts */
 	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: 'PP Neue Machina Inktrap', var(--font-system);
-	--font-brand: 'PP Neue Machina Inktrap', var(--font-system);
+	--font-display: 'Space Grotesk', var(--font-system);
+	--font-body: 'Instrument Sans', var(--font-system);
+	/* --font-brand is the legacy name for the display face; kept so older
+	   components keep working until they're migrated to the type roles. */
+	--font-brand: var(--font-display);
+
+	/* Weights actually shipped. Nothing else is available — see font-synthesis-weight. */
+	--weight-display: 300;
+	--weight-heading: 400;
+	--weight-body: 400;
+	--weight-emphasis: 500;
+	--weight-bold: 700;
+
+	/* Body tracking. Light-on-dark halates, so this is the hook for a
+	   theme-conditional value if light mode ever wants a tighter setting. */
+	--track-body: 0.005em;
+
+	/* Type roles — size / line-height / tracking / weight bundled per role.
+	   Apply with the .t-* utility classes below rather than raw --text-* sizes. */
+	--role-display-size: clamp(2.25rem, 5.5vw, 4.25rem);
+	--role-title-size: clamp(1.75rem, 3.6vw, 2.75rem);
+	--role-heading-size: clamp(1.25rem, 1.9vw, 1.6rem);
+	--role-subhead-size: clamp(1.05rem, 1.4vw, 1.2rem);
+	--role-body-size: 1rem;
+	--role-meta-size: 0.875rem;
+	--role-eyebrow-size: 0.75rem;
 
 	/* Transitions */
 	--theme-transition: 0.2s ease-in-out;
@@ -116,37 +158,70 @@
 		0px 16px 16px rgba(255, 255, 255, 0.1), 0px 4px 9px rgba(255, 255, 255, 0.12);
 }
 
+/* Display — Space Grotesk (SIL Open Font License 1.1) */
 @font-face {
-    font-family: 'PP Neue Machina Inktrap';
-    src: url('../fonts/PPNeueMachina-InktrapLight.woff2') format('woff2'),
-        url('../fonts/PPNeueMachina-InktrapLight.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Space Grotesk';
+	src: url('/fonts/spacegrotesk-300.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('/fonts/spacegrotesk-400.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Space Grotesk';
+	src: url('/fonts/spacegrotesk-700.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
+/* Body — Instrument Sans (SIL Open Font License 1.1) */
 @font-face {
-    font-family: 'PP Neue Machina Inktrap Ulbold';
-    src: url('../fonts/PPNeueMachina-InktrapUltrabold.woff2') format('woff2'),
-        url('../fonts/PPNeueMachina-InktrapUltrabold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Instrument Sans';
+	src: url('/fonts/instrumentsans-400.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Instrument Sans';
+	src: url('/fonts/instrumentsans-500.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Instrument Sans';
+	src: url('/fonts/instrumentsans-600.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 html,
 body {
 	height: 100%;
 	overflow-x: hidden;
-	letter-spacing: -.02em;
 }
 
 body {
-	background-color: var(--gray-999);
-	color: var(--gray-0);
+	background-color: var(--surface-page);
+	color: var(--text-primary);
 	font-family: var(--font-body);
+	font-size: var(--role-body-size);
+	font-weight: var(--weight-body);
+	letter-spacing: var(--track-body);
 	-webkit-font-smoothing: antialiased;
-	line-height: 1.5;
+	line-height: 1.55;
+	/* Fail loudly on any weight we don't actually ship rather than letting
+	   the browser fake one. See --weight-* above for what exists. */
+	font-synthesis-weight: none;
 }
 
 *,
@@ -170,35 +245,158 @@ a {
 	color: var(--link-color);
 }
 
+/* Headings are the brightest text on the page — body copy dims to
+   gray-200 (see .content :global(p) in the case-study templates) so the
+   two never compete. This was inverted before: headings sat at gray-100
+   while body text and inline <strong> ran at pure white. */
 h1,
 h2,
 h3,
 h4,
-h5 {
-	line-height: 1.1;
-	font-family: var(--font-brand);
-	font-weight: 300;
-	color: var(--gray-100);
+h5,
+h6 {
+	font-family: var(--font-display);
+	color: var(--text-primary);
 }
 
 h1 {
-	font-size: var(--text-5xl);
+	font-size: var(--role-display-size);
+	font-weight: var(--weight-display);
+	line-height: 1.05;
+	letter-spacing: -0.04em;
 }
 
 h2 {
-	font-size: var(--text-4xl);
+	font-size: var(--role-title-size);
+	font-weight: var(--weight-display);
+	line-height: 1.1;
+	letter-spacing: -0.03em;
 }
 
 h3 {
-	font-size: var(--text-3xl);
+	font-size: var(--role-heading-size);
+	font-weight: var(--weight-heading);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
 }
 
+/* Case-study section head ("Context", "Problem Definition"). Sized above
+   the fluid heading role deliberately — this is the anchor a scanning
+   reader locks onto, so it needs to read as a real step up from h5/h6. */
 h4 {
-	font-size: var(--text-2xl);
+	font-size: 1.75rem;
+	font-weight: var(--weight-display);
+	line-height: 1.25;
+	letter-spacing: -0.02em;
 }
 
+/* Case-study subhead. Differentiated from body by weight, not size — both
+   run at role-subhead-size, so a scanning eye separates them by boldness
+   alone rather than a jump in scale. */
 h5 {
-	font-size: var(--text-xl);
+	font-family: var(--font-body);
+	font-size: var(--role-subhead-size);
+	font-weight: var(--weight-emphasis);
+	line-height: 1.4;
+	letter-spacing: var(--track-body);
+}
+
+/* Case-study section marker ("01. Background"). Deliberately the smallest
+   heading on the page — it works through color, tracking, and case, not
+   size. Was previously unstyled and fell through to the browser default
+   (~10.7px, body face), which made it smaller than body copy. */
+h6 {
+	font-size: var(--role-eyebrow-size);
+	font-weight: var(--weight-bold);
+	line-height: 1.4;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--accent);
+}
+
+/* Type roles
+   ----------
+   Seven roles, each bundling size + weight + line-height + tracking + family.
+   Prefer these over setting font-size directly. Display face carries the
+   display/title/heading/eyebrow tiers; body face carries subhead/body/meta. */
+
+.t-display,
+.t-title,
+.t-heading,
+.t-eyebrow {
+	font-family: var(--font-display);
+	color: var(--text-primary);
+}
+
+.t-subhead,
+.t-body,
+.t-meta {
+	font-family: var(--font-body);
+	letter-spacing: var(--track-body);
+}
+
+.t-display {
+	font-size: var(--role-display-size);
+	font-weight: var(--weight-display);
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+	text-wrap: balance;
+}
+
+.t-title {
+	font-size: var(--role-title-size);
+	font-weight: var(--weight-display);
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	text-wrap: balance;
+}
+
+.t-heading {
+	font-size: var(--role-heading-size);
+	font-weight: var(--weight-heading);
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
+
+.t-subhead {
+	font-size: var(--role-subhead-size);
+	font-weight: var(--weight-body);
+	line-height: 1.5;
+	color: var(--text-secondary);
+}
+
+.t-body {
+	font-size: var(--role-body-size);
+	font-weight: var(--weight-body);
+	line-height: 1.55;
+	color: var(--text-secondary);
+	max-width: 64ch;
+}
+
+.t-meta {
+	font-size: var(--role-meta-size);
+	font-weight: var(--weight-body);
+	line-height: 1.5;
+	color: var(--text-tertiary);
+}
+
+.t-eyebrow {
+	font-size: var(--role-eyebrow-size);
+	font-weight: var(--weight-bold);
+	line-height: 1.4;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--text-tertiary);
+}
+
+/* Bare <small> (role/date lines, secondary captions) gets the meta role by
+   default so it doesn't fall back to the browser's arbitrary "smaller". */
+small {
+	font-size: var(--role-meta-size);
+	font-weight: var(--weight-body);
+	letter-spacing: var(--track-body);
+	line-height: 1.5;
+	color: var(--text-tertiary);
 }
 
 /* Utilities */

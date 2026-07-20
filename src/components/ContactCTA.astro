@@ -21,21 +21,25 @@ import Icon from './Icon.astro';
 		/*border-top: 1px solid var(--gray-800);
 		border-bottom: 1px solid var(--gray-800);*/
 		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
+		background-color: var(--surface-raised);
 		box-shadow: var(--shadow-sm);
 	}
 
+	/* title role */
 	h2 {
-		font-size: var(--text-xl);
+		font-size: var(--role-title-size);
 		text-align: center;
 		max-width: 16ch;
 	}
 
+	/* subhead role */
 	p.desc {
 		font-family: var(--font-body);
-		font-size:16px;
-		margin-top:.5em;
-		font-weight:normal;
+		font-size: var(--role-subhead-size);
+		font-weight: var(--weight-body);
+		letter-spacing: var(--track-body);
+		margin-top: 0.5em;
+		color: var(--text-secondary);
 	}
 
 	@media (min-width: 50em) {
@@ -47,7 +51,6 @@ import Icon from './Icon.astro';
 		}
 
 		h2 {
-			font-size: var(--text-3xl);
 			text-align: left;
 		}
 	}

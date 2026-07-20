@@ -30,16 +30,16 @@ const { href, size, style } = Astro.props;
 
 	a.inverse {
 		background: transparent;
-		color: var(--gray-0);
-		border-color: var(--gray-0);
+		color: var(--text-primary);
+		border-color: var(--border-strong);
 		border-width: 1px;
 		border-style: solid;
 	}
 
 	:root.theme-dark a.inverse {
 		background: transparent;
-		color: var(--gray-0);
-		border-color: var(--gray-0);
+		color: var(--text-primary);
+		border-color: var(--border-strong);
 	}
 
 	a.small {
@@ -48,7 +48,7 @@ const { href, size, style } = Astro.props;
 
 	@media (min-width: 20em) {
 		a {
-			font-size: var(--text-md);
+			font-size: var(--role-subhead-size);
 		}
 	}
 
@@ -70,10 +70,10 @@ const { href, size, style } = Astro.props;
 	@media (min-width: 50em) {
 		a {
 			padding: 1.125rem 2.5rem;
-			font-size: var(--text-xl);
+			font-size: var(--role-heading-size);
 		}
 		a.small {
-			font-size: var(--text-md);
+			font-size: var(--role-subhead-size);
 		}
 	}
 

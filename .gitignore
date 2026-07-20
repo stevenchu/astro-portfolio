@@ -19,3 +19,7 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Type lab specimen fonts — evaluation only, never ship
+public/fonts/lab/
+src/pages/type-lab*.astro

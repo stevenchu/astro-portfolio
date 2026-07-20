@@ -24,9 +24,9 @@ import Skills from '../components/Skills.astro';
 				<h2 class="section-title">Product Design Background</h2>
 				<div class="content">
 										
-					<h5 style="max-width:54ch;font-weight:300;line-height:1.35;margin-bottom:.5em;">
+					<p class="lede">
 						I’ve spent more than 10 years designing products and systems across creative tools, learning, and enterprise software. My background spans product design, design systems, interaction design, front-end coding, and—more recently—AI-assisted product development, from early-stage concepts to complex platforms used at scale.
-					</h5>
+					</p>
 
 					<!--img
 					width="800"
@@ -150,7 +150,20 @@ import Skills from '../components/Skills.astro';
 </BaseLayout>
 
 <style>
-	h5 {color: var(--gray-0);}
+	/* Lede — was previously an <h5>, which (via the global body-face h5 rule)
+	   rendered smaller than the paragraphs beneath it: the opening line was
+	   the least prominent text on the page. This sits clearly above body
+	   size instead, in the body face at a brighter weight, so it reads as
+	   the sentence you're meant to read first. */
+	.lede {
+		font-family: var(--font-body);
+		font-size: 1.5rem;
+		font-weight: var(--weight-body);
+		letter-spacing: var(--track-body);
+		line-height: 1.45;
+		color: var(--text-primary);
+		max-width: 54ch;
+	}
 
 	.about {
 		display: flex;
@@ -170,10 +183,15 @@ import Skills from '../components/Skills.astro';
 		gap: 0.5rem;
 	}
 
+	/* heading role */
 	.section-title {
 		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
+		font-family: var(--font-display);
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--text-primary);
 	}
 
 	.ctas {

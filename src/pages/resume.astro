@@ -163,17 +163,22 @@ Design tokens</pre>
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		color: var(--gray-200);
+		color: var(--text-secondary);
 	}
 
+	/* heading role */
 	.section-title {
 		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
+		font-family: var(--font-display);
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--text-primary);
 	}
 
 	h5 {
-		color: var(--gray-0);
+		color: var(--text-primary);
 	}
 
     ul {
@@ -204,7 +209,7 @@ Design tokens</pre>
 
 	p {
 		margin: 1em 0;
-		color: var(--gray-0);
+		color: var(--text-primary);
 	}
 
 	.content {

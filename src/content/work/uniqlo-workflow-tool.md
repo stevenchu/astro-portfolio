@@ -87,7 +87,8 @@ was a quick, high‐intensity effort that allowed us to define project milestone
 
 ###### Key User
 I determined the key users to serve in this project were the company's 2 email designers. through initial stakeholder interviews with management and team members. They were at 
->User persona
+
+**User persona**
 
 
 
@@ -97,15 +98,15 @@ How were 2 designers with no coding background working around email code and QA 
 
 I conducted 1 day of contextual inquiry followed by a task analysis of their current process to find out.
 
-> Topline insights
+**Topline insights**
 
 For the designers, uncertainty and lack of reliability were the main challenges behind the coding time varying wildly from 40 mins to a costly 4 hrs per email.
 
-> pain points
+**pain points**
 
 From the task analysis, I found clusters of mentally demanding, repetitive steps– steps a system could take over and streamline
 
->task analysis
+**task analysis**
 
 Problem Statement
 The designers needed an organized and reliable system to build emails frictionlessly.
@@ -123,11 +124,11 @@ Ideation
 
 To gather ideas and approaches, I moved into brainstorming
 
-> pp ideation
+**pp ideation**
 
 I prioritized the possible solutions based on their portential to lower build time per email.
 
->prioritization matrix
+**prioritization matrix**
 
 Requirements:
 To decrease build time, the new system must:
