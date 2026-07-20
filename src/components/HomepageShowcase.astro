@@ -7,7 +7,8 @@ interface Props {
 
 const { project } = Astro.props;
 const { data, id } = project;
-const imagePath = data.img.replace(/^\//, '');
+const mediaPath = data.img.replace(/^\//, '');
+const posterPath = data.poster?.replace(/^\//, '');
 const href = data.externalUrl ?? `/work/${id}`;
 const isExternal = Boolean(data.externalUrl);
 ---
@@ -35,7 +36,25 @@ const isExternal = Boolean(data.externalUrl);
 		}
 	</header>
 
-	<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<div class="showcase-media">
+		{
+			data.mediaType === 'video' ? (
+				<video
+					autoplay
+					muted
+					loop
+					playsinline
+					preload="metadata"
+					poster={posterPath}
+					aria-label={data.img_alt || undefined}
+				>
+					<source src={mediaPath} type="video/mp4" />
+				</video>
+			) : (
+				<img src={mediaPath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+			)
+		}
+	</div>
 </article>
 
 <style>
@@ -111,14 +130,19 @@ const isExternal = Boolean(data.externalUrl);
 		text-underline-offset: 0.25em;
 	}
 
-	img {
+	.showcase-media {
+		width: 100%;
+		aspect-ratio: 5 / 3;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-sm);
+	}
+
+	.showcase-media > :is(img, video) {
 		display: block;
 		width: 100%;
-		height: auto;
-		aspect-ratio: 5 / 3;
-		border-radius: 1.5rem;
+		height: 100%;
 		object-fit: cover;
-		box-shadow: var(--shadow-sm);
 	}
 
 	@media (min-width: 50em) {
@@ -130,9 +154,8 @@ const isExternal = Boolean(data.externalUrl);
 			border-radius: 4.5rem;
 		}
 
-		img {
+		.showcase-media {
 			aspect-ratio: 5 / 3;
-			/*border-radius: 4.5rem;*/
 		}
 	}
 </style>

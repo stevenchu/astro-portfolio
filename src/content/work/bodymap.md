@@ -1,7 +1,7 @@
 ---
 title: BodyMap
 publishDate: 2026-07-19 00:00:00
-img: /images/case/cover-bodymap.jpg
+img: /images/case/cover-bodymap.png
 img_alt: Abstract gradient artwork used as a temporary placeholder for the BodyMap product experience.
 description: BodyMap helps movement teachers turn student videos into clear visual coaching feedback.
 tags:
