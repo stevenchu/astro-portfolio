@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import WorkMedia from './WorkMedia.astro';
 
 interface Props {
 	project: CollectionEntry<'work'>;
@@ -7,8 +8,6 @@ interface Props {
 
 const { project } = Astro.props;
 const { data, id } = project;
-const mediaPath = data.img.replace(/^\//, '');
-const posterPath = data.poster?.replace(/^\//, '');
 const href = data.externalUrl ?? `/work/${id}`;
 const isExternal = Boolean(data.externalUrl);
 ---
@@ -36,25 +35,7 @@ const isExternal = Boolean(data.externalUrl);
 		}
 	</header>
 
-	<div class="showcase-media">
-		{
-			data.mediaType === 'video' ? (
-				<video
-					autoplay
-					muted
-					loop
-					playsinline
-					preload="metadata"
-					poster={posterPath}
-					aria-label={data.img_alt || undefined}
-				>
-					<source src={mediaPath} type="video/mp4" />
-				</video>
-			) : (
-				<img src={mediaPath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-			)
-		}
-	</div>
+	<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
 </article>
 
 <style>
@@ -130,21 +111,6 @@ const isExternal = Boolean(data.externalUrl);
 		text-underline-offset: 0.25em;
 	}
 
-	.showcase-media {
-		width: 100%;
-		aspect-ratio: 5 / 3;
-		overflow: hidden;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-sm);
-	}
-
-	.showcase-media > :is(img, video) {
-		display: block;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
 	@media (min-width: 50em) {
 		.showcase {
 			grid-template-columns: 6fr 4fr;
@@ -154,8 +120,5 @@ const isExternal = Boolean(data.externalUrl);
 			border-radius: 4.5rem;
 		}
 
-		.showcase-media {
-			aspect-ratio: 5 / 3;
-		}
 	}
 </style>

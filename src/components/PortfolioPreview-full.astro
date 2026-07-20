@@ -1,12 +1,12 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import WorkMedia from './WorkMedia.astro';
 
 interface Props {
 	project: CollectionEntry<'work'>;
 }
 
 const { data } = Astro.props.project;
-const imagePath = data.img.replace(/^\//, '');
 ---
 
 <section class="project showcase-card">
@@ -15,7 +15,7 @@ const imagePath = data.img.replace(/^\//, '');
 		<h3>{data.title}</h3>
 		<p class="showcase-argument">{data.showcaseArgument}</p>
 	</div>
-	<img src={imagePath} alt={data.img_alt || ''} loading="lazy" decoding="async" />
+	<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
 </section>
 
 <style>
@@ -71,14 +71,6 @@ const imagePath = data.img.replace(/^\//, '');
 		color: var(--text-secondary);
 	}
 
-	.project > img {
-		width: 100%;
-		height: auto;
-		aspect-ratio: 5 / 3;
-		border-radius: 1.5rem;
-		object-fit: cover;
-	}
-
 	@media (min-width: 50em) {
 		section {
 			padding: 4.5rem;
@@ -92,9 +84,5 @@ const imagePath = data.img.replace(/^\//, '');
 			border-radius: 4.5rem;
 		}
 
-		.project > img {
-			aspect-ratio: 5 / 3;
-			/*border-radius: 4.5rem;*/
-		}
 	}
 </style>
