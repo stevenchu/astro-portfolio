@@ -1,8 +1,8 @@
 ---
-title: A workflow tool to quickly generate code for Uniqlo's email designers
+title: UNIQLO Email Workflow
 publishDate: 2021-03-02 00:00:00
 img: /images/case/cover-uniqlo-wide.png
-img_alt: Email code generator tool for non-coding designers
+img_alt: Internal email code-generation workflow created for UNIQLO designers.
 description: |
   Developed an internal tool for Uniqlo that cut the time it took designers to build email code from 40 minutes to 5 minutes. This reduced development friction, and freed up bandwidth allowing the team to create personalized content and deliver a better customer experience.
 tags:
@@ -16,6 +16,10 @@ platforms: Internal Tool
 result: |
   In 2 weeks, I cut email coding from 40 minutes to 5 minutes. Achieved on $0 budget spend.
 year: "2018"
+eyebrow: UNIQLO · SERVICE DESIGN & UX ENGINEERING
+showcaseArgument: UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send. I redesigned their production workflow and built a reusable coding system that reduced email build time from 40 minutes to 5 minutes. The team tripled weekly output without added budget or interrupting its regular launch calendar.
+homepageOrder: 6
+ctaLabel: View project
 ---
   <style>
       main p {
@@ -211,4 +215,3 @@ Below are slides of the content from above.
 | January  | $250    |
 | February | $80     |
 | March    | $420    |
-

@@ -6,7 +6,11 @@ import Hero from '../components/Hero.astro';
 import HomepageShowcase from '../components/HomepageShowcase.astro';
 import Icon from '../components/Icon.astro';
 import Skills from '../components/Skills.astro';
-import { homepageShowcases } from '../data/homepageShowcases';
+import { getCollection } from 'astro:content';
+
+const homepageProjects = (await getCollection('work'))
+	.filter((project) => project.data.homepageOrder !== undefined)
+	.sort((a, b) => a.data.homepageOrder! - b.data.homepageOrder!);
 ---
 
 <BaseLayout>
@@ -40,7 +44,7 @@ import { homepageShowcases } from '../data/homepageShowcases';
 
 		<main class="wrapper stack gap-20">
 			<section class="work" aria-label="Selected work">
-				{homepageShowcases.map((showcase) => <HomepageShowcase showcase={showcase} />)}
+				{homepageProjects.map((project) => <HomepageShowcase project={project} />)}
 			</section>
 
 			<section class="services with-background bg-variant">
@@ -121,7 +125,7 @@ import { homepageShowcases } from '../data/homepageShowcases';
 
 		.hero img {
 			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
+			/*border-radius: 4.5rem;*/
 			object-fit: cover;
 		}
 
