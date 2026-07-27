@@ -1,5 +1,5 @@
 ---
-title: UNIQLO Email Workflow
+title: Cutting email production from 40 minutes to 5—and tripling weekly output
 publishDate: 2021-03-02 00:00:00
 img: /images/case/cover-uniqlo-wide.png
 img_alt: Internal email code-generation workflow created for UNIQLO designers.
@@ -16,8 +16,8 @@ platforms: Internal Tool
 result: |
   In 2 weeks, I cut email coding from 40 minutes to 5 minutes. Achieved on $0 budget spend.
 year: "2018"
-eyebrow: UNIQLO · SERVICE DESIGN & UX ENGINEERING
-showcaseArgument: UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send. I redesigned their production workflow and built a reusable coding system that reduced email build time from 40 minutes to 5 minutes. The team tripled weekly output without added budget or interrupting its regular launch calendar.
+eyebrow: UNIQLO · SERVICE DESIGN & UX ENGINEERING · 2018
+showcaseArgument: UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send. I redesigned their production workflow and built a reusable coding system that reduced each email build from 40 minutes to 5. The team increased output from 7 to 21 emails per week without added budget or interrupting its regular launch calendar.
 homepageOrder: 6
 ctaLabel: View project
 ---
@@ -68,7 +68,7 @@ The new system significantly improved speed and accuracy, reducing email build t
 &nbsp;  
 
 
-###### Problem
+#### Problem
 ## Uniqlo wanted to personalize their email experience so subscribers would not get the same undifferentiated content.
 
 
@@ -86,13 +86,14 @@ Personalization requires bandwidth to ideate and produce that content, and the m
 
 
 
+
 was a quick, high‐intensity effort that allowed us to define project milestones, audit the existing work, review the competitor landscape, understand our client's vision, and begin research into user needs, behaviours and pain‐points. 
 
-
-###### Key User
+#### Key User
 I determined the key users to serve in this project were the company's 2 email designers. through initial stakeholder interviews with management and team members. They were at 
 
 **User persona**
+
 
 
 
@@ -125,7 +126,6 @@ Success metrics
 - Employee satisfaction
 
 Ideation
-
 To gather ideas and approaches, I moved into brainstorming
 
 **pp ideation**
@@ -203,7 +203,6 @@ Below are slides of the content from above.
 <figure><img src="images/case/uniqlo18.jpg" alt="Uniqlo Slide"></figure>
 <figure><img src="images/case/uniqlo19.jpg" alt="Uniqlo Slide"></figure>
 <figure><img src="images/case/uniqlo20.jpg" alt="Uniqlo Slide"></figure>
-
 
 
 
