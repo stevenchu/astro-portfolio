@@ -1,11 +1,11 @@
 ---
-title: Bose Design System
+title: Eliminating 90 production defect overrides by restoring trust in Bose’s design system
 publishDate: 2024-08-09 00:00:00
 img: /images/case/bose/cover-bose-design-system-strike2.png
 img_alt: A visual overview of the Bose design-system foundation.
 homepageOrder: 3
-eyebrow: BOSE · DESIGN SYSTEMS
-showcaseArgument: Bose teams were designing and shipping across a growing ecosystem of commerce experiences without a sufficiently shared product foundation. I owned the design system and developed the foundations, components, and patterns that helped design, content, and engineering teams work from a more consistent model.
+eyebrow: BOSE · DESIGN SYSTEMS · 2024–2025
+showcaseArgument: Bose teams were working from a monolithic design library with more than 2,000 components, inconsistent implementation logic, and recurring gaps between design and production. I first prioritized the canonical components responsible for visible site defects, helping eliminate 90 production overrides within three months. Across my tenure, I continued evolving the system’s architecture and internal authoring experience—restructuring unstable libraries, modernizing legacy components, and introducing clearer foundations, patterns, and governance.
 detailAvailability: internal
 ctaLabel: View project
 description: |
@@ -74,6 +74,7 @@ On the design side, inconsistencies across platforms and a lack of standardizati
 
 <hr>
 
+
 ###### 03. Strategy
 
 #### Focusing on standardization, scalability, and enhanced collaboration between design and engineering and content authors,
@@ -97,6 +98,7 @@ I led a cross-functional team to overhaul the design system. By using adaptive l
 - - ARIA Labeling: Integrated ARIA attributes for enhanced screen reader compatibility.
 
 <hr>
+
 
 ###### 04. Testing & Iteration
 
