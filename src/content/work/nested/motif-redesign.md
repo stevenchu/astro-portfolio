@@ -30,19 +30,74 @@ ctaLabel: View project
   .motif-metrics {
     display: grid;
     gap: 1rem;
-    margin: 2rem 0;
+  }
+
+  .content > .motif-workflow {
+    margin: 1.75rem 0 2rem;
+  }
+
+  .content > .motif-interventions,
+  .content > .motif-metrics {
+    margin: 1.5rem 0 2rem;
+  }
+
+  .motif-workflow-summary {
+    display: grid;
+    gap: 0.5rem;
+    padding: 0 0.25rem 0.25rem;
+  }
+
+  .motif-workflow-summary strong {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.65rem;
+    align-items: baseline;
+    font-size: clamp(1.6rem, 4vw, 2.25rem);
+    font-weight: var(--weight-display);
+    line-height: 1.05;
+  }
+
+  .motif-workflow-summary strong span:last-child {
+    color: var(--accent);
+  }
+
+  .motif-workflow-summary-arrow {
+    color: var(--text-tertiary);
+  }
+
+  .motif-workflow-columns {
+    display: grid;
+    gap: 1rem;
+    align-items: start;
   }
 
   .motif-workflow-panel,
   .motif-intervention {
     border: 1px solid var(--border-subtle);
     border-radius: 1rem;
-    padding: clamp(1.25rem, 3vw, 2rem);
+    padding: 1.25rem;
   }
 
   .motif-workflow-panel--after,
   .motif-intervention {
     background: var(--surface-raised);
+  }
+
+  .motif-workflow-panel--after {
+    border-color: color-mix(in srgb, var(--accent) 42%, var(--border-subtle));
+  }
+
+  .motif-workflow-panel--before h4,
+  .motif-workflow-panel--before .motif-workflow-kicker {
+    color: var(--text-secondary);
+  }
+
+  .motif-workflow-panel--before .motif-workflow-steps li::before {
+    color: var(--text-tertiary);
+  }
+
+  .motif-workflow-panel--after .motif-workflow-kicker {
+    color: var(--accent);
   }
 
   .motif-workflow-kicker,
@@ -56,25 +111,29 @@ ctaLabel: View project
     text-transform: uppercase;
   }
 
-  .motif-workflow-panel h4,
-  .motif-intervention h4 {
+  .motif-workflow .motif-workflow-panel h4,
+  .motif-interventions .motif-intervention h4 {
     margin: 0;
+    font-size: clamp(1.2rem, 1.4vw, 1.35rem);
+    line-height: 1.2;
   }
 
   .motif-workflow-steps {
     counter-reset: workflow-step;
     list-style: none;
-    margin: 1.5rem 0 0;
+    margin: 1rem 0 0;
     padding: 0;
   }
 
-  .motif-workflow-steps li {
+  .motif-workflow .motif-workflow-steps li {
     counter-increment: workflow-step;
     display: grid;
-    grid-template-columns: 2rem minmax(0, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: 1.75rem minmax(0, 1fr);
+    gap: 0.5rem;
     align-items: start;
-    padding: 0.9rem 0;
+    max-width: none;
+    margin-top: 0;
+    padding: 0.55rem 0;
     border-top: 1px solid var(--border-subtle);
   }
 
@@ -86,23 +145,8 @@ ctaLabel: View project
     line-height: 1.6;
   }
 
-  .motif-workflow-time {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    align-items: baseline;
-    margin-top: 0.75rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .motif-workflow-time strong {
-    font-size: clamp(1.35rem, 3vw, 2rem);
-    line-height: 1;
-  }
-
-  .motif-intervention p {
-    margin-bottom: 0;
+  .motif-interventions .motif-intervention p {
+    margin: 0.75rem 0 0;
   }
 
   .motif-metrics {
@@ -110,19 +154,20 @@ ctaLabel: View project
   }
 
   .motif-metric {
+    min-width: 0;
     padding: 1rem 0;
     border-top: 1px solid var(--border-subtle);
   }
 
   .motif-metric strong {
     display: block;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.4rem, 2.3vw, 1.75rem);
     line-height: 1.05;
   }
 
   .motif-homepage-crop {
     position: relative;
-    aspect-ratio: 4 / 3;
+    /*aspect-ratio: 4 / 3;*/
     overflow: hidden;
     border-radius: 1rem;
     background: var(--surface-raised);
@@ -148,8 +193,20 @@ ctaLabel: View project
   }
 
   @media (min-width: 50em) {
-    .motif-workflow {
+    .motif-workflow-summary {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+    }
+
+    .motif-workflow-columns {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .motif-workflow-panel,
+    .motif-intervention {
+      padding: 1.5rem;
     }
 
     .motif-interventions {
@@ -170,7 +227,17 @@ Motif’s customer-acquisition experience served 32 countries, but the publishin
 The constraint was not a shortage of campaign ideas. The system made every page expensive to change—even when much of the structure already existed.
 
 <div class="motif-workflow" aria-label="Before and after marketing page production workflow">
-  <section class="motif-workflow-panel">
+  <div class="motif-workflow-summary">
+    <span class="motif-workflow-kicker">Typical page production time</span>
+    <strong>
+      <span>5.5 weeks</span>
+      <span class="motif-workflow-summary-arrow" aria-hidden="true">→</span>
+      <span>≈3 hours</span>
+    </strong>
+  </div>
+
+  <div class="motif-workflow-columns">
+  <section class="motif-workflow-panel motif-workflow-panel--before">
     <span class="motif-workflow-kicker">Before · one-off production</span>
     <h4>Duplicate, customize, hand off</h4>
     <ol class="motif-workflow-steps">
@@ -180,7 +247,6 @@ The constraint was not a shortage of campaign ideas. The system made every page 
       <li>Review the implementation across devices</li>
       <li>Repeat QA and fixes before launch</li>
     </ol>
-    <div class="motif-workflow-time"><span>Typical page</span><strong>5.5 weeks</strong></div>
   </section>
 
   <section class="motif-workflow-panel motif-workflow-panel--after">
@@ -192,14 +258,14 @@ The constraint was not a shortage of campaign ideas. The system made every page 
       <li>Preview shared responsive patterns</li>
       <li>Publish from a validated foundation</li>
     </ol>
-    <div class="motif-workflow-time"><span>Typical page</span><strong>≈3 hours</strong></div>
   </section>
+  </div>
 </div>
 
 ###### THE INTERVENTION
 #### I moved the work from page production to system configuration
 
-I led the brand and marketing experience redesign, then helped define the content model and reusable UI patterns for a decoupled Contentful and static-site architecture. The important shift was not simply creating a component library. It was changing what each team had to do for every launch.
+I led the brand and marketing experience redesign, then helped define the content model and reusable UI patterns for a decoupled Contentful and static-site architecture. The important shift was not the resulting component library, but streamlining the effort required from each team for each project launch.
 
 <div class="motif-interventions">
   <section class="motif-intervention">
@@ -230,7 +296,7 @@ The responsive homepage used shared structures to make product value, pricing, t
 
 <figure class="motif-case-visual">
   <div class="motif-homepage-crop">
-    <img src="/images/case/motif16.jpg" alt="Responsive Motif homepage redesign shown across phone, tablet, and desktop, emphasizing product value, trust signals, product range, and next steps.">
+    <img src="/images/case/motif/motif-responsive-homepage-after.webp" alt="Responsive Motif homepage redesign shown across phone, tablet, and desktop, emphasizing product value, trust signals, product range, and next steps.">
   </div>
   <figcaption>Selected portion of the final homepage presentation: the responsive after-state across phone, tablet, and desktop.</figcaption>
 </figure>
@@ -243,7 +309,7 @@ A page that had taken 5.5 weeks through external development could be produced i
 <div class="motif-metrics" aria-label="Motif project results">
   <div class="motif-metric">
     <span class="motif-metric-label">Production time</span>
-    <strong>5.5 weeks → ≈3 hours</strong>
+    <strong>≈3 hours</strong>
   </div>
   <div class="motif-metric">
     <span class="motif-metric-label">Faster production</span>
@@ -254,8 +320,8 @@ A page that had taken 5.5 weeks through external development could be produced i
     <strong>≈$200K</strong>
   </div>
   <div class="motif-metric">
-    <span class="motif-metric-label">Global reach</span>
-    <strong>32 countries</strong>
+    <span class="motif-metric-label">Countries served</span>
+    <strong>32</strong>
   </div>
 </div>
 
@@ -263,4 +329,4 @@ The broader redesign also increased organic downloads by 55% among 25–34-year-
 
 <!-- TODO(evidence): The current exported slide deck does not contain the source for the +12% CTR result from the top-right “Download Motif” navigation test. Add a focused visual or supporting caption here only after the original test evidence is located and verified. -->
 
-> Takeaway: The highest-leverage design decision was not another campaign concept. It was changing the production model behind every campaign.
+Takeaway: The highest-leverage design decision was not another campaign concept. It was changing the production model behind every campaign.
