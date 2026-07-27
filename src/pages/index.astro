@@ -5,7 +5,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import HomepageShowcase from '../components/HomepageShowcase.astro';
 import Icon from '../components/Icon.astro';
-import Skills from '../components/Skills.astro';
+import PositioningStatements from '../components/PositioningStatements.astro';
 import { getCollection } from 'astro:content';
 import { sortWorkProjects } from '../utils/work-order';
 
@@ -46,7 +46,9 @@ const homepageProjects = (await getCollection('work'))
 
 		<div class="hero-work-gap" aria-hidden="true"></div>
 
-		<main class="wrapper stack gap-20">
+		<main class="wrapper stack gap-15 lg:gap-20">
+			<PositioningStatements />
+
 			<section class="work" aria-label="Selected work">
 				{homepageProjects.map((project) => <HomepageShowcase project={project} />)}
 			</section>
@@ -56,13 +58,6 @@ const homepageProjects = (await getCollection('work'))
 					View all work →
 				</CallToAction>
 			</div>
-
-			<section class="services with-background bg-variant">
-				<header class="stack gap-2 lg:gap-4">
-					<h3>Services</h3>
-					<Skills />
-				</header>
-			</section>
 		</main>
 
 		<ContactCTA />
@@ -109,34 +104,6 @@ const homepageProjects = (await getCollection('work'))
 		justify-content: center;
 	}
 
-	.services {
-		position: relative;
-	}
-
-	/* title role */
-	.services h3 {
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-display);
-		letter-spacing: -0.03em;
-	}
-
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-1);
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background: url('../images/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, var(--surface-page);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
-	}
-
 	@media (min-width: 50em) {
 		.hero {
 			display: grid;
@@ -151,6 +118,5 @@ const homepageProjects = (await getCollection('work'))
 			/*border-radius: 4.5rem;*/
 			object-fit: cover;
 		}
-
 	}
 </style>
