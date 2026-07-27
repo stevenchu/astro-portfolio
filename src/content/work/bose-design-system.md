@@ -24,12 +24,14 @@ year: "2024–2025"
 ---
 
 <style>
-  .bose-case-visual {
+  .bose-case-visual,
+  .bose-media-figure {
     width: 100%;
     margin: 1.75rem 0 0;
   }
 
-  .bose-case-visual img {
+  .bose-case-visual img,
+  .bose-media-figure img {
     display: block;
     width: 100%;
     height: auto;
@@ -38,19 +40,34 @@ year: "2024–2025"
     background: var(--surface-raised);
   }
 
-  .bose-case-visual figcaption {
-    max-width: 65ch;
-    margin: 0.75rem 0 0;
+  .bose-case-visual figcaption,
+  .bose-media-figure figcaption,
+  .bose-comparison-copy p,
+  .bose-status-note {
     color: var(--text-tertiary);
     font-size: var(--role-meta-size);
     line-height: 1.5;
+  }
+
+  .bose-media-grid .bose-media-figure,
+  .bose-prototype-grid .bose-media-figure,
+  .bose-nav-comparison .bose-media-figure {
+    margin-top: 0;
+  }
+
+  .bose-case-visual figcaption,
+  .bose-media-figure figcaption {
+    max-width: 65ch;
+    margin: 0.75rem 0 0;
   }
 
   .bose-metrics,
   .bose-flow,
   .bose-architecture,
   .bose-system-parts,
-  .bose-media-grid {
+  .bose-media-grid,
+  .bose-prototype-grid,
+  .bose-nav-comparison {
     display: grid;
     width: 100%;
     gap: 1rem;
@@ -61,7 +78,8 @@ year: "2024–2025"
   .bose-flow > div,
   .bose-architecture-panel,
   .bose-system-parts > div,
-  .bose-image-placeholder {
+  .bose-naming-example,
+  .bose-placeholder-frame {
     border: 1px solid var(--border-subtle);
     border-radius: 0.875rem;
     background: var(--surface-raised);
@@ -71,7 +89,9 @@ year: "2024–2025"
   .bose-metrics p,
   .bose-flow p,
   .bose-system-parts p,
-  .bose-image-placeholder p {
+  .bose-placeholder-frame p,
+  .bose-naming-example p,
+  .bose-comparison-copy p {
     margin: 0 !important;
   }
 
@@ -86,7 +106,9 @@ year: "2024–2025"
   .bose-metrics span,
   .bose-flow span,
   .bose-architecture-label,
-  .bose-image-placeholder span {
+  .bose-placeholder-frame span,
+  .bose-naming-example span,
+  .bose-comparison-label {
     color: var(--text-tertiary);
     font-size: var(--role-meta-size);
     line-height: 1.4;
@@ -98,7 +120,8 @@ year: "2024–2025"
 
   .bose-flow strong,
   .bose-system-parts strong,
-  .bose-image-placeholder strong {
+  .bose-placeholder-frame strong,
+  .bose-naming-example strong {
     display: block;
     margin: 0.25rem 0 0.5rem;
     color: var(--text-primary);
@@ -164,18 +187,95 @@ year: "2024–2025"
     font-weight: var(--weight-emphasis);
   }
 
-  .bose-image-placeholder {
+  .bose-placeholder-frame {
     display: grid;
+    width: 100%;
     min-height: 12rem;
     place-content: center;
     border-style: dashed;
     text-align: center;
   }
 
-  .bose-image-placeholder span {
+  .bose-placeholder-frame span {
     display: block;
     margin-top: 0.5rem;
     overflow-wrap: anywhere;
+  }
+
+  .bose-placeholder-frame--landscape {
+    aspect-ratio: 16 / 9;
+  }
+
+  .bose-placeholder-frame--ultrawide {
+    min-height: 10rem;
+    aspect-ratio: 6 / 1;
+  }
+
+  .bose-placeholder-frame--square {
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+
+  .bose-naming-example {
+    display: grid;
+    align-content: center;
+    gap: 1rem;
+  }
+
+  .bose-naming-shift {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .bose-naming-shift > div {
+    border: 1px solid var(--border-strong);
+    border-radius: 0.65rem;
+    padding: 1rem;
+  }
+
+  .bose-naming-arrow {
+    color: var(--text-tertiary);
+    font-size: 1.5rem;
+  }
+
+  .bose-nav-after {
+    display: grid;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .bose-nav-after .bose-placeholder-frame {
+    max-width: 28rem;
+  }
+
+  .bose-comparison-label {
+    display: block;
+    margin-bottom: 0.65rem;
+    font-weight: var(--weight-emphasis);
+    letter-spacing: 0.04em;
+  }
+
+  .bose-comparison-copy {
+    max-width: 34rem;
+  }
+
+  .bose-comparison-copy strong {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    line-height: 1.15;
+  }
+
+  .bose-status-note {
+    width: 100%;
+    margin-top: 1rem;
+    border-inline-start: 3px solid var(--accent-dark);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--surface-raised);
+    padding: 0.9rem 1rem;
   }
 
   .bose-continuity {
@@ -192,21 +292,23 @@ year: "2024–2025"
   }
 
   @media (min-width: 50em) {
-    .bose-metrics {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
+    .bose-metrics,
     .bose-flow {
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     .bose-architecture,
-    .bose-media-grid {
+    .bose-media-grid,
+    .bose-prototype-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .bose-system-parts {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .bose-nav-after {
+      grid-template-columns: minmax(16rem, 0.8fr) minmax(0, 1.2fr);
     }
   }
 </style>
@@ -250,14 +352,28 @@ Within three months, the team had eliminated all 90 defect-related overrides. Th
 
 #### The defects exposed a monolithic system that was difficult to trust or maintain
 
-The immediate failures were only one symptom. The overloaded Figma library mixed current components, legacy assets, explorations, and unmerged work. Memory warnings, component detachment, inconsistent naming, and unclear contribution paths made the dependable source difficult to identify.
+The immediate failures were only one symptom. The overloaded Figma library mixed current components, legacy assets, explorations, and unmerged work. Memory warnings, local component detachment, inconsistent naming, and unclear contribution paths made the dependable source difficult to identify.
 
-<div class="bose-media-grid" aria-label="Placeholders for monolithic-library evidence">
-  <div class="bose-image-placeholder"><p><strong>Monolithic evidence · memory warning</strong><span>Replace with: /images/case/bose/bose-monolith-memory-warning.webp</span></p></div>
-  <div class="bose-image-placeholder"><p><strong>Monolithic evidence · detached component</strong><span>Replace with: /images/case/bose/bose-monolith-detached-component.webp</span></p></div>
+<div class="bose-media-grid" aria-label="Monolithic-library evidence and naming example">
+  <figure class="bose-media-figure">
+    <div class="bose-placeholder-frame bose-placeholder-frame--square">
+      <p><strong>Monolithic evidence · memory warning</strong><span>Replace with: /images/case/bose/bose-monolith-memory-warning.webp</span></p>
+    </div>
+    <figcaption>A Figma memory warning made the operational cost of the monolithic library visible.</figcaption>
+  </figure>
+
+  <div class="bose-naming-example">
+    <span>ONE SMALL EXAMPLE · CLEARER COMPONENT INTENT</span>
+    <div class="bose-naming-shift">
+      <div><span>Legacy name</span><strong>No-image card</strong><p>Defined by what it lacked.</p></div>
+      <span class="bose-naming-arrow" aria-hidden="true">→</span>
+      <div><span>Clarified name</span><strong>Text card</strong><p>Named for its actual purpose.</p></div>
+    </div>
+    <p>Clarifying names, anatomy, and supported behavior made components easier to find and understand without publishing Bose's internal component structure.</p>
+  </div>
 </div>
 
-<!-- When the exports are added, replace the two placeholder divs above with images using the same filenames. -->
+<!-- Replace only the memory-warning placeholder with bose-monolith-memory-warning.webp. The naming example is intentionally rendered as public-safe HTML rather than a raw internal screenshot. -->
 
 <div class="bose-architecture" aria-label="Before and after design-system architecture">
   <div class="bose-architecture-panel">
@@ -288,18 +404,58 @@ The immediate failures were only one symptom. The overloaded Figma library mixed
 
 The goal was not a perfectly tidy Figma file. It was a dependable product foundation that different teams could use, implement, and extend without reopening the same production failures.
 
-#### One example: consolidating global navigation behavior
+#### One example: reducing repeated navigation variants
 
-A variable-driven navigation model replaced repeated values and variant-heavy maintenance with one controlled source for desktop and mobile contexts. The following placeholders are ready for the exported Initiative 4 screens.
+I designed and handed off a lighter navigation model that consolidated six category-specific variants into one component, with content switched through variables while interaction behavior remained centralized.
 
-<div class="bose-media-grid" aria-label="Placeholders for global navigation modernization exports">
-  <div class="bose-image-placeholder"><p><strong>Global navigation · before</strong><span>Replace with: /images/case/bose/bose-global-nav-before.webp</span></p></div>
-  <div class="bose-image-placeholder"><p><strong>Global navigation · variables model</strong><span>Replace with: /images/case/bose/bose-global-nav-variables.webp</span></p></div>
-  <div class="bose-image-placeholder"><p><strong>Global navigation · desktop result</strong><span>Replace with: /images/case/bose/bose-global-nav-desktop.webp</span></p></div>
-  <div class="bose-image-placeholder"><p><strong>Global navigation · mobile result</strong><span>Optional fourth export: /images/case/bose/bose-global-nav-mobile.webp</span></p></div>
+<div class="bose-nav-comparison" aria-label="Global navigation before and after comparison">
+  <figure class="bose-media-figure">
+    <span class="bose-comparison-label">BEFORE · 6 REPEATED VARIANTS</span>
+    <div class="bose-placeholder-frame bose-placeholder-frame--ultrawide">
+      <p><strong>Six category-specific navigation variants</strong><span>Replace with: /images/case/bose/bose-global-nav-six-variants.webp</span></p>
+    </div>
+  </figure>
+
+  <div class="bose-nav-after">
+    <figure class="bose-media-figure">
+      <span class="bose-comparison-label">AFTER · 1 VARIABLE-CONTROLLED COMPONENT</span>
+      <div class="bose-placeholder-frame bose-placeholder-frame--square">
+        <p><strong>One shared component model</strong><span>Replace with: /images/case/bose/bose-global-nav-one-component.webp</span></p>
+      </div>
+    </figure>
+
+    <div class="bose-comparison-copy">
+      <strong>Centralized interaction behavior, flexible content</strong>
+      <p>One shared structure changed category content through variables instead of duplicating the same interaction model across six variants.</p>
+    </div>
+  </div>
 </div>
 
-<!-- Replace the placeholder divs above with the three or four exported Initiative 4 images. If only three exports are used, remove the optional mobile placeholder. -->
+<!-- Replace the two placeholder frames with the approved exports. Keep the ultrawide before image full width; keep the square after image beside the explanatory copy on desktop and stacked on mobile. -->
+
+###### AN INITIATIVE IN MOTION
+
+#### I prototyped a reusable alternative to repeated campaign-layout correction
+
+Campaign assets combined background, product imagery, and copy into fixed compositions that required manual repositioning across responsive containers. I separated those layers in a coded prototype, tested responsive behavior, and documented authoring controls for implementation.
+
+<div class="bose-prototype-grid" aria-label="Responsive campaign layout constraint and proposed model">
+  <figure class="bose-media-figure">
+    <div class="bose-placeholder-frame bose-placeholder-frame--landscape">
+      <p><strong>Existing constraint · flattened composition</strong><span>Replace with: /images/case/bose/bose-responsive-layout-constraint.webp</span></p>
+    </div>
+    <figcaption>A single flattened campaign composition could not adapt reliably across the full range of responsive containers.</figcaption>
+  </figure>
+
+  <figure class="bose-media-figure">
+    <div class="bose-placeholder-frame bose-placeholder-frame--landscape">
+      <p><strong>Proposed model · independently controlled layers</strong><span>Replace with: /images/case/bose/bose-responsive-layout-model.webp</span></p>
+    </div>
+    <figcaption>I modeled separate content, product-image, and background layers, then tested responsive rules and authoring controls in a coded prototype.</figcaption>
+  </figure>
+</div>
+
+<div class="bose-status-note">This initiative was prototyped and handed off before my departure; implementation after handoff is unverified.</div>
 
 ###### THE OUTCOME
 
