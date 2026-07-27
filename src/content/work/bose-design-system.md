@@ -5,11 +5,11 @@ img: /images/case/bose/cover-bose-design-system-strike2.png
 img_alt: A visual overview of Bose design-system foundations, components, patterns, and governance.
 homepageOrder: 3
 eyebrow: BOSE · DESIGN SYSTEMS · 2024–2025
-showcaseArgument: Bose teams were working from a monolithic design library with 2,300+ components, recurring production defects, and inconsistent implementation logic. I led remediation of the canonical components behind visible site issues, helping the team eliminate 90 defect overrides within three months. I then restructured the library architecture, modernized legacy components, and established clearer foundations, patterns, and governance.
+showcaseArgument: Bose teams were working from a monolithic design library with 2,000+ components, recurring production defects, and inconsistent implementation logic. I led remediation of the canonical components behind visible site issues, helping the team eliminate 90 defect overrides within three months. I then restructured the library architecture, modernized legacy components, and established clearer foundations, patterns, and governance.
 detailAvailability: internal
 ctaLabel: View project
 description: |
-  Bose teams were patching visible defects downstream because canonical components were no longer dependable. As Product Design Lead and design-system owner, I led remediation that removed 90 defect overrides in three months, then restructured the 2,300+ component system for clearer ownership, reuse, and continued evolution.
+  Bose teams were patching visible defects downstream because canonical components were no longer dependable. As Product Design Lead and design-system owner, I led remediation that removed 90 defect overrides in three months, then restructured the 2,000+ component system for clearer ownership, reuse, and continued evolution.
 tags:
   - Design Systems
   - UX Infrastructure
@@ -19,7 +19,7 @@ role:
   - Design Systems Owner
 platforms: Bose.com · Figma design system · Responsive web
 result: |
-  90 → 0 defect overrides in three months · 2,300+ component system restructured
+  90 → 0 defect overrides in three months · 2,000+ component system restructured
 year: "2024–2025"
 ---
 
@@ -49,7 +49,8 @@ year: "2024–2025"
   .bose-metrics,
   .bose-flow,
   .bose-architecture,
-  .bose-system-parts {
+  .bose-system-parts,
+  .bose-media-grid {
     display: grid;
     width: 100%;
     gap: 1rem;
@@ -59,7 +60,8 @@ year: "2024–2025"
   .bose-metrics > div,
   .bose-flow > div,
   .bose-architecture-panel,
-  .bose-system-parts > div {
+  .bose-system-parts > div,
+  .bose-image-placeholder {
     border: 1px solid var(--border-subtle);
     border-radius: 0.875rem;
     background: var(--surface-raised);
@@ -68,7 +70,8 @@ year: "2024–2025"
 
   .bose-metrics p,
   .bose-flow p,
-  .bose-system-parts p {
+  .bose-system-parts p,
+  .bose-image-placeholder p {
     margin: 0 !important;
   }
 
@@ -82,7 +85,8 @@ year: "2024–2025"
 
   .bose-metrics span,
   .bose-flow span,
-  .bose-architecture-label {
+  .bose-architecture-label,
+  .bose-image-placeholder span {
     color: var(--text-tertiary);
     font-size: var(--role-meta-size);
     line-height: 1.4;
@@ -93,7 +97,8 @@ year: "2024–2025"
   }
 
   .bose-flow strong,
-  .bose-system-parts strong {
+  .bose-system-parts strong,
+  .bose-image-placeholder strong {
     display: block;
     margin: 0.25rem 0 0.5rem;
     color: var(--text-primary);
@@ -159,6 +164,20 @@ year: "2024–2025"
     font-weight: var(--weight-emphasis);
   }
 
+  .bose-image-placeholder {
+    display: grid;
+    min-height: 12rem;
+    place-content: center;
+    border-style: dashed;
+    text-align: center;
+  }
+
+  .bose-image-placeholder span {
+    display: block;
+    margin-top: 0.5rem;
+    overflow-wrap: anywhere;
+  }
+
   .bose-continuity {
     width: 100%;
     margin-top: 1.5rem;
@@ -181,7 +200,8 @@ year: "2024–2025"
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .bose-architecture {
+    .bose-architecture,
+    .bose-media-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -197,11 +217,11 @@ year: "2024–2025"
 
 #### Canonical components had become unreliable enough that production required 90 defect patches
 
-Bose.com was shipping from a monolithic design library containing more than 2,300 components. When shared components created visible issues, production overrides corrected individual pages without repairing the source. The site kept moving, but design and implementation drifted further apart—and each patch increased the cost of future change.
+Bose.com was shipping from a monolithic design library containing more than 2,000 components. When shared components created visible issues, production overrides corrected individual pages without repairing the source. The site kept moving, but design and implementation drifted further apart—and each patch increased the cost of future change.
 
 <div class="bose-metrics" aria-label="Bose design-system starting conditions">
   <div><strong>90</strong><span>Defect-related production overrides</span></div>
-  <div><strong>2,300+</strong><span>Components in one overloaded library</span></div>
+  <div><strong>2,000+</strong><span>Components in one overloaded library</span></div>
   <div><strong>1 source</strong><span>Mixed current, legacy, and exploratory assets</span></div>
   <div><strong>4 teams</strong><span>Design, engineering, content, and creative</span></div>
 </div>
@@ -221,7 +241,10 @@ As Product Design Lead and design-system owner, I worked with design, engineerin
 
 Within three months, the team had eliminated all 90 defect-related overrides. The sequencing mattered: restoring production integrity created the stability and credibility needed to address the deeper system architecture.
 
-<!-- FUTURE IMAGE: Add one legible production defect / canonical component before-and-after here. Crop to the affected UI, source component, and repaired result; omit ticket or presentation chrome. -->
+<figure class="bose-case-visual">
+  <img src="/images/case/bose/global%20component%20spacing%20-%20initial%20sketch.png" alt="Early proposal for shared component spacing and layout behavior at Bose.">
+  <figcaption>Early system work aligning global component spacing and layout behavior.</figcaption>
+</figure>
 
 ###### THE SYSTEM BEHIND THE FIX
 
@@ -229,10 +252,17 @@ Within three months, the team had eliminated all 90 defect-related overrides. Th
 
 The immediate failures were only one symptom. The overloaded Figma library mixed current components, legacy assets, explorations, and unmerged work. Memory warnings, component detachment, inconsistent naming, and unclear contribution paths made the dependable source difficult to identify.
 
+<div class="bose-media-grid" aria-label="Placeholders for monolithic-library evidence">
+  <div class="bose-image-placeholder"><p><strong>Monolithic evidence · memory warning</strong><span>Replace with: /images/case/bose/bose-monolith-memory-warning.webp</span></p></div>
+  <div class="bose-image-placeholder"><p><strong>Monolithic evidence · detached component</strong><span>Replace with: /images/case/bose/bose-monolith-detached-component.webp</span></p></div>
+</div>
+
+<!-- When the exports are added, replace the two placeholder divs above with images using the same filenames. -->
+
 <div class="bose-architecture" aria-label="Before and after design-system architecture">
   <div class="bose-architecture-panel">
     <span class="bose-architecture-label">BEFORE · ONE MONOLITHIC SOURCE</span>
-    <div class="bose-monolith"><strong>2,300+ components</strong><span>Shared logic, legacy assets, experiments, and team-specific needs combined in one file</span></div>
+    <div class="bose-monolith"><strong>2,000+ components</strong><span>Shared logic, legacy assets, experiments, and team-specific needs combined in one file</span></div>
   </div>
   <div class="bose-architecture-panel">
     <span class="bose-architecture-label">AFTER · CLEARER INHERITANCE</span>
@@ -258,18 +288,18 @@ The immediate failures were only one symptom. The overloaded Figma library mixed
 
 The goal was not a perfectly tidy Figma file. It was a dependable product foundation that different teams could use, implement, and extend without reopening the same production failures.
 
-<!-- FUTURE IMAGE: Add one legacy-to-modernized component comparison here. Show the old variant or detachment problem beside the new properties, variables, or responsive logic. -->
+#### One example: consolidating global navigation behavior
 
-###### SYSTEMATIC ACCESSIBILITY
+A variable-driven navigation model replaced repeated values and variant-heavy maintenance with one controlled source for desktop and mobile contexts. The following placeholders are ready for the exported Initiative 4 screens.
 
-#### I tested reusable interaction-state logic instead of accepting one-off color fixes
+<div class="bose-media-grid" aria-label="Placeholders for global navigation modernization exports">
+  <div class="bose-image-placeholder"><p><strong>Global navigation · before</strong><span>Replace with: /images/case/bose/bose-global-nav-before.webp</span></p></div>
+  <div class="bose-image-placeholder"><p><strong>Global navigation · variables model</strong><span>Replace with: /images/case/bose/bose-global-nav-variables.webp</span></p></div>
+  <div class="bose-image-placeholder"><p><strong>Global navigation · desktop result</strong><span>Replace with: /images/case/bose/bose-global-nav-desktop.webp</span></p></div>
+  <div class="bose-image-placeholder"><p><strong>Global navigation · mobile result</strong><span>Optional fourth export: /images/case/bose/bose-global-nav-mobile.webp</span></p></div>
+</div>
 
-Bose’s expressive color system introduced more than 30 surface and on-surface pairings. I evaluated 240 button-state combinations to find reusable ways to preserve WCAG AA contrast without adding custom hover and pressed values for every theme. The exploration narrowed the system toward maintainable fallbacks while documenting browser-support and color-integrity tradeoffs rather than hiding them.
-
-<figure class="bose-case-visual">
-  <img src="/images/case/bose/2-UI-accessibility-audit-results.webp" alt="Audit comparing interaction-state color approaches across Bose color themes.">
-  <figcaption>One systems-thinking example: testing reusable state logic across the expanded Bose color system.</figcaption>
-</figure>
+<!-- Replace the placeholder divs above with the three or four exported Initiative 4 images. If only three exports are used, remove the optional mobile placeholder. -->
 
 ###### THE OUTCOME
 
@@ -278,7 +308,7 @@ Bose’s expressive color system introduced more than 30 surface and on-surface 
 <div class="bose-metrics" aria-label="Bose design-system outcomes">
   <div><strong>90 → 0</strong><span>Defect overrides</span></div>
   <div><strong>3 months</strong><span>Production remediation</span></div>
-  <div><strong>2,300+</strong><span>Component system addressed</span></div>
+  <div><strong>2,000+</strong><span>Component system addressed</span></div>
   <div><strong>5 layers</strong><span>Governance through templates</span></div>
 </div>
 
