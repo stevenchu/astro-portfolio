@@ -51,6 +51,7 @@ year: "2024–2025"
 
   .bose-media-grid .bose-media-figure,
   .bose-prototype-grid .bose-media-figure,
+  .bose-prototype-solutions .bose-media-figure,
   .bose-nav-comparison .bose-media-figure {
     margin-top: 0;
   }
@@ -269,6 +270,47 @@ year: "2024–2025"
     line-height: 1.15;
   }
 
+  .bose-prototype-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .bose-prototype-solutions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .bose-prototype-solutions .bose-media-figure {
+    min-width: 0;
+  }
+
+  .bose-prototype-image-frame {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    border-radius: 1rem;
+    background: var(--surface-raised);
+  }
+
+  .bose-prototype-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .bose-prototype-solutions figcaption strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+  }
+
   .bose-status-note {
     width: 100%;
     margin-top: 1rem;
@@ -298,12 +340,12 @@ year: "2024–2025"
     }
 
     .bose-architecture,
-    .bose-media-grid,
-    .bose-prototype-grid {
+    .bose-media-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .bose-system-parts {
+    .bose-system-parts,
+    .bose-prototype-solutions {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
@@ -435,16 +477,32 @@ Campaign assets combined background, product imagery, and copy into fixed compos
 
 <div class="bose-prototype-grid" aria-label="Responsive campaign layout constraint and proposed model">
   <figure class="bose-media-figure">
-    <img src="/images/case/bose/bose-responsive-layout-constraint.png" alt="Existing constraint · flattened composition.">
+    <img src="/images/case/bose/bose-responsive-layout-constraint.png" alt="The same flattened campaign composition cropped across wide, tall, square, and variable responsive containers.">
     <figcaption>A single flattened campaign composition could not adapt reliably across the full range of responsive containers.</figcaption>
   </figure>
 
-  <figure class="bose-media-figure">
-    <img src="/images/case/bose/bose-responsive-layout-layers.png" alt="Proposed model · independently controlled layers.">
-    <img src="/images/case/bose/bose-responsive-layout-behavior.png" alt="Proposed model · independently controlled layers.">
-    <img src="/images/case/bose/bose-responsive-layout-controls.png" alt="Proposed model · independently controlled layers.">
-    <figcaption>I modeled separate content, product-image, and background layers, then tested responsive rules and authoring controls in a coded prototype.</figcaption>
-  </figure>
+  <div class="bose-prototype-solutions" aria-label="Responsive layout prototype sequence">
+    <figure class="bose-media-figure">
+      <div class="bose-prototype-image-frame">
+        <img src="/images/case/bose/bose-responsive-layout-layers.png" alt="Prototype separating campaign background, product imagery, and content into independent layers.">
+      </div>
+      <figcaption><strong>Separate the layers</strong>Background, product imagery, and copy became independently controllable.</figcaption>
+    </figure>
+
+    <figure class="bose-media-figure">
+      <div class="bose-prototype-image-frame">
+        <img src="/images/case/bose/bose-responsive-layout-behavior.png" alt="Prototype testing responsive product-image behavior inside a variable container.">
+      </div>
+      <figcaption><strong>Test responsive behavior</strong>The model could be evaluated across changing container proportions and placements.</figcaption>
+    </figure>
+
+    <figure class="bose-media-figure">
+      <div class="bose-prototype-image-frame">
+        <img src="/images/case/bose/bose-responsive-layout-controls.png" alt="Prototype controls for content-author scale and position adjustments.">
+      </div>
+      <figcaption><strong>Validate author controls</strong>Scale and position controls gave authors flexibility within defined system rules.</figcaption>
+    </figure>
+  </div>
 </div>
 
 <div class="bose-status-note">This initiative was prototyped and handed off before my departure; implementation after handoff is unverified.</div>
