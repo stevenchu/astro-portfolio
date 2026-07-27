@@ -17,7 +17,10 @@ result: |
   40 → 5 minutes per build · 7 → 21 emails per week · 2-week rollout
 year: "2018"
 eyebrow: UNIQLO · INTERNAL WORKFLOW · 2018
-showcaseArgument: UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send. I redesigned their production workflow and built a reusable coding system that reduced each email build from 40 minutes to 5. The team increased output from 7 to 21 emails per week without added budget or interrupting its regular launch calendar.
+showcaseArgument: |
+  UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send.
+
+  I redesigned their production workflow and built a reusable coding system that reduced each email build from 40 minutes to 5. The team increased output from 7 to 21 emails per week without added budget or interrupting its regular launch calendar.
 homepageOrder: 6
 ctaLabel: View project
 ---

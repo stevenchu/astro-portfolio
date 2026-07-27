@@ -5,7 +5,10 @@ img: /images/case/bose/cover-bose-design-system-strike2.png
 img_alt: A visual overview of Bose design-system foundations, components, patterns, and governance.
 homepageOrder: 3
 eyebrow: BOSE · DESIGN SYSTEMS · 2024–2025
-showcaseArgument: Bose teams were working from a monolithic design library with 2,000+ components, recurring production defects, and inconsistent implementation logic. I led remediation of the canonical components behind visible site issues, helping the team eliminate 90 defect overrides within three months. I then restructured the library architecture, modernized legacy components, and established clearer foundations, patterns, and governance.
+showcaseArgument: |
+  Bose teams were working from a monolithic design library with 2,000+ components, recurring production defects, and inconsistent implementation logic.
+
+  I led remediation of the canonical components behind visible site issues, helping the team eliminate 90 defect overrides within three months. I then restructured the library architecture, modernized legacy components, and established clearer foundations, patterns, and governance.
 detailAvailability: internal
 ctaLabel: View project
 description: |

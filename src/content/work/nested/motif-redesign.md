@@ -19,7 +19,10 @@ result: |
   Reduced page production by 98.7% and recovered an estimated $200K in annual cross-team capacity.
 year: "2021"
 eyebrow: MOTIF PHOTOS · BRAND, GROWTH & CONTENT SYSTEMS · 2019–2023
-showcaseArgument: Motif’s customer-acquisition experience spanned its marketing website, email communications, and brand touchpoints across 32 countries. New web pages depended on a one-off production process across design, content, engineering, QA, and an external development partner, limiting how quickly the team could respond to campaigns and customer needs. I led the brand and marketing experience redesign and introduced a reusable component and content architecture that reduced page production to roughly three hours and recovered an estimated $200K in annual cross-team capacity.
+showcaseArgument: |
+  Motif’s customer-acquisition experience spanned its marketing website, email communications, and brand touchpoints across 32 countries. New web pages depended on a one-off production process across design, content, engineering, QA, and an external development partner, limiting how quickly the team could respond to campaigns and customer needs.
+
+  I led the brand and marketing experience redesign and introduced a reusable component and content architecture that reduced page production to roughly three hours and recovered an estimated $200K in annual cross-team capacity.
 homepageOrder: 5
 ctaLabel: View project
 ---

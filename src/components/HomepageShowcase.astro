@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import ShowcaseCopy from './ShowcaseCopy.astro';
 import WorkMedia from './WorkMedia.astro';
 
 interface Props {
@@ -13,26 +14,14 @@ const isExternal = Boolean(data.externalUrl);
 ---
 
 <article class="showcase">
-	<header class="showcase-copy">
-		<p class="eyebrow">{data.eyebrow}</p>
-		<h2>{data.title}</h2>
-		<p class="context">{data.showcaseArgument}</p>
-
-		{
-			data.detailAvailability === 'interview-only' ? (
-				<p class="detail-note">Public details limited by confidentiality.</p>
-			) : data.ctaLabel ? (
-				<a
-					class="showcase-link"
-					href={href}
-					target={isExternal ? '_blank' : undefined}
-					rel={isExternal ? 'noreferrer' : undefined}
-				>
-					{data.ctaLabel}
-					{isExternal && <span aria-hidden="true">↗</span>}
-				</a>
-			) : null
-		}
+	<header>
+		<ShowcaseCopy
+			data={data}
+			headingLevel="h2"
+			href={href}
+			isExternal={isExternal}
+			showCta
+		/>
 	</header>
 
 	<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
@@ -45,70 +34,6 @@ const isExternal = Boolean(data.externalUrl);
 		padding: 3rem 1.5rem;
 		border: 1px solid var(--border-strong);
 		border-radius: 0.75rem;
-	}
-
-	.showcase-copy {
-		display: grid;
-		gap: 0.9rem;
-		max-width: 46rem;
-	}
-
-	/* eyebrow role */
-	.eyebrow {
-		margin: 0;
-		font-family: var(--font-display);
-		font-size: var(--role-eyebrow-size);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.12em;
-		line-height: 1.4;
-		text-transform: uppercase;
-		color: var(--text-tertiary);
-	}
-
-	/* title role */
-	h2 {
-		max-width: 22ch;
-		margin: 0;
-		font-family: var(--font-display);
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-display);
-		letter-spacing: -0.03em;
-		line-height: 1.1;
-		text-wrap: balance;
-		color: var(--text-primary);
-	}
-
-	/* body role */
-	.context {
-		max-width: 64ch;
-		margin: 0;
-		font-size: var(--role-body-size);
-		font-weight: var(--weight-body);
-		letter-spacing: var(--track-body);
-		line-height: 1.55;
-		color: var(--text-secondary);
-	}
-
-	/* meta role */
-	.detail-note {
-		margin: 0.25rem 0 0;
-		font-size: var(--role-meta-size);
-		letter-spacing: var(--track-body);
-		line-height: 1.5;
-		color: var(--text-tertiary);
-	}
-
-	.showcase-link {
-		display: inline-flex;
-		align-items: center;
-		justify-self: start;
-		gap: 0.4rem;
-		margin-top: 0.35rem;
-		font-size: var(--role-body-size);
-		font-weight: var(--weight-emphasis);
-		letter-spacing: var(--track-body);
-		text-decoration-thickness: 1px;
-		text-underline-offset: 0.25em;
 	}
 
 	@media (min-width: 50em) {

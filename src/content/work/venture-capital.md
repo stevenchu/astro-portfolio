@@ -16,7 +16,10 @@ result: |
   Growing, extending, and updating the firm's design system.  
 year: "2022 - Current"
 eyebrow: ALPACA VC · BRANDED ENVIRONMENT
-showcaseArgument: Alpaca VC brought founders, investors, and partners together for its 2025 General Meeting and needed the space to feel like a coherent expression of the firm rather than a collection of event graphics. I translated the brand into a spatial system across the stage, signage, lounges, murals, and storytelling moments, creating an environment that guided guests through the event while giving the gathering a distinctive visual identity.
+showcaseArgument: |
+  Alpaca VC brought founders, investors, and partners together for its 2025 General Meeting and needed the space to feel like a coherent expression of the firm rather than a collection of event graphics.
+
+  I translated the brand into a spatial system across the stage, signage, lounges, murals, and storytelling moments, creating an environment that guided guests through the event while giving the gathering a distinctive visual identity.
 ---
 
 

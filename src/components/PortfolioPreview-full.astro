@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import ShowcaseCopy from './ShowcaseCopy.astro';
 import WorkMedia from './WorkMedia.astro';
 
 interface Props {
@@ -20,20 +21,12 @@ const projectHref = `/work/${project.id}/`;
 			href={projectHref}
 			aria-label={`View ${data.title} case study`}
 		>
-			<div class="showcase-content">
-				<p class="eyebrow">{data.eyebrow}</p>
-				<h3>{data.title}</h3>
-				<p class="showcase-argument">{data.showcaseArgument}</p>
-			</div>
+			<ShowcaseCopy data={data} headingLevel="h3" />
 			<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
 		</a>
 	) : (
 		<section class="project showcase-card">
-			<div class="showcase-content">
-				<p class="eyebrow">{data.eyebrow}</p>
-				<h3>{data.title}</h3>
-				<p class="showcase-argument">{data.showcaseArgument}</p>
-			</div>
+			<ShowcaseCopy data={data} headingLevel="h3" />
 			<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
 		</section>
 	)
@@ -69,46 +62,6 @@ const projectHref = `/work/${project.id}/`;
 	.project-link:focus-visible {
 		outline: 3px solid var(--accent-dark);
 		outline-offset: 0.25rem;
-	}
-
-	.showcase-content {
-		max-width: 46rem;
-	}
-
-	/* eyebrow role */
-	.eyebrow {
-		margin: 0 0 0.9rem;
-		font-family: var(--font-display);
-		font-size: var(--role-eyebrow-size);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.12em;
-		line-height: 1.4;
-		text-transform: uppercase;
-		color: var(--text-tertiary);
-	}
-
-	/* title role */
-	h3 {
-		max-width: 22ch;
-		margin: 0;
-		font-family: var(--font-display);
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-display);
-		letter-spacing: -0.03em;
-		line-height: 1.1;
-		text-wrap: balance;
-		color: var(--text-primary);
-	}
-
-	/* body role */
-	.showcase-argument {
-		max-width: 64ch;
-		margin: 0.9rem 0 0;
-		font-size: var(--role-body-size);
-		font-weight: var(--weight-body);
-		letter-spacing: var(--track-body);
-		line-height: 1.55;
-		color: var(--text-secondary);
 	}
 
 	@media (prefers-reduced-motion: reduce) {

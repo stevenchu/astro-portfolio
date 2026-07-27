@@ -1,0 +1,27 @@
+---
+interface Props {
+	text: string;
+	class?: string;
+}
+
+const { text, class: className } = Astro.props;
+const paragraphs = text
+	.split(/\n\s*\n/)
+	.map((paragraph) => paragraph.trim())
+	.filter(Boolean);
+---
+
+<div class:list={['showcase-argument-text', className]}>
+	{paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+</div>
+
+<style>
+	.showcase-argument-text {
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	p {
+		margin: 0;
+	}
+</style>

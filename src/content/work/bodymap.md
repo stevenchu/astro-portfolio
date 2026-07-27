@@ -8,7 +8,10 @@ tags:
   - Product Design
 homepageOrder: 1
 eyebrow: BODYMAP · INDEPENDENT PRODUCT · 2026
-showcaseArgument: Movement teachers often rely on spoken corrections that students struggle to retain after class. I designed and independently built BodyMap, a web app that turns student videos into clear visual coaching feedback instructors can annotate, review, and share. The working beta launched in three weeks.
+showcaseArgument: |
+  Movement teachers often rely on spoken corrections that students struggle to retain after class.
+
+  I designed and independently built BodyMap, a web app that turns student videos into clear visual coaching feedback instructors can annotate, review, and share. The working beta launched in three weeks.
 detailAvailability: external
 ctaLabel: Try BodyMap
 externalUrl: https://bodymapcoach.vercel.app

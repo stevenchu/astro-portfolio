@@ -16,7 +16,10 @@ result: |
   Consistent visual language between online and in-store. UI + microinteractions communicate identity of bold exploration. Navigation architecture improved overall.
 year: "2021"
 eyebrow: THE NORTH FACE · ECOMMERCE CONCEPT
-showcaseArgument: The North Face’s ecommerce experience did not carry the confidence or sense of exploration found in its stores and field storytelling. I explored a responsive UI direction that translated the brand’s bold visual language into product discovery, navigation, and microinteractions. The concept connected online shopping more closely to the brand’s adventure-led identity.
+showcaseArgument: |
+  The North Face’s ecommerce experience did not carry the confidence or sense of exploration found in its stores and field storytelling.
+
+  I explored a responsive UI direction that translated the brand’s bold visual language into product discovery, navigation, and microinteractions. The concept connected online shopping more closely to the brand’s adventure-led identity.
 ---
 
 

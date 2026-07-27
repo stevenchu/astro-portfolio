@@ -15,7 +15,10 @@ role:
 result: Tripled content discovery via MarieTV, improved onboarding for 30%+ of blog visitors, and delivered a UX architecture still supporting platform growth 10 years later.
 platforms: Responsive Web
 eyebrow: MARIE FORLEO · UX STRATEGY & INFORMATION ARCHITECTURE · 2015
-showcaseArgument: Marie Forleo’s audience often entered through individual blog posts or videos, but the site did not guide aspiring entrepreneurs across its editorial, video, and course experiences. I restructured the content ecosystem and designed pathways that helped visitors move from discovery toward confidence and readiness to enroll in B-School. The new architecture tripled entry points to MarieTV and continues to support the platform more than a decade later.
+showcaseArgument: |
+  Marie Forleo’s audience often entered through individual blog posts or videos, but the site did not guide aspiring entrepreneurs across its editorial, video, and course experiences.
+
+  I restructured the content ecosystem and designed pathways that helped visitors move from discovery toward confidence and readiness to enroll in B-School. The new architecture tripled entry points to MarieTV and continues to support the platform more than a decade later.
 homepageOrder: 7
 ctaLabel: View project
 ---
