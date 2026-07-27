@@ -1,123 +1,291 @@
 ---
-title: Eliminating 90 production defect overrides by restoring trust in Bose’s design system
+title: Eliminating 90 production defect overrides—and rebuilding the system behind Bose.com
 publishDate: 2024-08-09 00:00:00
 img: /images/case/bose/cover-bose-design-system-strike2.png
-img_alt: A visual overview of the Bose design-system foundation.
+img_alt: A visual overview of Bose design-system foundations, components, patterns, and governance.
 homepageOrder: 3
 eyebrow: BOSE · DESIGN SYSTEMS · 2024–2025
-showcaseArgument: Bose teams were working from a monolithic design library with more than 2,000 components, inconsistent implementation logic, and recurring gaps between design and production. I first prioritized the canonical components responsible for visible site defects, helping eliminate 90 production overrides within three months. Across my tenure, I continued evolving the system’s architecture and internal authoring experience—restructuring unstable libraries, modernizing legacy components, and introducing clearer foundations, patterns, and governance.
+showcaseArgument: Bose teams were working from a monolithic design library with 2,300+ components, recurring production defects, and inconsistent implementation logic. I led remediation of the canonical components behind visible site issues, helping the team eliminate 90 defect overrides within three months. I then restructured the library architecture, modernized legacy components, and established clearer foundations, patterns, and governance.
 detailAvailability: internal
 ctaLabel: View project
 description: |
-    Led design system debt remediation and optimization initiatives for Bose.com, collaborating closely with design, engineering, and content teams to address critical blockers and standardize components. 
+  Bose teams were patching visible defects downstream because canonical components were no longer dependable. As Product Design Lead and design-system owner, I led remediation that removed 90 defect overrides in three months, then restructured the 2,300+ component system for clearer ownership, reuse, and continued evolution.
 tags:
-  - Design System
-  - Responsive Web Design
-  - Visual Design
-role:
   - Design Systems
-  - UX Design
-  - Interaction Design
-  - Prototyping
-  - Usability Testing
-platforms: Design Library, Jira, Confluence, Responsive Web
+  - UX Infrastructure
+  - Product Design
+role:
+  - Product Design Lead
+  - Design Systems Owner
+platforms: Bose.com · Figma design system · Responsive web
 result: |
-  Growing, extending, and updating the firm's design system.  
-year: "2024 - Current"
+  90 → 0 defect overrides in three months · 2,300+ component system restructured
+year: "2024–2025"
 ---
+
 <style>
-    h6 + h4 {
-        margin-top:1rem !important;
+  .bose-case-visual {
+    width: 100%;
+    margin: 1.75rem 0 0;
+  }
+
+  .bose-case-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: 1rem;
+    background: var(--surface-raised);
+  }
+
+  .bose-case-visual figcaption {
+    max-width: 65ch;
+    margin: 0.75rem 0 0;
+    color: var(--text-tertiary);
+    font-size: var(--role-meta-size);
+    line-height: 1.5;
+  }
+
+  .bose-metrics,
+  .bose-flow,
+  .bose-architecture,
+  .bose-system-parts {
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .bose-metrics > div,
+  .bose-flow > div,
+  .bose-architecture-panel,
+  .bose-system-parts > div {
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.875rem;
+    background: var(--surface-raised);
+    padding: 1.25rem;
+  }
+
+  .bose-metrics p,
+  .bose-flow p,
+  .bose-system-parts p {
+    margin: 0 !important;
+  }
+
+  .bose-metrics strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    font-size: clamp(1.45rem, 5vw, 2.35rem);
+    line-height: 1.05;
+  }
+
+  .bose-metrics span,
+  .bose-flow span,
+  .bose-architecture-label {
+    color: var(--text-tertiary);
+    font-size: var(--role-meta-size);
+    line-height: 1.4;
+  }
+
+  .bose-flow > div {
+    position: relative;
+  }
+
+  .bose-flow strong,
+  .bose-system-parts strong {
+    display: block;
+    margin: 0.25rem 0 0.5rem;
+    color: var(--text-primary);
+  }
+
+  .bose-flow-step {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    color: var(--text-primary) !important;
+    font-weight: var(--weight-emphasis);
+  }
+
+  .bose-architecture {
+    align-items: stretch;
+  }
+
+  .bose-architecture-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .bose-monolith {
+    display: grid;
+    flex: 1;
+    place-content: center;
+    min-height: 15rem;
+    border: 1px solid var(--border-strong);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .bose-monolith strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    line-height: 1.15;
+  }
+
+  .bose-monolith span {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--text-tertiary);
+  }
+
+  .bose-stack {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .bose-stack > div {
+    border: 1px solid var(--border-strong);
+    border-inline-start: 4px solid var(--accent-dark);
+    border-radius: 0.65rem;
+    padding: 0.85rem 1rem;
+    color: var(--text-primary);
+    font-weight: var(--weight-emphasis);
+  }
+
+  .bose-continuity {
+    width: 100%;
+    margin-top: 1.5rem;
+    border-inline-start: 3px solid var(--accent-dark);
+    border-radius: 0 0.75rem 0.75rem 0;
+    background: var(--surface-raised);
+    padding: 1rem 1.25rem;
+  }
+
+  .bose-continuity p {
+    margin: 0 !important;
+  }
+
+  @media (min-width: 50em) {
+    .bose-metrics {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    h4 + ul, h4 + ul>p, p + ul {
-        margin-top:0rem !important;
+
+    .bose-flow {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    hr {
-        width: 100%;
-        margin: 4rem 0 3rem !important;
+
+    .bose-architecture {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    </style> 
+
+    .bose-system-parts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+</style>
 
 > ###### [Abridged for confidentiality]
 
-<br>
+###### THE FAILURE CONDITION
 
+#### Canonical components had become unreliable enough that production required 90 defect patches
 
-###### 01. Background
-#### Context
-In the rapidly evolving world of e-commerce, maintaining a consistent and seamless user experience across platforms is paramount. **At Bose, where innovation in sound is key, I was tasked with transforming the design system into a strategic asset that would empower designers, engineers, and content creators.**
+Bose.com was shipping from a monolithic design library containing more than 2,300 components. When shared components created visible issues, production overrides corrected individual pages without repairing the source. The site kept moving, but design and implementation drifted further apart—and each patch increased the cost of future change.
 
-I was hired in January 2024 by the head of UX due to my successful leadership in migrating a startup to a decoupled architecture and rebranding. Bose’s challenge was similar but on an enterprise scale. My goal was to build a scalable and robust system that could adapt to Bose's growing digital presence and market demands.
+<div class="bose-metrics" aria-label="Bose design-system starting conditions">
+  <div><strong>90</strong><span>Defect-related production overrides</span></div>
+  <div><strong>2,300+</strong><span>Components in one overloaded library</span></div>
+  <div><strong>1 source</strong><span>Mixed current, legacy, and exploratory assets</span></div>
+  <div><strong>4 teams</strong><span>Design, engineering, content, and creative</span></div>
+</div>
 
-<br>
+<div class="bose-flow" aria-label="Production remediation sequence">
+  <div><span class="bose-flow-step">1</span><strong>Visible defect</strong><p>A customer-facing inconsistency surfaced on Bose.com.</p></div>
+  <div><span class="bose-flow-step">2</span><strong>Downstream patch</strong><p>A production override corrected the individual instance.</p></div>
+  <div><span class="bose-flow-step">3</span><strong>Canonical repair</strong><p>We traced the failure back to shared component logic.</p></div>
+  <div><span class="bose-flow-step">4</span><strong>Override removed</strong><p>The repaired source could support future use without the patch.</p></div>
+</div>
 
-#### Problem Definition 
+###### THE FIRST MOVE
 
-When I joined Bose, rapid growth and changes in business model led to fragmented product experiences and a backlog of design, development, and CMS debt. 
+#### I repaired the sources causing visible defects before expanding the system
 
-On the design side, inconsistencies across platforms and a lack of standardization made it difficult to iterate on future state components. The engineering teams faced blockers due to unclear design specs, and the UX was suffering as a result.
+As Product Design Lead and design-system owner, I worked with design, engineering, and content partners to trace recurring defects back to their canonical components. I prioritized customer-facing failures, clarified intended responsive behavior, and aligned component specifications with production implementation.
 
-**<ins>Business Implications:</ins>** These gaps were more than just technical issues—they were business risks. The inefficiencies were leading to longer development cycles, increased costs, and a user experience that was not meeting the premium product expectatations of Bose customers.
+Within three months, the team had eliminated all 90 defect-related overrides. The sequencing mattered: restoring production integrity created the stability and credibility needed to address the deeper system architecture.
 
+<!-- FUTURE IMAGE: Add one legible production defect / canonical component before-and-after here. Crop to the affected UI, source component, and repaired result; omit ticket or presentation chrome. -->
 
-<hr>
+###### THE SYSTEM BEHIND THE FIX
 
+#### The defects exposed a monolithic system that was difficult to trust or maintain
 
-###### 02. Discovery & Insights
+The immediate failures were only one symptom. The overloaded Figma library mixed current components, legacy assets, explorations, and unmerged work. Memory warnings, component detachment, inconsistent naming, and unclear contribution paths made the dependable source difficult to identify.
 
-#### Interviewing product owners revealed:
-- Different teams were using different versions of UI components, leading to **inconsistent component usage** and a disjointed user experience.
+<div class="bose-architecture" aria-label="Before and after design-system architecture">
+  <div class="bose-architecture-panel">
+    <span class="bose-architecture-label">BEFORE · ONE MONOLITHIC SOURCE</span>
+    <div class="bose-monolith"><strong>2,300+ components</strong><span>Shared logic, legacy assets, experiments, and team-specific needs combined in one file</span></div>
+  </div>
+  <div class="bose-architecture-panel">
+    <span class="bose-architecture-label">AFTER · CLEARER INHERITANCE</span>
+    <div class="bose-stack">
+      <div>Governance</div>
+      <div>Foundations</div>
+      <div>Components</div>
+      <div>Patterns</div>
+      <div>Templates</div>
+    </div>
+  </div>
+</div>
 
-- Engineers were **struggling to interpret design specs** which often led to sprint delays.
+###### THE OPERATING MODEL
 
-- Legacy components, work in progress explorations, and unmerged updates to master components cluttered the design system to the point that UX designers were unsure what the most up-to-date assets to use were.
+#### I turned remediation into a more durable way to evolve the system
 
-<hr>
+<div class="bose-system-parts">
+  <div><p><strong>Separate shared layers</strong>I restructured the library around clearer inheritance, publishing boundaries, and ownership instead of asking every team to depend on one unstable file.</p></div>
+  <div><p><strong>Modernize component logic</strong>I rebuilt priority legacy components with clearer properties, variables, responsive behavior, and supported configuration paths.</p></div>
+  <div><p><strong>Make safe use explicit</strong>I introduced clearer patterns and governance so teams could adapt the system without detaching components or recreating shared behavior.</p></div>
+</div>
 
+The goal was not a perfectly tidy Figma file. It was a dependable product foundation that different teams could use, implement, and extend without reopening the same production failures.
 
-###### 03. Strategy
+<!-- FUTURE IMAGE: Add one legacy-to-modernized component comparison here. Show the old variant or detachment problem beside the new properties, variables, or responsive logic. -->
 
-#### Focusing on standardization, scalability, and enhanced collaboration between design and engineering and content authors,
-I led a cross-functional team to overhaul the design system. By using adaptive layouts, responsive components, variables and tokens, and stronger governance protocols, we ensured that the system was both robust and flexible for future growth.
+###### SYSTEMATIC ACCESSIBILITY
 
-<figure><img src="images/case/bose/global component spacing - initial sketch.png" alt="Global spacing proposal"></figure>
+#### I tested reusable interaction-state logic instead of accepting one-off color fixes
 
-<br>
+Bose’s expressive color system introduced more than 30 surface and on-surface pairings. I evaluated 240 button-state combinations to find reusable ways to preserve WCAG AA contrast without adding custom hover and pressed values for every theme. The exploration narrowed the system toward maintainable fallbacks while documenting browser-support and color-integrity tradeoffs rather than hiding them.
 
-**Bringing the vision to life:**
+<figure class="bose-case-visual">
+  <img src="/images/case/bose/2-UI-accessibility-audit-results.webp" alt="Audit comparing interaction-state color approaches across Bose color themes.">
+  <figcaption>One systems-thinking example: testing reusable state logic across the expanded Bose color system.</figcaption>
+</figure>
 
-- **<ins>Library Organization</ins>** - I restructured the design system from a massive single-file library into a tiered-inheritance file structure following atomic design principles that allowed departments to pull in just the resources they need.
+###### THE OUTCOME
 
-- **<ins>Component Remediation</ins>** - We set up a process for designers to report and replace outdated components, driving the team toward a unified source of truth while keeping the system dynamic and responsive to user feedback.
+#### The immediate defects were removed, and the system became safer to evolve
 
-- **<ins>Collaboration with Engineering</ins>** - I worked closely with engineering teams to ensure that the components were not only technically feasible and visually consistent, but also easy to implement. By creating detailed design specs and maintaining open communication channels, we reduced the time engineers spent on interpreting designs by 40%.
+<div class="bose-metrics" aria-label="Bose design-system outcomes">
+  <div><strong>90 → 0</strong><span>Defect overrides</span></div>
+  <div><strong>3 months</strong><span>Production remediation</span></div>
+  <div><strong>2,300+</strong><span>Component system addressed</span></div>
+  <div><strong>5 layers</strong><span>Governance through templates</span></div>
+</div>
 
-- **<ins>Accessibility First</ins>** - We implemented key accessibility practices, including:
-- - Optimized Color Contrast: Ensured all components met or exceeded WCAG AA standards.
-- - Keyboard Navigation: Designed with full keyboard support for users with motor disabilities.
-- - ARIA Labeling: Integrated ARIA attributes for enhanced screen reader compatibility.
+The verified result was the elimination of the 90 defect-related production overrides. Beyond that immediate recovery, the system had clearer inheritance, more maintainable component logic, and more explicit paths for teams to use and evolve shared assets.
 
-<hr>
+<div class="bose-continuity">
+  <p><strong>Continuity after handoff:</strong> At the end of my tenure, I documented the major initiatives still in motion and assigned a point person to each workstream so the system could continue evolving rather than becoming a loose backlog.</p>
+</div>
 
-
-###### 04. Testing & Iteration
-
-
-#### Continuous feedback loops between end-users and UX and CRO teams reduce design time by up to 30% with 25% faster time to market for new features.
-- **Alignment on naming conventions** - between design, engineering, and content teams.
-- **Navigation label improvements** - UserTesting moderated card sort study to understand how visitors think about navigating the website.
-- **Data-backed best practices** - UX audit conducted by Baymard.
-- **Earlier testing phases** and finding resourceful ways to validate components in real-world scenarios.
-
-
-##### Outcome and Impact
-
-**Highlight:**
-By mid-June, the successful launch of the 12-column grid and container rail system was recognized by leadership as a major achievement. This, along with improved internal collaboration on component updates, was a turning point in getting to a design system that could scale. 
-
-#### Results:
-- **Increased Efficiency**: Reduced time spent on design and engineering alignment by 30%, enabling faster project delivery.
-- **Improved Onboarding** - Accelerated team member onboarding by 25% through clear, well-documented processes.
-- **Enhanced User Experience** - Achieved greater consistency across platforms, leading to higher user satisfaction scores and stronger brand loyalty.
-- **Faster Load Times** - Optimized components led to a 20% reduction in website load times, providing a smoother, more responsive user experience.
-- **Improved Accessibility** - Enhanced accessibility features resulted in a 15% increase in positive feedback from users with disabilities, making the site more inclusive and easier to navigate for all.
+Takeaway: Restoring a design system is an exercise in sequencing. Fix the customer-facing failure first, then change the architecture and operating model that allowed it to recur.
