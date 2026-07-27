@@ -103,7 +103,7 @@ year: "2024–2025"
     display: block;
     margin-bottom: 0.25rem;
     color: var(--text-primary);
-    font-size: clamp(1.45rem, 5vw, 2.35rem);
+    font-size: clamp(1.45rem, 5vw, 2rem);
     line-height: 1.05;
   }
 
