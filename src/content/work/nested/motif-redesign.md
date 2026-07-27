@@ -1,5 +1,5 @@
 ---
-title: Motif Photos
+title: Cutting marketing page production from 5.5 weeks to three hours—recovering $200K in annual capacity
 publishDate: 2021-09-04 00:00:00
 img: /images/case/cover-design_language_system-print_photo_memories.png
 img_alt: Motif photo-printing product and design-system work.
@@ -18,8 +18,8 @@ platforms: Desktop web, Mobile web, iOS, macOS
 result: |
   55% increase in organic downloads among 25-34 year olds.
 year: "2021"
-eyebrow: MOTIF · PRODUCT, BRAND & SYSTEMS
-showcaseArgument: As R.R. Donnelley moved from B2B printing into direct-to-consumer photo products, Motif needed a brand and digital system that could support a growing global experience across its app, web, and marketing channels. I led the redesign and built shared design and content systems that brought those touchpoints into a more consistent model. By introducing component-based content architecture, I reduced web production time by 98.7% and saved approximately $200K annually.
+eyebrow: MOTIF PHOTOS · BRAND, GROWTH & CONTENT SYSTEMS · 2019–2023
+showcaseArgument: Motif’s customer-acquisition experience spanned its marketing website, email communications, and brand touchpoints across 32 countries. New web pages depended on a one-off production process across design, content, engineering, QA, and an external development partner, limiting how quickly the team could respond to campaigns and customer needs. I led the brand and marketing experience redesign and introduced a reusable component and content architecture that reduced page production to roughly three hours and recovered an estimated $200K in annual cross-team capacity.
 homepageOrder: 5
 ctaLabel: View project
 ---
