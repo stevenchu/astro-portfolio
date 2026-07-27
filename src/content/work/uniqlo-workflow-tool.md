@@ -1,217 +1,174 @@
 ---
 title: Cutting email production from 40 minutes to 5—and tripling weekly output
 publishDate: 2021-03-02 00:00:00
-img: /images/case/cover-uniqlo-wide.png
-img_alt: Internal email code-generation workflow created for UNIQLO designers.
+img: /images/case/uniqlo/uniqlo-hero-system-output.svg
+img_alt: Placeholder for a composite showing the guided UNIQLO email-production system and a segmented email output.
 description: |
-  Developed an internal tool for Uniqlo that cut the time it took designers to build email code from 40 minutes to 5 minutes. This reduced development friction, and freed up bandwidth allowing the team to create personalized content and deliver a better customer experience.
+  Two designers were manually coding a daily national email and had no capacity to develop personalized content. In a two-week engagement, I redesigned their production workflow and built an editor-native system of reusable, guarded email modules—without adding budget or interrupting scheduled launches.
 tags:
   - Service Design
-  - Front-end Development
+  - UX Engineering
 role:
-  - UX Engineer
-  - User Research
-  - Front-end Development
-platforms: Internal Tool
+  - Service Design
+  - Workflow Research
+  - Front-end Implementation
+platforms: Internal email production system
 result: |
-  In 2 weeks, I cut email coding from 40 minutes to 5 minutes. Achieved on $0 budget spend.
+  40 → 5 minutes per build · 7 → 21 emails per week · 2-week rollout
 year: "2018"
-eyebrow: UNIQLO · SERVICE DESIGN & UX ENGINEERING · 2018
+eyebrow: UNIQLO · INTERNAL WORKFLOW · 2018
 showcaseArgument: UNIQLO wanted to create more personalized email content, but two designers were already at capacity manually coding a daily national send. I redesigned their production workflow and built a reusable coding system that reduced each email build from 40 minutes to 5. The team increased output from 7 to 21 emails per week without added budget or interrupting its regular launch calendar.
 homepageOrder: 6
 ctaLabel: View project
 ---
-  <style>
-      main p {
-        max-width: 65ch;
-      }
-  </style>
 
+<style>
+  main p {
+    max-width: 65ch;
+  }
 
+  .case-visual {
+    width: 100%;
+    margin: 2rem 0 0;
+  }
 
+  .case-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--border-subtle);
+    border-radius: 1rem;
+    background: var(--surface-raised);
+  }
 
-###### Overview
+  .case-visual figcaption {
+    max-width: 65ch;
+    margin: 0.75rem 0 0;
+    color: var(--text-tertiary);
+    font-size: var(--role-meta-size);
+    line-height: 1.5;
+  }
 
-Uniqlo's email team faced a frustrating production bottleneck where buggy code interfered daily with their launch calendar and efforts to improve their reader experience through personalized content. In a two-week service redesign, I worked on-site at the Uniqlo NYC headquarters to build an internal tool that gave designers production-ready email code in under 5 minutes. By removing the designer's need to manually code, I gave them clarity and confidence over their formerly unpredictable email launch cadence as well as the bandwidth to develop personalized content.
+  .system-parts,
+  .metric-strip {
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
 
+  .system-parts > div,
+  .metric-strip > div {
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.875rem;
+    background: var(--surface-raised);
+    padding: 1.25rem;
+  }
 
-<figure><img src="images/case/uniqlo-timeline.png" alt="Process Timeline">
+  .system-parts p,
+  .metric-strip p {
+    margin: 0 !important;
+  }
+
+  .system-parts strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .metric-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .metric-strip strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: var(--text-primary);
+    font-size: clamp(1.35rem, 4vw, 2rem);
+    line-height: 1.1;
+  }
+
+  .metric-strip span {
+    color: var(--text-tertiary);
+    font-size: var(--role-meta-size);
+    line-height: 1.4;
+  }
+
+  @media (min-width: 50em) {
+    .system-parts {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .metric-strip {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>
+
+###### THE BOTTLENECK
+
+#### A personalization strategy was blocked by a fragile production workflow
+
+UNIQLO wanted to create more relevant email content, but two designers were already at capacity producing and manually coding one national send each day. The inherited codebase was unreliable: a routine build took about 40 minutes, while troubleshooting could stretch the work to several hours. The team had neither the production capacity nor the dependable mechanism needed to segment campaigns by audience, region, or context. Designing more campaign concepts would not solve the constraint upstream.
+
+<figure class="case-visual">
+  <img src="/images/case/uniqlo/uniqlo-personalization-regions.svg" alt="Placeholder for a visual comparing one national UNIQLO email against different regional weather contexts in Portland, San Francisco, and Miami.">
+  <figcaption>Image placeholder — regional mismatch: one national campaign shown against different local contexts.</figcaption>
 </figure>
 
-###### DISCOVERY
+###### THE DIAGNOSIS
 
+#### The highest-leverage intervention was removing technical work from the designers
 
-The discovery phase was quick and allowed me to dial this project in on serving the company's 2 email designers. Stakeholder interviews with management and team members confirmed that the designers were at max capacity with their existing workload: designing and coding 7 emails a week (1 sent daily).
+I spent a day observing the existing production process and mapping each step required to move from design to launch. Repetitive editing, code interpretation, and QA created most of the uncertainty. The intervention therefore had to do more than accelerate typing: it needed to remove existing defects, prevent designers from introducing new ones, and shorten the path to a validated build. Given the two-week timeline and $0 added budget, embedding a maintainable system in the team’s existing editor was more practical than creating a standalone application.
 
-I simultaneously ran a technical discovery around email development tools to understand feasibility and constraints.
-
-I focused on supporting the goals of Designer Emmy, my primary persona.
-Specifically, the development segment of Emmy's journey. She was losing the most bandwidth here– and this prevented her from taking on new projects. 
-
-
-
-
-###### Summary
-
-As an internal UX consultant, I worked on a 2-week service redesign for Uniqlo's email production. The company wanted to personalize their email experience, but their existing system lacked the capability to do so efficiently. I determined the key users to serve were the company's 2 email designers who were at max capacity with their workload. I conducted a task analysis and found mentally demanding, repetitive steps that could be streamlined through a new system. 
-
-To decrease build time, the new system had to eliminate existing bugs, prevent future bugs, and streamline the build workflow. I rewrote the master set of code in stages to give designers a clean foundation, researched and trialed competing code editors, set up a permanent home for the code blocks, and created a smart template that prompts designers with which values to fill in. 
-
-The new system significantly improved speed and accuracy, reducing email build time from 40 minutes to 5 minutes. This allowed the designers to develop personalized user content, resulting in a 200% increase in emails shipped weekly without a lapse in regular workload. The solution was implemented in production in 2 weeks with $0 additional business spend. The improved content included geo-based product recommendations, live polls, creative alignment with social team, and more resources put toward product education.
-
-
-
-
-
-
-&nbsp;  
-&nbsp;  
-
-
-#### Problem
-## Uniqlo wanted to personalize their email experience so subscribers would not get the same undifferentiated content.
-
-
-<figure style="text-align:center;">
-<figcaption>The same email is sent despite regional weather differences.</figcaption>
-<img src="images/case/uniqlo-overview-personalization.png" alt="Uniqlo personalization" width="400">
+<figure class="case-visual">
+  <img src="/images/case/uniqlo/uniqlo-workflow-before-after.svg" alt="Placeholder for a simplified before-and-after workflow comparing a manual, uncertain email build with a guided, repeatable process.">
+  <figcaption>Image placeholder — primary evidence graphic: before and after workflow, including the 40-minute versus 5-minute contrast.</figcaption>
 </figure>
 
-Uniqlo's current state did not have the capability to personalize content for their customer messaging. 
-For the entire US, they sent 1 daily email to the entire US - men and women, 
-which made it hard to speak to diff group needs 
-no tailoring
-purchase history, regional tastes, temperature/season.
-Personalization requires bandwidth to ideate and produce that content, and the means to ship it - both of which were absent.
+###### THE SYSTEM
 
+#### Reusable blocks and guided fields made the safe path the fastest path
 
+I rebuilt the workflow as three coordinated parts.
 
+<div class="system-parts">
+  <div>
+    <p><strong>Standardized foundation</strong>I sanitized and modularized the inherited master code so every email began from a dependable source.</p>
+  </div>
+  <div>
+    <p><strong>Reusable block library</strong>Designers inserted approved modules through memorable shortcuts instead of locating, copying, and modifying old code.</p>
+  </div>
+  <div>
+    <p><strong>Guided content fields</strong>Each module prompted only for values such as image URL, dimensions, and alt text, while the system protected structural code and repeated shared values automatically.</p>
+  </div>
+</div>
 
-was a quick, high‐intensity effort that allowed us to define project milestones, audit the existing work, review the competitor landscape, understand our client's vision, and begin research into user needs, behaviours and pain‐points. 
+<figure class="case-visual">
+  <img src="/images/case/uniqlo/uniqlo-guided-template.svg" alt="Placeholder for the guided template showing content prompts and protected structural email code.">
+  <figcaption>Image placeholder — system behavior: designers enter content values while the workflow handles structural code and repeated fields.</figcaption>
+</figure>
 
-#### Key User
-I determined the key users to serve in this project were the company's 2 email designers. through initial stakeholder interviews with management and team members. They were at 
+I tested the system against the active build queue, piloted it with the designers, added requested campaign variants, and created a video walkthrough and shortcut guide so the team could operate it independently.
 
-**User persona**
+###### THE OUTCOME
 
+#### Build time fell 87.5%, giving the team capacity to triple weekly output
 
+<div class="metric-strip" aria-label="UNIQLO project outcomes">
+  <div><strong>40 → 5 min</strong><span>Build time</span></div>
+  <div><strong>7 → 21</strong><span>Emails per week</span></div>
+  <div><strong>2 weeks</strong><span>Production rollout</span></div>
+  <div><strong>$0</strong><span>Added business spend</span></div>
+</div>
 
+During the pilot, average build time fell from approximately 40 minutes to five. The team increased weekly output from 7 to 21 emails while the new workflow was implemented alongside the normal launch calendar, with no added business spend.
 
-##### Designer Emmy's journey for shipping an email
+That capacity enabled geo-based product recommendations, live polls, gender-segmented creative, closer alignment with the social team, and more product education. These were content capabilities enabled by the workflow; the project did not measure downstream subscriber or revenue impact.
 
-How were 2 designers with no coding background working around email code and QA tasks?
+<figure class="case-visual">
+  <img src="/images/case/uniqlo/uniqlo-content-enabled.svg" alt="Placeholder for paired UNIQLO email examples showing differentiated customer-facing content enabled by the new workflow.">
+  <figcaption>Image placeholder — customer-facing result: paired examples of segmented or context-specific email content.</figcaption>
+</figure>
 
-I conducted 1 day of contextual inquiry followed by a task analysis of their current process to find out.
-
-**Topline insights**
-
-For the designers, uncertainty and lack of reliability were the main challenges behind the coding time varying wildly from 40 mins to a costly 4 hrs per email.
-
-**pain points**
-
-From the task analysis, I found clusters of mentally demanding, repetitive steps– steps a system could take over and streamline
-
-**task analysis**
-
-Problem Statement
-The designers needed an organized and reliable system to build emails frictionlessly.
-
-Project constraints
-- $0 budget
-- Limited to free solutions
-
-Success metrics
-- Build time per email
-- Number of bugs encountered
-- Employee satisfaction
-
-Ideation
-To gather ideas and approaches, I moved into brainstorming
-
-**pp ideation**
-
-I prioritized the possible solutions based on their portential to lower build time per email.
-
-**prioritization matrix**
-
-Requirements:
-To decrease build time, the new system must:
-- Eliminate existing bugs
-- Prevent future bugs entering into code
-- Streamline build workflow
-
-1. Clean code to start: First I rewrite the master set of code over 2 days in 3 stages to give the designers a clean foundation to work from. Sanitized by section.
-2. New editor: next I researched and trialed competing code editors- choosing Sublime for the easy win.
-3. Code library: (library of clean sections) I now set up a permanent home for the code blocks. Any content block Emmy needs is now easy to access by typing in the section shortcode name.
-- To use a snippet, Designer Emmy types the shortcut name then hits [tab] to expand the code stored inside.
-4. Smart template: Each code block will then prompt Designer Emmy with which values to fill in. 
-- She no longer has to decipher what code to edit: process simplified, limits ability to introduce future error.
-- Separate code from content (only edit values)
-
-
-Testing & Feedback
-5 days into piloting the new system, Emmy remarked: "I don't know what I'd do without these blocks!"
-
-Preliminary testing (2 days)
-- Before onboarding Emmy, I tested the new system over 2 days with the team's build queue and was able to build emails consistently in ~2-3 minutes
-- This new method significantly improved speed and accuracy
-
-Documentation
-- Next I created a video walkthrough and shortcut cheat sheet so Emmy would have documentation to reference as she piloted the new system independently
-
-Piloting period & feedback (3 days + rolling feedback)
-- Emmy's new email build time: ~5 mins
-- Team manager's main feedback was to add a variant for men's only emails, and more shipping promo banner variants
-
-##### Before vs after task analysis
-Emmy now builds fast - focusing only on inputting key values while the system handles the rest
-- repetitive work eliminated
-- technical tasks transferred to the system
-
-Results
-With emails now built in 5 minutes instead of 40, Emmy gained bandwidth to develop personalized user content.
-
-##### Outcomes
-- New achievement of 21 emails shipped weekly (a 200% increase)
-- No lapse in regular workload while developing new solution in parallel
-- Implemented solution into production in 2 weeks
-- Cost $O additional business spend
-- Improved content through geo-based product recommendations, live polls, creative alignment with social team, and more resources put toward product education
-
-##### Lessons
-- Frictions faced by internal teams can greatly impact front stage experience without end users ever knowing why
-
-Below are slides of the content from above.
-
-<figure><img src="images/case/uniqlo1.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo2.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo3.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo4.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo5.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo6.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo7.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo8.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo9.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo10.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo11.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo12.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo13.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo14.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo15.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo16.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo17.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo18.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo19.jpg" alt="Uniqlo Slide"></figure>
-<figure><img src="images/case/uniqlo20.jpg" alt="Uniqlo Slide"></figure>
-
-
-
-
-
-
-
-| Month    | Savings |
-| -------- | ------- |
-| January  | $250    |
-| February | $80     |
-| March    | $420    |
+> Customer experience can be constrained by invisible internal systems. Improving the production workflow created more leverage than designing additional campaign concepts would have.
