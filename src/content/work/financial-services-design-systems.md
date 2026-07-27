@@ -9,7 +9,7 @@ img_alt: Adaptive banking
 mediaType: video
 poster: /images/case/cover-financial-services.png
 homepageOrder: 2
-eyebrow: FINANCIAL-SERVICES PLATFORM · DESIGN SYSTEMS · 2026
+eyebrow: ENTERPRISE PLATFORM · CONFIDENTIAL
 showcaseArgument: A shared banking platform needed to support the identities of more than 1,000 banks and credit unions without fragmenting into separate products. I architected theming logic that translates each institution’s palette into accessible semantic roles while preserving one shared product foundation.
 detailAvailability: interview-only
 ---
