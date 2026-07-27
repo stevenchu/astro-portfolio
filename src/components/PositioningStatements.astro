@@ -1,0 +1,132 @@
+<section class="positioning" aria-labelledby="positioning-title">
+	<h2 id="positioning-title" class="section-label">What I bring</h2>
+
+	<ol class="statements">
+		<li class="statement">
+			<span class="statement-number" aria-hidden="true">01</span>
+			<div class="statement-copy">
+				<h3>I design systems that adapt without fragmenting.</h3>
+				<p>
+					I turn accessibility, platform, and organizational constraints into flexible product
+					foundations that support different experiences without becoming separate products.
+				</p>
+			</div>
+		</li>
+
+		<li class="statement">
+			<span class="statement-number" aria-hidden="true">02</span>
+			<div class="statement-copy">
+				<h3>I move from strategy to working software.</h3>
+				<p>
+					I use AI-assisted development to prototype, validate, and ship while keeping the product
+					value grounded in real user needs.
+				</p>
+			</div>
+		</li>
+
+		<li class="statement">
+			<span class="statement-number" aria-hidden="true">03</span>
+			<div class="statement-copy">
+				<h3>I improve how teams make the work.</h3>
+				<p>
+					I redesign design systems and production workflows so teams can ship faster and more
+					consistently without sacrificing craft.
+				</p>
+			</div>
+		</li>
+	</ol>
+</section>
+
+<style>
+	.positioning {
+		border-block: 1px solid var(--border-subtle);
+		padding-block: 1.5rem 0.5rem;
+	}
+
+	.section-label {
+		font-size: var(--role-eyebrow-size);
+		font-weight: var(--weight-bold);
+		line-height: 1.4;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--text-tertiary);
+	}
+
+	.statements {
+		list-style: none;
+		padding: 0;
+		margin-top: 1rem;
+	}
+
+	.statement {
+		display: grid;
+		grid-template-columns: 2rem minmax(0, 1fr);
+		gap: 0.75rem;
+		padding-block: 1.5rem;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.statement-number {
+		padding-top: 0.2rem;
+		font-size: var(--role-meta-size);
+		font-variant-numeric: tabular-nums;
+		line-height: 1.5;
+		color: var(--text-tertiary);
+	}
+
+	.statement-copy {
+		display: grid;
+		align-content: start;
+		gap: 0.75rem;
+	}
+
+	h3 {
+		max-width: 18ch;
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+
+	p {
+		max-width: 42ch;
+		font-size: var(--role-body-size);
+		line-height: 1.55;
+		color: var(--text-secondary);
+	}
+
+	@media (min-width: 50em) {
+		.positioning {
+			padding-block: 2rem 3rem;
+		}
+
+		.statements {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			margin-top: 2.5rem;
+		}
+
+		.statement {
+			display: grid;
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			padding: 0 2rem;
+			border-top: 0;
+			border-left: 1px solid var(--border-subtle);
+		}
+
+		.statement:first-child {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.statement:last-child {
+			padding-right: 0;
+		}
+
+		.statement-number {
+			padding-top: 0;
+		}
+	}
+</style>
