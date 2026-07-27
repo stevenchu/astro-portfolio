@@ -12,6 +12,12 @@ interface Props {
 
 const { src, alt, mediaType = 'image', poster, href, target, rel, linkLabel } = Astro.props;
 const MediaContainer = href ? 'a' : 'div';
+const withBasePath = (path: string) =>
+	path.startsWith('/') && !path.startsWith('//')
+		? `${import.meta.env.BASE_URL}${path.slice(1)}`
+		: path;
+const mediaSrc = withBasePath(src);
+const mediaPoster = poster ? withBasePath(poster) : undefined;
 ---
 
 <MediaContainer
@@ -29,13 +35,13 @@ const MediaContainer = href ? 'a' : 'div';
 				loop
 				playsinline
 				preload="metadata"
-				poster={poster}
+				poster={mediaPoster}
 				aria-label={alt || undefined}
 			>
-				<source src={src} type="video/mp4" />
+				<source src={mediaSrc} type="video/mp4" />
 			</video>
 		) : (
-			<img src={src} alt={alt || ''} loading="lazy" decoding="async" />
+			<img src={mediaSrc} alt={alt || ''} loading="lazy" decoding="async" />
 		)
 	}
 </MediaContainer>
