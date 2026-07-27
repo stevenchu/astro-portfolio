@@ -2,21 +2,21 @@
 title: Cutting marketing page production from 5.5 weeks to three hours—recovering $200K in annual capacity
 publishDate: 2021-09-04 00:00:00
 img: /images/case/cover-design_language_system-print_photo_memories.png
-img_alt: Motif photo-printing product and design-system work.
+img_alt: Motif photo-printing brand and responsive marketing experience.
 description: |
-  Motif is a print-on-demand service for custom photo products, available on iOS and Mac in 32 countries. At it's peak, it ranked #12 in Photo & Video apps on the App Store. Created by the world's largest B2B printer, R.R. Donnelley, a Fortune 500 company.
+  Motif Photos served customers across 32 countries, but its marketing pages were still produced one at a time. I led the brand and marketing experience redesign and introduced reusable content architecture that turned a recurring cross-team production cost into a modular publishing system.
 tags:
-  - Design System
+  - Content Systems
   - Responsive Web Design
-  - Visual Design
+  - Growth
 role:
-  - User Research
-  - Interaction Design
-  - Visual Design
-  - Usability Testing
-platforms: Desktop web, Mobile web, iOS, macOS
+  - Design Lead
+  - Brand & Marketing Experience
+  - Design Systems
+  - UX Research
+platforms: Responsive web, iOS, macOS, Contentful CMS
 result: |
-  55% increase in organic downloads among 25-34 year olds.
+  Reduced page production by 98.7% and recovered an estimated $200K in annual cross-team capacity.
 year: "2021"
 eyebrow: MOTIF PHOTOS · BRAND, GROWTH & CONTENT SYSTEMS · 2019–2023
 showcaseArgument: Motif’s customer-acquisition experience spanned its marketing website, email communications, and brand touchpoints across 32 countries. New web pages depended on a one-off production process across design, content, engineering, QA, and an external development partner, limiting how quickly the team could respond to campaigns and customer needs. I led the brand and marketing experience redesign and introduced a reusable component and content architecture that reduced page production to roughly three hours and recovered an estimated $200K in annual cross-team capacity.
@@ -25,77 +25,242 @@ ctaLabel: View project
 ---
 
 <style>
-    h6 + h4 {
-        margin-top:1rem !important;
+  .motif-workflow,
+  .motif-interventions,
+  .motif-metrics {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .motif-workflow-panel,
+  .motif-intervention {
+    border: 1px solid var(--border-subtle);
+    border-radius: 1rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .motif-workflow-panel--after,
+  .motif-intervention {
+    background: var(--surface-raised);
+  }
+
+  .motif-workflow-kicker,
+  .motif-metric-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  .motif-workflow-panel h4,
+  .motif-intervention h4 {
+    margin: 0;
+  }
+
+  .motif-workflow-steps {
+    counter-reset: workflow-step;
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+  }
+
+  .motif-workflow-steps li {
+    counter-increment: workflow-step;
+    display: grid;
+    grid-template-columns: 2rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .motif-workflow-steps li::before {
+    content: counter(workflow-step, decimal-leading-zero);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+  }
+
+  .motif-workflow-time {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: baseline;
+    margin-top: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .motif-workflow-time strong {
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1;
+  }
+
+  .motif-intervention p {
+    margin-bottom: 0;
+  }
+
+  .motif-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .motif-metric {
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .motif-metric strong {
+    display: block;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    line-height: 1.05;
+  }
+
+  .motif-homepage-crop {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: var(--surface-raised);
+  }
+
+  .motif-homepage-crop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: right center;
+  }
+
+  .motif-case-visual {
+    margin: 2rem 0;
+  }
+
+  .motif-case-visual figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (min-width: 50em) {
+    .motif-workflow {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    h4 + ul, h4 + ul>p, p + ul {
-        margin-top:0rem !important;
+
+    .motif-interventions {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    hr {
-        width: 100%;
-        margin: 4rem 0 3rem !important;
+
+    .motif-metrics {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-</style> 
+  }
+</style>
 
-###### 01. Background
-#### Context
-RR Donnelley is Apple’s printer-of-record and the largest B2B owner of print factories globally. In 2018, Apple shut down their Photos app printing services, but opened up to 3rd party photo services. RR Donnelley created Motif Photos as their first B2C business, and my team was tasked with taking the app to market. We launched in 32 countries for Mac Photos, iPhone, and iPad.
+###### THE OPERATING PROBLEM
+#### A global marketing team was still producing pages one at a time
 
-#### My Role
-As the Design Lead at Motif Photos, I led a comprehensive global redesign and rebranding effort, and launched our first design system. I also played a core role in transitioning our marketing & support website to a decoupled architecture. Leveraging my extensive experience as a former front-end developer, my role extended beyond traditional design responsibilities. 
+Motif’s customer-acquisition experience served 32 countries, but the publishing model did not scale with it. New pages typically began by duplicating an earlier page and editing it for the next campaign instead of being assembled from modular, reusable sections. Any new layout or behavior then moved through design, content, an external development partner, and repeated responsive QA.
 
-I also worked closely with business leadership and distributed international teams to integrate UX design into cross-departmental conversations, ensuring that operational needs were met and that the user experience across all channels was cohesive.
+The constraint was not a shortage of campaign ideas. The system made every page expensive to change—even when much of the structure already existed.
 
-I was responsible for several key areas:
+<div class="motif-workflow" aria-label="Before and after marketing page production workflow">
+  <section class="motif-workflow-panel">
+    <span class="motif-workflow-kicker">Before · one-off production</span>
+    <h4>Duplicate, customize, hand off</h4>
+    <ol class="motif-workflow-steps">
+      <li>Duplicate a previous page</li>
+      <li>Rewrite content and reshape the layout</li>
+      <li>Send custom changes to external development</li>
+      <li>Review the implementation across devices</li>
+      <li>Repeat QA and fixes before launch</li>
+    </ol>
+    <div class="motif-workflow-time"><span>Typical page</span><strong>5.5 weeks</strong></div>
+  </section>
 
-**DesignOps:** Streamlined design operations to enhance efficiency and collaboration across teams.
+  <section class="motif-workflow-panel motif-workflow-panel--after">
+    <span class="motif-workflow-kicker">After · modular publishing</span>
+    <h4>Assemble, localize, publish</h4>
+    <ol class="motif-workflow-steps">
+      <li>Select reusable page sections</li>
+      <li>Enter campaign and localized content</li>
+      <li>Preview shared responsive patterns</li>
+      <li>Publish from a validated foundation</li>
+    </ol>
+    <div class="motif-workflow-time"><span>Typical page</span><strong>≈3 hours</strong></div>
+  </section>
+</div>
 
-**Research:** Conducted user research to inform design decisions and validate our approach.
+###### THE INTERVENTION
+#### I moved the work from page production to system configuration
 
-**Branding:** Defined & developed the new brand, aligning the visual and interaction design with the new brand identity.
+I led the brand and marketing experience redesign, then helped define the content model and reusable UI patterns for a decoupled Contentful and static-site architecture. The important shift was not simply creating a component library. It was changing what each team had to do for every launch.
 
-**Information Architecture:** Structured content to improve navigation and usability across platforms.
+<div class="motif-interventions">
+  <section class="motif-intervention">
+    <span class="motif-workflow-kicker">01 · Structure</span>
+    <h4>Modular content architecture</h4>
+    <p>Reusable sections carried known responsive behavior instead of requiring teams to duplicate complete pages.</p>
+  </section>
 
-**Interaction & Visual Design:** Led the design of both the marketing website and owned specific marketing & user retention flows within the app experience.
+  <section class="motif-intervention">
+    <span class="motif-workflow-kicker">02 · Authoring</span>
+    <h4>Shared publishing workflow</h4>
+    <p>Content editors could assemble and localize campaigns without initiating another bespoke engineering project.</p>
+  </section>
 
+  <section class="motif-intervention">
+    <span class="motif-workflow-kicker">03 · Governance</span>
+    <h4>Reusable design and code</h4>
+    <p>Shared patterns kept behavior consistent while preserving enough flexibility for campaign and market needs.</p>
+  </section>
+</div>
 
-#### Results
+<!-- TODO(asset): Optional localization evidence belongs here. Search the source archive for a legible, disclosure-safe Contentful screenshot showing locale or market authoring. Keep this section absent until the evidence is found. -->
 
-- **Identified workflow efficiencies** - 
-Saving the company net $200K annually and reducing web development time 98.7% by implementing a headless CMS + static site web stack allowing content editors to launch web pages in 1/2 a day (down from 5.5 weeks via offshore development agency).
-- **Defined design toolsets and processes** -
-Established a collaborative brand book and design system hub in Notion that facilitated stakeholder discussions and contributions, resulting in a 56% weekly active member rate in the first month of launch.
-- **Roadmap prioritization strategy** -
-Led quarterly workshops where our team evaluates all requests and initiatives by cost vs effort. We prioritize our top-scoring quick and strategic wins into upcoming roadmaps.
-- **Design workshop facilitation** -
-Facilitated bi-weekly workshops with 6-8 stakeholders to improve user experience on blog, website, and email channels through iterative cycles of research, design, and feedback gathering.
-- **Interaction and visual design:**
-Rapidly prototyped motion and design concepts in low and hi fidelity in order to communicate brand direction to stakeholders and direct reports for web and social channels.
-- **A/B Testing:**
-Improved conversion by 12% on key funnel pages through continuous testing and optimization. Creating a feedback cycle empowered business stakeholders with data-driven decision-making, and in turn garnered business support for the process of iterative design, rapid prototyping, and re-testing of ideas.
+###### THE CUSTOMER EXPERIENCE
+#### Modularity supported a clearer brand experience—not a generic one
 
-<hr>
+The responsive homepage used shared structures to make product value, pricing, trust signals, product range, and next steps easier to scan across breakpoints. The system created consistency underneath the experience while still leaving room for campaign storytelling and visual expression.
 
-###### 03. Presentation Slides
-#### Below are slides discussing the challenges and best practices associated with rebranding while launching a design system:
+<figure class="motif-case-visual">
+  <div class="motif-homepage-crop">
+    <img src="/images/case/motif16.jpg" alt="Responsive Motif homepage redesign shown across phone, tablet, and desktop, emphasizing product value, trust signals, product range, and next steps.">
+  </div>
+  <figcaption>Selected portion of the final homepage presentation: the responsive after-state across phone, tablet, and desktop.</figcaption>
+</figure>
 
-<figure><img src="images/case/motif1.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif2.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif3.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif4.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif5.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif6.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif7.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif8.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif9.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif10.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif11.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif12.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif13.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif14.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif15.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif16.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif17.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif18.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif19.jpg" alt="Motif Slide"></figure>
-<figure><img src="images/case/motif20.jpg" alt="Motif Slide"></figure>
+###### THE RESULT
+#### Production stopped scaling linearly with every campaign
+
+A page that had taken 5.5 weeks through external development could be produced in roughly three hours in the new workflow—a 98.7% reduction. Across the recurring work of design, content, engineering, QA, and vendor coordination, that recovered an estimated $200K in annual cross-team capacity.
+
+<div class="motif-metrics" aria-label="Motif project results">
+  <div class="motif-metric">
+    <span class="motif-metric-label">Production time</span>
+    <strong>5.5 weeks → ≈3 hours</strong>
+  </div>
+  <div class="motif-metric">
+    <span class="motif-metric-label">Faster production</span>
+    <strong>98.7%</strong>
+  </div>
+  <div class="motif-metric">
+    <span class="motif-metric-label">Annual capacity</span>
+    <strong>≈$200K</strong>
+  </div>
+  <div class="motif-metric">
+    <span class="motif-metric-label">Global reach</span>
+    <strong>32 countries</strong>
+  </div>
+</div>
+
+The broader redesign also increased organic downloads by 55% among 25–34-year-olds, showing that the operational gains did not require sacrificing acquisition performance or customer-facing quality.
+
+<!-- TODO(evidence): The current exported slide deck does not contain the source for the +12% CTR result from the top-right “Download Motif” navigation test. Add a focused visual or supporting caption here only after the original test evidence is located and verified. -->
+
+> Takeaway: The highest-leverage design decision was not another campaign concept. It was changing the production model behind every campaign.
