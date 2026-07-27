@@ -488,14 +488,12 @@ Campaign assets combined background, product imagery, and copy into fixed compos
       </div>
       <figcaption><strong>Separate the layers</strong>Background, product imagery, and copy became independently controllable.</figcaption>
     </figure>
-
     <figure class="bose-media-figure">
       <div class="bose-prototype-image-frame">
         <img src="/images/case/bose/bose-responsive-layout-behavior.png" alt="Prototype testing responsive product-image behavior inside a variable container.">
       </div>
       <figcaption><strong>Test responsive behavior</strong>The model could be evaluated across changing container proportions and placements.</figcaption>
     </figure>
-
     <figure class="bose-media-figure">
       <div class="bose-prototype-image-frame">
         <img src="/images/case/bose/bose-responsive-layout-controls.png" alt="Prototype controls for content-author scale and position adjustments.">
