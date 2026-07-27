@@ -313,7 +313,7 @@ year: "2024–2025"
   }
 </style>
 
-> ###### [Abridged for confidentiality]
+> ###### Selected work shown. Internal names, implementation details, and unpublished concepts have been omitted or generalized.
 
 ###### THE FAILURE CONDITION
 
@@ -356,9 +356,7 @@ The immediate failures were only one symptom. The overloaded Figma library mixed
 
 <div class="bose-media-grid" aria-label="Monolithic-library evidence and naming example">
   <figure class="bose-media-figure">
-    <div class="bose-placeholder-frame bose-placeholder-frame--square">
-      <p><strong>Monolithic evidence · memory warning</strong><span>Replace with: /images/case/bose/bose-monolith-memory-warning.webp</span></p>
-    </div>
+    <img src="/images/case/bose/bose-monolith-memory-warning.png" alt="A Figma memory warning made the operational cost of the monolithic library visible.">
     <figcaption>A Figma memory warning made the operational cost of the monolithic library visible.</figcaption>
   </figure>
 
@@ -411,23 +409,19 @@ I designed and handed off a lighter navigation model that consolidated six categ
 <div class="bose-nav-comparison" aria-label="Global navigation before and after comparison">
   <figure class="bose-media-figure">
     <span class="bose-comparison-label">BEFORE · 6 REPEATED VARIANTS</span>
-    <div class="bose-placeholder-frame bose-placeholder-frame--ultrawide">
-      <p><strong>Six category-specific navigation variants</strong><span>Replace with: /images/case/bose/bose-global-nav-six-variants.webp</span></p>
-    </div>
+    <img src="/images/case/bose/bose-global-nav-six-variants.png" alt="Six category-specific navigation variants.">
   </figure>
 
   <div class="bose-nav-after">
     <figure class="bose-media-figure">
       <span class="bose-comparison-label">AFTER · 1 VARIABLE-CONTROLLED COMPONENT</span>
-      <div class="bose-placeholder-frame bose-placeholder-frame--square">
-        <p><strong>One shared component model</strong><span>Replace with: /images/case/bose/bose-global-nav-one-component.webp</span></p>
-      </div>
+      <img src="/images/case/bose/bose-global-nav-one-component.png" alt="One shared component model.">
     </figure>
-
     <div class="bose-comparison-copy">
       <strong>Centralized interaction behavior, flexible content</strong>
       <p>One shared structure changed category content through variables instead of duplicating the same interaction model across six variants.</p>
     </div>
+
   </div>
 </div>
 
@@ -441,16 +435,14 @@ Campaign assets combined background, product imagery, and copy into fixed compos
 
 <div class="bose-prototype-grid" aria-label="Responsive campaign layout constraint and proposed model">
   <figure class="bose-media-figure">
-    <div class="bose-placeholder-frame bose-placeholder-frame--landscape">
-      <p><strong>Existing constraint · flattened composition</strong><span>Replace with: /images/case/bose/bose-responsive-layout-constraint.webp</span></p>
-    </div>
+    <img src="/images/case/bose/bose-responsive-layout-constraint.png" alt="Existing constraint · flattened composition.">
     <figcaption>A single flattened campaign composition could not adapt reliably across the full range of responsive containers.</figcaption>
   </figure>
 
   <figure class="bose-media-figure">
-    <div class="bose-placeholder-frame bose-placeholder-frame--landscape">
-      <p><strong>Proposed model · independently controlled layers</strong><span>Replace with: /images/case/bose/bose-responsive-layout-model.webp</span></p>
-    </div>
+    <img src="/images/case/bose/bose-responsive-layout-layers.png" alt="Proposed model · independently controlled layers.">
+    <img src="/images/case/bose/bose-responsive-layout-behavior.png" alt="Proposed model · independently controlled layers.">
+    <img src="/images/case/bose/bose-responsive-layout-controls.png" alt="Proposed model · independently controlled layers.">
     <figcaption>I modeled separate content, product-image, and background layers, then tested responsive rules and authoring controls in a coded prototype.</figcaption>
   </figure>
 </div>
