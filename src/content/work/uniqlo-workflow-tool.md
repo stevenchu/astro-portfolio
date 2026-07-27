@@ -1,8 +1,8 @@
 ---
 title: Cutting email production from 40 minutes to 5—and tripling weekly output
 publishDate: 2021-03-02 00:00:00
-img: /images/case/uniqlo/uniqlo-hero-system-output.svg
-img_alt: Placeholder for a composite showing the guided UNIQLO email-production system and a segmented email output.
+img: /images/case/uniqlo/cover-uniqlo-wide.png
+img_alt: Composite showing the guided UNIQLO email-production system and a segmented email output.
 description: |
   Two designers were manually coding a daily national email and had no capacity to develop personalized content. In a two-week engagement, I redesigned their production workflow and built an editor-native system of reusable, guarded email modules—without adding budget or interrupting scheduled launches.
 tags:
@@ -36,7 +36,7 @@ ctaLabel: View project
     display: block;
     width: 100%;
     height: auto;
-    border: 1px solid var(--border-subtle);
+    /*border: 1px solid var(--border-subtle);*/
     border-radius: 1rem;
     background: var(--surface-raised);
   }
@@ -49,6 +49,8 @@ ctaLabel: View project
     line-height: 1.5;
   }
 
+  .two-col-fixed,
+  .two-col,
   .system-parts,
   .metric-strip {
     display: grid;
@@ -75,6 +77,7 @@ ctaLabel: View project
     margin-bottom: 0.5rem;
   }
 
+  .two-col-fixed,
   .metric-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -94,6 +97,15 @@ ctaLabel: View project
   }
 
   @media (min-width: 50em) {
+    .two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .two-col-fixed figcaption,
+    .two-col figcaption {
+      grid-column: span 2;
+    }
+
     .system-parts {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -111,8 +123,8 @@ ctaLabel: View project
 UNIQLO wanted to create more relevant email content, but two designers were already at capacity producing and manually coding one national send each day. The inherited codebase was unreliable: a routine build took about 40 minutes, while troubleshooting could stretch the work to several hours. The team had neither the production capacity nor the dependable mechanism needed to segment campaigns by audience, region, or context. Designing more campaign concepts would not solve the constraint upstream.
 
 <figure class="case-visual">
-  <img src="/images/case/uniqlo/uniqlo-personalization-regions.svg" alt="Placeholder for a visual comparing one national UNIQLO email against different regional weather contexts in Portland, San Francisco, and Miami.">
-  <figcaption>Image placeholder — regional mismatch: one national campaign shown against different local contexts.</figcaption>
+  <img src="/images/case/uniqlo/uniqlo-personalization-regions.png" style="max-width:500px;margin:0;" alt="Visual comparing one national UNIQLO email against different regional weather contexts in Portland, San Francisco, and Miami.">
+  <figcaption>Regional mismatch: one national campaign shown against different local contexts.</figcaption>
 </figure>
 
 ###### THE DIAGNOSIS
@@ -121,9 +133,9 @@ UNIQLO wanted to create more relevant email content, but two designers were alre
 
 I spent a day observing the existing production process and mapping each step required to move from design to launch. Repetitive editing, code interpretation, and QA created most of the uncertainty. The intervention therefore had to do more than accelerate typing: it needed to remove existing defects, prevent designers from introducing new ones, and shorten the path to a validated build. Given the two-week timeline and $0 added budget, embedding a maintainable system in the team’s existing editor was more practical than creating a standalone application.
 
-<figure class="case-visual">
-  <img src="/images/case/uniqlo/uniqlo-workflow-before-after.svg" alt="Placeholder for a simplified before-and-after workflow comparing a manual, uncertain email build with a guided, repeatable process.">
-  <figcaption>Image placeholder — primary evidence graphic: before and after workflow, including the 40-minute versus 5-minute contrast.</figcaption>
+<figure class="case-visual two-col">
+  <img src="/images/case/uniqlo/uniqlo-workflow-before.png" alt="Before-and-after workflow comparing a manual, uncertain email build with a guided, repeatable process."><img src="/images/case/uniqlo/uniqlo-workflow-after.png" alt="Before-and-after workflow comparing a manual, uncertain email build with a guided, repeatable process.">
+  <figcaption>Before and after workflow, including the 40-minute versus 5-minute contrast.</figcaption>
 </figure>
 
 ###### THE SYSTEM
@@ -144,9 +156,9 @@ I rebuilt the workflow as three coordinated parts.
   </div>
 </div>
 
-<figure class="case-visual">
-  <img src="/images/case/uniqlo/uniqlo-guided-template.svg" alt="Placeholder for the guided template showing content prompts and protected structural email code.">
-  <figcaption>Image placeholder — system behavior: designers enter content values while the workflow handles structural code and repeated fields.</figcaption>
+<figure class="case-visual two-col">
+  <img src="/images/case/uniqlo/uniqlo-guided-template.png" alt="Guided template showing content prompts and protected structural email code."><img src="/images/case/uniqlo/uniqlo-guided-template.gif" alt="Guided template showing content prompts and protected structural email code.">
+  <figcaption>System behavior: designers enter content values while the workflow handles structural code and repeated fields.</figcaption>
 </figure>
 
 I tested the system against the active build queue, piloted it with the designers, added requested campaign variants, and created a video walkthrough and shortcut guide so the team could operate it independently.
@@ -166,9 +178,9 @@ During the pilot, average build time fell from approximately 40 minutes to five.
 
 That capacity enabled geo-based product recommendations, live polls, gender-segmented creative, closer alignment with the social team, and more product education. These were content capabilities enabled by the workflow; the project did not measure downstream subscriber or revenue impact.
 
-<figure class="case-visual">
-  <img src="/images/case/uniqlo/uniqlo-content-enabled.svg" alt="Placeholder for paired UNIQLO email examples showing differentiated customer-facing content enabled by the new workflow.">
-  <figcaption>Image placeholder — customer-facing result: paired examples of segmented or context-specific email content.</figcaption>
+<figure class="case-visual two-col-fixed">
+  <img src="/images/case/uniqlo/uniqlo-segmentation-enabled-men.png" alt="Paired UNIQLO email examples showing differentiated customer-facing content enabled by the new workflow."><img src="/images/case/uniqlo/uniqlo-segmentation-enabled-women.png" alt="Paired UNIQLO email examples showing differentiated customer-facing content enabled by the new workflow.">
+  <figcaption>Customer-facing result: paired examples of segmented or context-specific email content.</figcaption>
 </figure>
 
-> Customer experience can be constrained by invisible internal systems. Improving the production workflow created more leverage than designing additional campaign concepts would have.
+Takeaway: Customer experience can be constrained by invisible internal systems. Improving the production workflow created more leverage than designing additional campaign concepts would have.
