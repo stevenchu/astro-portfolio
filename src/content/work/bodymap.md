@@ -6,7 +6,7 @@ img_alt: A BodyMap pose-correction annotation over a kicking figure, with coachi
 description: BodyMap helps movement teachers turn student videos into clear visual coaching feedback.
 tags:
   - Product Design
-homepageOrder: 1
+homepageOrder: 2
 eyebrow: BODYMAP · INDEPENDENT PRODUCT · 2026
 showcaseArgument: |
   Movement teachers often rely on spoken corrections that students struggle to retain after class.

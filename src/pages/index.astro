@@ -7,10 +7,12 @@ import HomepageShowcase from '../components/HomepageShowcase.astro';
 import Icon from '../components/Icon.astro';
 import Skills from '../components/Skills.astro';
 import { getCollection } from 'astro:content';
+import { sortWorkProjects } from '../utils/work-order';
 
 const homepageProjects = (await getCollection('work'))
 	.filter((project) => project.data.homepageOrder !== undefined)
-	.sort((a, b) => a.data.homepageOrder! - b.data.homepageOrder!);
+	.sort(sortWorkProjects)
+	.slice(0, 3);
 ---
 
 <BaseLayout>
@@ -42,10 +44,18 @@ const homepageProjects = (await getCollection('work'))
 			</header>
 		</div>
 
+		<div class="hero-work-gap" aria-hidden="true"></div>
+
 		<main class="wrapper stack gap-20">
 			<section class="work" aria-label="Selected work">
 				{homepageProjects.map((project) => <HomepageShowcase project={project} />)}
 			</section>
+
+			<div class="view-all-work">
+				<CallToAction href={`${import.meta.env.BASE_URL}work/`} style="inverse">
+					View all work →
+				</CallToAction>
+			</div>
 
 			<section class="services with-background bg-variant">
 				<header class="stack gap-2 lg:gap-4">
@@ -87,6 +97,16 @@ const homepageProjects = (await getCollection('work'))
 
 	.work {
 		display: grid;
+	}
+
+	.hero-work-gap {
+		flex: 0 0 auto;
+		block-size: clamp(4rem, 8vw, 8rem);
+	}
+
+	.view-all-work {
+		display: flex;
+		justify-content: center;
 	}
 
 	.services {

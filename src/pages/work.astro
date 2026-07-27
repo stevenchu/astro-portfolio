@@ -7,13 +7,11 @@ import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview-full.astro';
 import Hero from '../components/Hero.astro';
 import Grid from '../components/Grid.astro';
+import { sortWorkProjects } from '../utils/work-order';
 
-// /work lists every case study in reverse-chronological order — it's the
-// canonical archive, not the homepage's curated subset. homepageOrder is
-// a homepage-only concern (see index.astro) and has no bearing here.
-const projects = (await getCollection('work')).sort(
-	(a, b) => (b.data.publishDate?.valueOf() ?? 0) - (a.data.publishDate?.valueOf() ?? 0)
-);
+// /work is the canonical archive: featured case studies lead, followed by
+// every remaining project in reverse-chronological order.
+const projects = (await getCollection('work')).sort(sortWorkProjects);
 ---
 
 <BaseLayout

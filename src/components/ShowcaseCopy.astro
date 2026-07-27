@@ -5,38 +5,51 @@ import ShowcaseArgument from './ShowcaseArgument.astro';
 interface Props {
 	data: CollectionEntry<'work'>['data'];
 	headingLevel: 'h2' | 'h3';
-	href?: string;
-	isExternal?: boolean;
-	showCta?: boolean;
+	titleHref?: string;
+	showExternalCta?: boolean;
 }
 
 const {
 	data,
 	headingLevel,
-	href,
-	isExternal = false,
-	showCta = false,
+	titleHref,
+	showExternalCta = false,
 } = Astro.props;
 const Heading = headingLevel;
 ---
 
 <div class="showcase-copy">
 	<p class="eyebrow">{data.eyebrow}</p>
-	<Heading class="title">{data.title}</Heading>
+	<Heading class="title">
+		{
+			titleHref ? (
+				<a
+					class="title-link"
+					href={titleHref}
+					aria-label={data.title}
+				>
+					{data.title}
+				</a>
+			) : (
+				data.title
+			)
+		}
+	</Heading>
 	<ShowcaseArgument class="argument" text={data.showcaseArgument} />
 
 	{
 		data.detailAvailability === 'interview-only' ? (
 			<p class="detail-note">Public details limited by confidentiality.</p>
-		) : showCta && data.ctaLabel && href ? (
+		) : showExternalCta && data.externalUrl && data.ctaLabel ? (
 			<a
 				class="showcase-link"
-				href={href}
-				target={isExternal ? '_blank' : undefined}
-				rel={isExternal ? 'noreferrer' : undefined}
+				href={data.externalUrl}
+				target="_blank"
+				rel="noreferrer"
+				aria-label={`${data.ctaLabel} (opens in a new tab)`}
 			>
 				{data.ctaLabel}
-				{isExternal && <span aria-hidden="true">↗</span>}
+				<span aria-hidden="true">↗</span>
 			</a>
 		) : null
 	}
@@ -72,6 +85,23 @@ const Heading = headingLevel;
 		color: var(--text-primary);
 	}
 
+	.title-link,
+	.title-link:visited {
+		color: inherit;
+		text-decoration: none;
+		transition: color var(--theme-transition);
+	}
+
+	.title-link:hover {
+		color: var(--link-color);
+		text-decoration: none;
+	}
+
+	.title-link:focus-visible {
+		outline: 3px solid var(--accent-dark);
+		outline-offset: 0.25rem;
+	}
+
 	/* body role */
 	:global(.showcase-argument-text.argument) {
 		max-width: 58ch;
@@ -92,15 +122,19 @@ const Heading = headingLevel;
 		color: var(--text-tertiary);
 	}
 
-	.showcase-link {
+	.showcase-link,
+	.showcase-link:visited {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.4rem;
 		margin-top: 1.5rem;
+		color: var(--link-color);
 		font-size: var(--role-body-size);
 		font-weight: var(--weight-emphasis);
 		letter-spacing: var(--track-body);
+		text-decoration-line: underline;
 		text-decoration-thickness: 1px;
 		text-underline-offset: 0.25em;
 	}
+
 </style>

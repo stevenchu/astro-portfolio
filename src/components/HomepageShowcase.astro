@@ -9,8 +9,10 @@ interface Props {
 
 const { project } = Astro.props;
 const { data, id } = project;
-const href = data.externalUrl ?? `/work/${id}`;
-const isExternal = Boolean(data.externalUrl);
+const href = `${import.meta.env.BASE_URL}work/${id}`;
+const hasInternalDestination =
+	data.detailAvailability !== 'external' && data.detailAvailability !== 'interview-only';
+const hasExternalDestination = data.detailAvailability === 'external' && Boolean(data.externalUrl);
 ---
 
 <article class="showcase">
@@ -18,13 +20,23 @@ const isExternal = Boolean(data.externalUrl);
 		<ShowcaseCopy
 			data={data}
 			headingLevel="h2"
-			href={href}
-			isExternal={isExternal}
-			showCta
+			titleHref={hasInternalDestination ? href : undefined}
+			showExternalCta={hasExternalDestination}
 		/>
 	</header>
 
-	<WorkMedia src={data.img} alt={data.img_alt} mediaType={data.mediaType} poster={data.poster} />
+	<WorkMedia
+		src={data.img}
+		alt={data.img_alt}
+		mediaType={data.mediaType}
+		poster={data.poster}
+		href={hasInternalDestination ? href : undefined}
+		linkLabel={
+			hasInternalDestination
+				? `${data.ctaLabel ?? 'View project'}: ${data.title}`
+				: undefined
+		}
+	/>
 </article>
 
 <style>
@@ -44,6 +56,5 @@ const isExternal = Boolean(data.externalUrl);
 			padding: 4.5rem;
 			border-radius: 4.5rem;
 		}
-
 	}
 </style>
