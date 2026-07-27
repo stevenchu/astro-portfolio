@@ -1,5 +1,5 @@
 ---
-title: Marie Forleo
+title: Connecting isolated content into a journey from inspiration to course readiness
 publishDate: 2015-10-01 00:00:00
 img: /images/case/cover-marie_forleo.jpg
 img_alt: Responsive content and learning experience designed for Marie Forleo.
@@ -14,8 +14,8 @@ role:
   - IA & Content Strategist
 result: Tripled content discovery via MarieTV, improved onboarding for 30%+ of blog visitors, and delivered a UX architecture still supporting platform growth 10 years later.
 platforms: Responsive Web
-eyebrow: MARIE FORLEO · UX STRATEGY & INFORMATION ARCHITECTURE
-showcaseArgument: Marie Forleo’s audience often arrived through isolated blog posts or videos, but the site did not yet guide aspiring entrepreneurs from inspiration toward the confidence and readiness to enroll in B-School. I restructured the content ecosystem and designed pathways across MarieTV, editorial content, and course experiences that supported discovery, trust, and action. The resulting architecture tripled entry points to MarieTV and continues to support the platform’s growth more than a decade later.
+eyebrow: MARIE FORLEO · UX STRATEGY & INFORMATION ARCHITECTURE · 2015
+showcaseArgument: Marie Forleo’s audience often entered through individual blog posts or videos, but the site did not guide aspiring entrepreneurs across its editorial, video, and course experiences. I restructured the content ecosystem and designed pathways that helped visitors move from discovery toward confidence and readiness to enroll in B-School. The new architecture tripled entry points to MarieTV and continues to support the platform more than a decade later.
 homepageOrder: 7
 ctaLabel: View project
 ---
