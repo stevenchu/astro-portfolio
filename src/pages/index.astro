@@ -20,18 +20,22 @@ const homepageProjects = (await getCollection('work'))
 		<div class="wrapper stack">
 			<header class="hero">
 				<Hero
-					title="A product designer connecting people with their curiosity to explore."
-					tagline="I design products and systems that help people create, build skills, and access useful services and capabilities more easily. My work spans creative tools, learning experiences, and enterprise platforms, combining systems rigor, visual craft, and hands-on prototyping to shape experiences that can scale."
+					title="I’m Steven, a designer connecting people with their curiosity to explore."
+					tagline="I combine systems rigor, visual craft, front-end fluency, and a teacher’s perspective to shape accessible products that help people create, build skills, and access valuable services."
 					align="start"
 				>
-					<p slot="pre-title">I'm Steven,</p>
+					<p slot="pre-title" class="hero-eyebrow">Staff Product Designer · New York</p>
 
-					<div class="ctas">
-						<CallToAction href="about" style="inverse small">About Me</CallToAction>
-						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
-							Say Hello
-							<Icon icon="paper-plane-tilt" size="1.2em" />
-						</CallToAction>
+					<div class="hero-meta">
+						<p class="availability"><span aria-hidden="true"></span>Open to select opportunities</p>
+
+						<div class="ctas">
+							<CallToAction href="about" style="inverse small">About Me</CallToAction>
+							<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
+								Say Hello
+								<Icon icon="paper-plane-tilt" size="1.2em" />
+							</CallToAction>
+						</div>
 					</div>
 				</Hero>
 
@@ -89,10 +93,48 @@ const homepageProjects = (await getCollection('work'))
 	}
 
 	.ctas {
-		margin-top: 0.5rem;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
+	}
+
+	.hero-meta {
+		display: grid;
+		justify-items: start;
+		gap: 1.5rem;
+	}
+
+	.hero-eyebrow {
+		font-family: var(--font-display);
+		font-size: var(--role-eyebrow-size);
+		font-weight: var(--weight-bold);
+		line-height: 1.4;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--text-secondary);
+	}
+
+	.availability {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin: 0;
+		font-size: var(--role-meta-size);
+		font-weight: var(--weight-body);
+		line-height: 1.5;
+		letter-spacing: var(--track-body);
+		color: var(--text-primary);
+	}
+
+	.availability span {
+		inline-size: 0.5rem;
+		block-size: 0.5rem;
+		border-radius: 50%;
+		background: #52a36a;
+	}
+
+	:global(:root.theme-dark) .availability span {
+		background: #89dca2;
 	}
 
 	.work {
