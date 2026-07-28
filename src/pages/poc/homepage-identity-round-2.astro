@@ -1,0 +1,723 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const portraitSrc = `${import.meta.env.BASE_URL}images/portrait.jpg`;
+---
+
+<BaseLayout
+	title="Homepage identity POC — round two | Steven Chu"
+	description="Three refined name-led homepage identity directions for local portfolio review."
+>
+	<main class="poc" data-poc-root data-show-status="true" data-show-experience="true">
+		<header class="review-header wrapper">
+			<div>
+				<p class="eyebrow">Exploratory · Issue #22 · Round two</p>
+				<h1>Name first. Role second. Proof after.</h1>
+				<p class="intro">
+					Three narrowed directions based on the first review. All keep Steven’s name as the dominant
+					first-scan element and treat Staff positioning as context rather than the main message.
+				</p>
+			</div>
+
+			<div class="review-notes">
+				<strong>Review for</strong>
+				<span>one clear entry point</span>
+				<span>20-second recognition</span>
+				<span>humanity without duplication</span>
+			</div>
+		</header>
+
+		<section class="controls wrapper" aria-label="Prototype controls">
+			<div class="tabs" role="tablist" aria-label="Round-two concepts">
+				<button type="button" role="tab" aria-selected="true" data-concept-target="a">
+					A · Name + profile + powers
+				</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="b">
+					B · Name + thesis + powers
+				</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="c">
+					C · Name + role + proof
+				</button>
+			</div>
+
+			<fieldset class="toggles">
+				<legend>Signals</legend>
+				<label><input type="checkbox" data-feature-toggle="status" checked /> Availability</label>
+				<label><input type="checkbox" data-feature-toggle="experience" checked /> Experience strip</label>
+			</fieldset>
+		</section>
+
+		<div class="stage">
+			<section class="panel" role="tabpanel" data-concept="a" aria-labelledby="concept-a-title">
+				<div class="canvas wrapper">
+					<div class="utility-row">
+						<p class="role-line">Staff Product Designer · New York</p>
+						<span class="status" data-feature="status">Open to select opportunities</span>
+					</div>
+
+					<div class="name-profile-grid">
+						<h2 id="concept-a-title" class="display-name">Steven Chu</h2>
+
+						<div class="profile-note">
+							<img src={portraitSrc} width="176" height="176" alt="Steven Chu smiling" />
+							<p>
+								A systems-minded product builder with visual craft, front-end fluency, and a
+								teacher’s attention to how people enter unfamiliar experiences.
+							</p>
+						</div>
+					</div>
+
+					<div class="powers powers-three">
+						<article>
+							<span>01</span>
+							<h3>Systems that adapt</h3>
+							<p>
+								I create shared foundations that support meaningful variation without turning into
+								separate products.
+							</p>
+						</article>
+						<article>
+							<span>02</span>
+							<h3>Strategy to software</h3>
+							<p>
+								I use front-end and AI-assisted building to test product judgment in working
+								experiences.
+							</p>
+						</article>
+						<article>
+							<span>03</span>
+							<h3>Better ways to make</h3>
+							<p>
+								I redesign systems and workflows so teams can ship consistently without flattening
+								the craft.
+							</p>
+						</article>
+					</div>
+
+					<div class="secondary-practice">
+						<p class="eyebrow">Teaching and community</p>
+						<p>
+							Open-level pole classes and intergenerational queer tech programs keep me attentive
+							to participation, feedback, confidence, and multiple ways of learning.
+						</p>
+					</div>
+
+					<div class="experience-strip" data-feature="experience" aria-label="Selected experience">
+						<p class="eyebrow">Selected experience</p>
+						<ul>
+							<li>BOSE</li>
+							<li>UNIQLO</li>
+							<li>Motif</li>
+							<li>STATE FARM</li>
+						</ul>
+					</div>
+				</div>
+
+				<aside class="rationale wrapper">
+					<div>
+						<p class="eyebrow">Why this fixes 3 + 4</p>
+						<p>
+							There is one identity entry point: the name. The profile block explains how Steven
+							operates without introducing him a second time. Three professional powers carry the
+							main evidence; teaching becomes a quieter reinforcing practice.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Watch for</p>
+						<p>
+							The right profile block still needs to feel necessary. If it reads as a second hero,
+							Concept B is cleaner.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="panel" role="tabpanel" data-concept="b" aria-labelledby="concept-b-title" hidden>
+				<div class="canvas wrapper">
+					<div class="utility-row">
+						<p class="role-line">New York-based Staff Product Designer</p>
+						<span class="status" data-feature="status">Open to select opportunities</span>
+					</div>
+
+					<div class="name-portrait-grid">
+						<div>
+							<h2 id="concept-b-title" class="display-name">I’m Steven.</h2>
+							<p class="hero-thesis">
+								I design products and the systems around them—from platform logic and interaction
+								design through visual craft and working front-end prototypes.
+							</p>
+						</div>
+
+						<img
+							class="portrait-medium"
+							src={portraitSrc}
+							width="420"
+							height="540"
+							alt="Steven Chu smiling in a white shirt and custom overalls"
+						/>
+					</div>
+
+					<div class="powers powers-three">
+						<article>
+							<span>01</span>
+							<h3>Systems that adapt</h3>
+							<p>Shared foundations that preserve meaningful variation without fragmentation.</p>
+						</article>
+						<article>
+							<span>02</span>
+							<h3>Strategy to software</h3>
+							<p>Working prototypes that expose product decisions earlier and more honestly.</p>
+						</article>
+						<article>
+							<span>03</span>
+							<h3>Better ways to make</h3>
+							<p>Systems and workflows that increase consistency without removing the craft.</p>
+						</article>
+					</div>
+
+					<div class="community-bridge">
+						<strong>I also teach and build community.</strong>
+						<span>
+							Pole instruction and intergenerational LGBTQ+ storytelling keep my design practice
+							grounded in how people learn, participate, and gain confidence.
+						</span>
+					</div>
+
+					<div class="experience-strip" data-feature="experience" aria-label="Selected experience">
+						<p class="eyebrow">Selected experience</p>
+						<ul>
+							<li>BOSE</li>
+							<li>UNIQLO</li>
+							<li>Motif</li>
+							<li>STATE FARM</li>
+						</ul>
+					</div>
+				</div>
+
+				<aside class="rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it may be strongest</p>
+						<p>
+							This has the cleanest information flow: identity, one professional thesis, three
+							proof categories, then a secondary human signal. The portrait supports recognition
+							without becoming a separate biography block.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Watch for</p>
+						<p>
+							The introduction is more controlled than Taamannae’s and may feel less conversational.
+							The final copy will need a little warmth without adding another text layer.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="panel" role="tabpanel" data-concept="c" aria-labelledby="concept-c-title" hidden>
+				<div class="canvas wrapper">
+					<div class="utility-row">
+						<p class="role-line">Staff Product Designer · New York</p>
+						<span class="status" data-feature="status">Open to select opportunities</span>
+					</div>
+
+					<div class="fallback-grid">
+						<div>
+							<h2 id="concept-c-title" class="display-name">Steven Chu</h2>
+							<p class="hero-thesis">
+								I combine systems rigor, visual craft, front-end fluency, and a teacher’s
+								perspective to shape accessible products that help people create, build skills, and
+								access valuable services.
+							</p>
+						</div>
+
+						<img
+							class="portrait-fallback"
+							src={portraitSrc}
+							width="420"
+							height="540"
+							alt="Steven Chu smiling in a white shirt and custom overalls"
+						/>
+					</div>
+
+					<div class="proof-row">
+						<article>
+							<strong>10+ years</strong>
+							<span>Across product development, enterprise platforms, and design systems</span>
+						</article>
+						<article>
+							<strong>1,300+ institutions</strong>
+							<span>Accessible theming logic for one shared financial platform</span>
+						</article>
+						<article>
+							<strong>Builder since age 12</strong>
+							<span>From custom websites to independently launched working products</span>
+						</article>
+					</div>
+
+					<div class="experience-strip prominent" data-feature="experience" aria-label="Selected experience">
+						<p class="eyebrow">Selected experience</p>
+						<ul>
+							<li>BOSE</li>
+							<li>UNIQLO</li>
+							<li>Motif</li>
+							<li>STATE FARM</li>
+						</ul>
+					</div>
+				</div>
+
+				<aside class="rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it is the fallback</p>
+						<p>
+							It retains Concept 1’s recruiter clarity while correcting the emphasis: the name is
+							the headline, the role is metadata, and proof is organized in one restrained row.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Watch for</p>
+						<p>
+							This is credible and easy to process, but it says less about your personality and
+							operating style than A or B.
+						</p>
+					</div>
+				</aside>
+			</section>
+		</div>
+	</main>
+</BaseLayout>
+
+<script>
+	const root = document.querySelector('[data-poc-root]');
+	const tabs = Array.from(document.querySelectorAll('[data-concept-target]'));
+	const panels = Array.from(document.querySelectorAll('[data-concept]'));
+	const toggles = Array.from(document.querySelectorAll('[data-feature-toggle]'));
+
+	const activateConcept = (concept) => {
+		tabs.forEach((tab) => {
+			const selected = tab.getAttribute('data-concept-target') === concept;
+			tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+		});
+
+		panels.forEach((panel) => {
+			panel.hidden = panel.getAttribute('data-concept') !== concept;
+		});
+
+		history.replaceState(null, '', `#concept-${concept}`);
+	};
+
+	tabs.forEach((tab) => {
+		tab.addEventListener('click', () => activateConcept(tab.getAttribute('data-concept-target') || 'a'));
+	});
+
+	toggles.forEach((toggle) => {
+		toggle.addEventListener('change', () => {
+			const feature = toggle.getAttribute('data-feature-toggle');
+			if (root && feature) root.setAttribute(`data-show-${feature}`, toggle.checked ? 'true' : 'false');
+		});
+	});
+
+	const initial = window.location.hash.match(/concept-([abc])/)?.[1];
+	if (initial) activateConcept(initial);
+</script>
+
+<style>
+	.poc {
+		--poc-max: 82rem;
+		padding-bottom: 8rem;
+	}
+
+	.poc[data-show-status='false'] [data-feature='status'],
+	.poc[data-show-experience='false'] [data-feature='experience'] {
+		display: none;
+	}
+
+	.wrapper {
+		width: min(calc(100% - 2rem), var(--poc-max));
+		margin-inline: auto;
+	}
+
+	.review-header {
+		display: grid;
+		gap: 2rem;
+		padding-block: 4rem 2rem;
+	}
+
+	.review-header h1 {
+		max-width: 17ch;
+		font-family: var(--font-display);
+		font-size: clamp(2.5rem, 6vw, 5.6rem);
+		font-weight: var(--weight-display);
+		line-height: 0.98;
+		letter-spacing: -0.05em;
+		text-wrap: balance;
+	}
+
+	.intro {
+		max-width: 64ch;
+		margin-top: 1.25rem;
+		font-size: var(--role-subhead-size);
+		line-height: 1.5;
+		color: var(--text-secondary);
+	}
+
+	.eyebrow,
+	.role-line {
+		font-size: var(--role-eyebrow-size);
+		font-weight: var(--weight-bold);
+		line-height: 1.4;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--text-tertiary);
+	}
+
+	.review-notes {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.review-notes strong {
+		color: var(--text-primary);
+	}
+
+	.controls {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: grid;
+		gap: 1rem;
+		padding-block: 1rem;
+		border-block: 1px solid var(--border-subtle);
+		background: color-mix(in srgb, var(--surface-page) 90%, transparent);
+		backdrop-filter: blur(18px);
+	}
+
+	.tabs {
+		display: flex;
+		gap: 0.5rem;
+		overflow-x: auto;
+	}
+
+	.tabs button {
+		flex: 0 0 auto;
+		border: 1px solid var(--border-subtle);
+		border-radius: 999px;
+		padding: 0.65rem 1rem;
+		background: var(--surface-page);
+		color: var(--text-secondary);
+		font: inherit;
+		font-size: var(--role-meta-size);
+		cursor: pointer;
+	}
+
+	.tabs button[aria-selected='true'] {
+		border-color: var(--text-primary);
+		background: var(--text-primary);
+		color: var(--surface-page);
+	}
+
+	.toggles {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem 1.25rem;
+		border: 0;
+		padding: 0;
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.toggles legend {
+		float: left;
+		margin-right: 1rem;
+		font-weight: var(--weight-bold);
+		color: var(--text-primary);
+	}
+
+	.toggles label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+
+	.stage {
+		padding-top: 3rem;
+	}
+
+	.canvas {
+		padding-block: clamp(3rem, 8vw, 8rem);
+	}
+
+	.utility-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: clamp(2.5rem, 6vw, 5rem);
+	}
+
+	.status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		border: 1px solid var(--border-strong);
+		border-radius: 999px;
+		padding: 0.7rem 1rem;
+		font-size: var(--role-body-size);
+		color: var(--text-secondary);
+	}
+
+	.status::before {
+		content: '';
+		inline-size: 0.5rem;
+		block-size: 0.5rem;
+		border-radius: 50%;
+		background: currentColor;
+	}
+
+	.display-name {
+		max-width: 8ch;
+		font-family: var(--font-display);
+		font-size: clamp(4.8rem, 14vw, 11rem);
+		font-weight: var(--weight-display);
+		line-height: 0.86;
+		letter-spacing: -0.065em;
+		text-wrap: balance;
+	}
+
+	.name-profile-grid,
+	.name-portrait-grid,
+	.fallback-grid {
+		display: grid;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.profile-note {
+		display: grid;
+		gap: 1.25rem;
+		align-content: start;
+		max-width: 30rem;
+	}
+
+	.profile-note img {
+		inline-size: 8.5rem;
+		aspect-ratio: 1;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 50%;
+		box-shadow: var(--shadow-md);
+	}
+
+	.profile-note p,
+	.hero-thesis {
+		font-size: clamp(1.35rem, 2.3vw, 2rem);
+		line-height: 1.45;
+		color: var(--text-secondary);
+	}
+
+	.hero-thesis {
+		max-width: 44ch;
+		margin-top: 2rem;
+	}
+
+	.portrait-medium,
+	.portrait-fallback {
+		width: min(100%, 25rem);
+		aspect-ratio: 3 / 4;
+		object-fit: cover;
+		object-position: top;
+		border-radius: 2rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	.powers {
+		display: grid;
+		margin-top: clamp(4rem, 8vw, 7rem);
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.powers article {
+		display: grid;
+		align-content: start;
+		gap: 1rem;
+		padding-block: 2rem;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.powers article:first-child {
+		border-top: 0;
+	}
+
+	.powers article > span {
+		font-size: var(--role-meta-size);
+		color: var(--text-tertiary);
+	}
+
+	.powers h3 {
+		max-width: 13ch;
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 4vw, 3.5rem);
+		font-weight: var(--weight-heading);
+		line-height: 1.05;
+		letter-spacing: -0.035em;
+	}
+
+	.powers p {
+		max-width: 34ch;
+		font-size: var(--role-body-size);
+		line-height: 1.55;
+		color: var(--text-secondary);
+	}
+
+	.secondary-practice,
+	.community-bridge {
+		display: grid;
+		gap: 0.75rem;
+		max-width: 58rem;
+		margin-top: 2.5rem;
+		padding-top: 2rem;
+	}
+
+	.secondary-practice > p:last-child,
+	.community-bridge span {
+		font-size: var(--role-body-size);
+		line-height: 1.55;
+		color: var(--text-secondary);
+	}
+
+	.community-bridge strong {
+		font-size: var(--role-heading-size);
+	}
+
+	.experience-strip {
+		margin-top: clamp(4rem, 8vw, 7rem);
+		padding-block: 2rem;
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.experience-strip ul {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1.5rem 2rem;
+		margin: 1.75rem 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.experience-strip li {
+		font-family: var(--font-display);
+		font-size: clamp(1.8rem, 4vw, 3.4rem);
+		font-weight: var(--weight-heading);
+		line-height: 1;
+		letter-spacing: -0.035em;
+		color: var(--text-primary);
+	}
+
+	.proof-row {
+		display: grid;
+		margin-top: clamp(4rem, 8vw, 7rem);
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.proof-row article {
+		display: grid;
+		gap: 0.75rem;
+		padding-block: 1.75rem;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.proof-row article:first-child {
+		border-top: 0;
+	}
+
+	.proof-row strong {
+		font-size: clamp(1.6rem, 3vw, 2.4rem);
+		line-height: 1.05;
+	}
+
+	.proof-row span {
+		font-size: var(--role-body-size);
+		line-height: 1.5;
+		color: var(--text-secondary);
+	}
+
+	.rationale {
+		display: grid;
+		gap: 2rem;
+		padding-block: 2rem 4rem;
+		border-top: 1px dashed var(--border-strong);
+	}
+
+	.rationale > div {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.rationale p:last-child {
+		max-width: 62ch;
+		font-size: var(--role-body-size);
+		line-height: 1.55;
+		color: var(--text-secondary);
+	}
+
+	@media (min-width: 52em) {
+		.review-header {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: end;
+			padding-block: 6rem 3rem;
+		}
+
+		.controls {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: center;
+		}
+
+		.name-profile-grid {
+			grid-template-columns: minmax(0, 1.8fr) minmax(18rem, 0.75fr);
+			gap: 5rem;
+		}
+
+		.name-portrait-grid,
+		.fallback-grid {
+			grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 0.65fr);
+			gap: 5rem;
+			align-items: center;
+		}
+
+		.powers-three,
+		.proof-row {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+
+		.powers article,
+		.proof-row article {
+			padding: 2.5rem 2rem;
+			border-top: 0;
+			border-left: 1px solid var(--border-subtle);
+		}
+
+		.powers article:first-child,
+		.proof-row article:first-child {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.powers article:last-child,
+		.proof-row article:last-child {
+			padding-right: 0;
+		}
+
+		.experience-strip ul {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			align-items: center;
+		}
+
+		.rationale {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 4rem;
+		}
+	}
+</style>
