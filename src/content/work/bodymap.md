@@ -1,5 +1,5 @@
 ---
-title: Turning student videos into shareable visual coaching feedback—in three weeks
+title: A visual feedback tool for movement instructors
 publishDate: 2026-07-19 00:00:00
 img: /images/case/cover-bodymap.png
 img_alt: A BodyMap pose-correction annotation over a kicking figure, with coaching callouts for "Point the big toe" and "engage and extend," and a before/after toggle.
@@ -7,11 +7,9 @@ description: BodyMap helps movement teachers turn student videos into clear visu
 tags:
   - Product Design
 homepageOrder: 2
-eyebrow: BODYMAP · INDEPENDENT PRODUCT · 2026
+eyebrow: BODYMAP · INDEPENDENT PRODUCT · AI-ASSISTED BUILD · 2026
 showcaseArgument: |
-  Movement teachers often rely on spoken corrections that students struggle to retain after class.
-
-  I designed and independently built BodyMap, a web app that turns student videos into clear visual coaching feedback instructors can annotate, review, and share. The working beta launched in three weeks.
+  I independently designed and built BodyMap using AI-assisted development. This computer-vision web app helps movement instructors annotate student videos, organize coaching guidance, and share visual feedback students can revisit. I shipped the working beta in three weeks.
 detailAvailability: external
 ctaLabel: Try BodyMap
 externalUrl: https://bodymapcoach.vercel.app
