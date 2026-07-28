@@ -1,0 +1,1114 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const portraitSrc = `${import.meta.env.BASE_URL}images/portrait.jpg`;
+---
+
+<BaseLayout
+	title="Homepage identity POC | Steven Chu"
+	description="Exploratory homepage identity directions for local portfolio review."
+>
+	<main class="poc-shell" data-poc-root data-show-portrait="true" data-show-status="true" data-show-credibility="true" data-show-company="true">
+		<header class="poc-header wrapper">
+			<div>
+				<p class="eyebrow">Exploratory · Issue #22</p>
+				<h1>How should the homepage establish who I am?</h1>
+				<p class="poc-intro">
+					Six information-architecture directions for the space before selected work. Copy is
+					intentionally provisional where the structure matters more than exact wording.
+				</p>
+			</div>
+
+			<div class="poc-guidance">
+				<strong>Review for:</strong>
+				<span>20-second clarity</span>
+				<span>Staff-level signal</span>
+				<span>Humanity</span>
+				<span>Distinctiveness</span>
+			</div>
+		</header>
+
+		<section class="poc-controls wrapper" aria-label="Prototype controls">
+			<div class="concept-tabs" role="tablist" aria-label="Homepage identity concepts">
+				<button type="button" role="tab" aria-selected="true" data-concept-target="1">01 Role + proof</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="2">02 Thesis-led</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="3">03 Human profile</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="4">04 Superpowers</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="5">05 Evidence ledger</button>
+				<button type="button" role="tab" aria-selected="false" data-concept-target="6">06 Builder + teacher</button>
+			</div>
+
+			<fieldset class="feature-toggles">
+				<legend>Mix-and-match signals</legend>
+				<label><input type="checkbox" data-feature-toggle="portrait" checked /> Portrait</label>
+				<label><input type="checkbox" data-feature-toggle="status" checked /> Availability</label>
+				<label><input type="checkbox" data-feature-toggle="credibility" checked /> Credibility</label>
+				<label><input type="checkbox" data-feature-toggle="company" checked /> Company context</label>
+			</fieldset>
+		</section>
+
+		<div class="concept-stage">
+			<section class="concept-panel concept-one" role="tabpanel" data-concept="1" aria-labelledby="concept-one-title">
+				<div class="concept-canvas wrapper">
+					<div class="role-first-copy">
+						<div class="identity-row">
+							<p class="eyebrow">Steven Chu</p>
+							<span class="status" data-feature="status">Open to select opportunities</span>
+						</div>
+						<h2 id="concept-one-title">Staff Product Designer</h2>
+						<p class="lead-copy">
+							I combine systems rigor, visual craft, front-end fluency, and a teacher’s perspective
+							to shape accessible products that help people create, build skills, and access valuable
+							services.
+						</p>
+
+						<div class="proof-strip" data-feature="credibility">
+							<span><strong>10+ years</strong> product and systems work</span>
+							<span><strong>Builder since age 12</strong> from websites to working product prototypes</span>
+						</div>
+
+						<p class="company-line" data-feature="company">
+							Across enterprise platforms, Bose, UNIQLO, creative tools, and independent product building.
+						</p>
+					</div>
+
+					<img
+						data-feature="portrait"
+						class="portrait portrait-medium"
+						src={portraitSrc}
+						width="480"
+						height="620"
+						alt="Steven Chu smiling in a white shirt and custom overalls"
+					/>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This is the clearest recruiting answer: level first, distinctive operating ingredients
+							second, evidence third. It fixes Femke’s seniority concern without depending on a slogan.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							It is highly legible but can feel resume-like unless the portrait, typography, and sentence
+							rhythm retain warmth.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="concept-panel concept-two" role="tabpanel" data-concept="2" aria-labelledby="concept-two-title" hidden>
+				<div class="concept-canvas wrapper thesis-canvas">
+					<div class="thesis-meta">
+						<div>
+							<p class="eyebrow">Steven Chu · Staff Product Designer</p>
+							<span class="status" data-feature="status">Open to select opportunities</span>
+						</div>
+						<img
+							data-feature="portrait"
+							class="portrait portrait-avatar"
+							src={portraitSrc}
+							width="200"
+							height="200"
+							alt="Steven Chu smiling"
+						/>
+					</div>
+
+					<h2 id="concept-two-title">I design systems that adapt without fragmenting.</h2>
+					<div class="thesis-support">
+						<p>
+							I turn accessibility, platform, and organizational constraints into flexible product
+							foundations that can support different experiences without becoming separate products.
+						</p>
+						<p data-feature="credibility">
+							My practice spans enterprise systems, working software, production workflows, and the
+							front-end decisions that connect design intent to implementation.
+						</p>
+					</div>
+
+					<p class="company-line" data-feature="company">
+						Selected experience across financial services, Bose, UNIQLO, and independently launched tools.
+					</p>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This is the strongest currently approved sentence that is difficult to substitute onto
+							another designer’s site. It communicates systems judgment rather than generic problem solving.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							It foregrounds one dimension of your practice. Builder, teacher, and creative-tool interests
+							must become immediately visible in the next block.
+					</div>
+				</aside>
+			</section>
+
+			<section class="concept-panel concept-three" role="tabpanel" data-concept="3" aria-labelledby="concept-three-title" hidden>
+				<div class="concept-canvas wrapper human-canvas">
+					<img
+						data-feature="portrait"
+						class="portrait portrait-human"
+						src={portraitSrc}
+						width="480"
+						height="620"
+						alt="Steven Chu smiling in a white shirt and custom overalls"
+					/>
+
+					<div class="human-intro">
+						<div class="identity-row">
+							<p class="eyebrow">Staff Product Designer · New York</p>
+							<span class="status" data-feature="status">Open to select opportunities</span>
+						</div>
+						<h2 id="concept-three-title">I’m Steven.</h2>
+						<p class="lead-copy compact">
+							I’m a product designer who has always needed to understand how the thing gets made. I’ve
+							built websites since I was 12; today I work across product strategy, interaction design,
+							design systems, accessibility, and front-end prototypes.
+						</p>
+
+						<div class="life-split">
+							<div>
+								<h3>At work</h3>
+								<p>
+									I design systems that adapt, move ideas into working software, and improve how teams
+									produce the work.
+								</p>
+							</div>
+							<div>
+								<h3>Outside work</h3>
+								<p>
+									I teach open-level pole and produce intergenerational queer tech stories—two practices
+									that keep me attentive to how different people learn and participate.
+								</p>
+							</div>
+						</div>
+
+						<p class="company-line" data-feature="company">
+							My career includes enterprise platform work, Bose, UNIQLO, creative software, and community-built tools.
+						</p>
+						<p class="credibility-line" data-feature="credibility">10+ years shaping products and the systems behind them.</p>
+					</div>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This most directly translates what feels human about Taamannae without copying her voice.
+							The design-development history gives the introduction a Steven-specific center of gravity.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							It asks the visitor to read more before reaching a single sharp professional thesis. The
+							mobile edit would need disciplined shortening.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="concept-panel concept-four" role="tabpanel" data-concept="4" aria-labelledby="concept-four-title" hidden>
+				<div class="concept-canvas wrapper powers-canvas">
+					<header class="powers-header">
+						<div>
+							<p class="eyebrow">Steven Chu</p>
+							<h2 id="concept-four-title">Staff Product Designer</h2>
+						</div>
+						<div class="powers-profile">
+							<img
+								data-feature="portrait"
+								class="portrait portrait-avatar"
+								src={portraitSrc}
+								width="200"
+								height="200"
+								alt="Steven Chu smiling"
+							/>
+							<p>
+								A systems-minded product builder with visual craft, front-end fluency, and a teacher’s
+								attention to how people enter unfamiliar experiences.
+							</p>
+							<span class="status" data-feature="status">Open to select opportunities</span>
+						</div>
+					</header>
+
+					<div class="powers-grid">
+						<article>
+							<span>01</span>
+							<h3>Systems that adapt</h3>
+							<p>I create shared foundations that support meaningful variation without product fragmentation.</p>
+						</article>
+						<article>
+							<span>02</span>
+							<h3>Strategy to software</h3>
+							<p>I use front-end and AI-assisted building to test product judgment in working experiences.</p>
+						</article>
+						<article>
+							<span>03</span>
+							<h3>Better ways to make</h3>
+							<p>I redesign systems and workflows so teams can ship consistently without flattening the craft.</p>
+						</article>
+						<article>
+							<span>04</span>
+							<h3>Teaching through participation</h3>
+							<p>I create entry points that let newcomers and experienced participants learn in the same room.</p>
+						</article>
+					</div>
+
+					<div class="powers-footer">
+						<p data-feature="credibility">10+ years across enterprise platforms, design systems, and product development.</p>
+						<p data-feature="company">Experience includes Bose, UNIQLO, financial services, and independently built products.</p>
+					</div>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This treats your superpowers as the hero rather than an extra section. It is highly
+							scannable and gives equal visibility to systems, shipping, workflows, and teaching.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							Four equal claims can dilute the hierarchy. It needs editorial restraint to avoid becoming
+							a capabilities grid or service menu.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="concept-panel concept-five" role="tabpanel" data-concept="5" aria-labelledby="concept-five-title" hidden>
+				<div class="concept-canvas wrapper evidence-canvas">
+					<div class="evidence-profile">
+						<img
+							data-feature="portrait"
+							class="portrait portrait-avatar"
+							src={portraitSrc}
+							width="200"
+							height="200"
+							alt="Steven Chu smiling"
+						/>
+						<p class="eyebrow">Steven Chu</p>
+						<h2 id="concept-five-title">Staff Product Designer</h2>
+						<p>
+							I design the product and the system around it: the rules, tools, prototypes, and workflows
+							that let an experience hold together as it grows.
+						</p>
+						<span class="status" data-feature="status">Open to select opportunities</span>
+					</div>
+
+					<div class="evidence-ledger">
+						<article data-feature="credibility">
+							<strong>10+ years</strong>
+							<span>Across product development, enterprise platforms, creative tools, and design systems</span>
+						</article>
+						<article>
+							<strong>1,300+ institutions</strong>
+							<span>Accessible theming logic for one shared financial platform</span>
+						</article>
+						<article>
+							<strong>3 weeks</strong>
+							<span>From movement-teaching problem to independently launched working product</span>
+						</article>
+						<article>
+							<strong>Since age 12</strong>
+							<span>Building websites across custom front ends, WordPress, Shopify, and modern web stacks</span>
+						</article>
+					</div>
+
+					<p class="company-line" data-feature="company">
+						Career context: Bose, UNIQLO, creative software, enterprise banking, and self-directed product work.
+					</p>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This lets evidence establish caliber before projects. It is fast, concrete, and avoids a
+							conventional logo wall while still signaling career scale and builder longevity.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							Metrics can make the opening feel transactional and may force NDA or substantiation decisions
+							earlier than necessary. The person can recede behind the proof.
+						</p>
+					</div>
+				</aside>
+			</section>
+
+			<section class="concept-panel concept-six" role="tabpanel" data-concept="6" aria-labelledby="concept-six-title" hidden>
+				<div class="concept-canvas wrapper dual-canvas">
+					<header class="dual-header">
+						<div>
+							<p class="eyebrow">Steven Chu · Staff Product Designer</p>
+							<h2 id="concept-six-title">I build systems. I teach people.</h2>
+						</div>
+						<div class="dual-meta">
+							<img
+								data-feature="portrait"
+								class="portrait portrait-avatar"
+								src={portraitSrc}
+								width="200"
+								height="200"
+								alt="Steven Chu smiling"
+							/>
+							<span class="status" data-feature="status">Open to select opportunities</span>
+						</div>
+					</header>
+
+					<div class="dual-practice">
+						<article>
+							<p class="eyebrow">Product practice</p>
+							<h3>Make the system useful, adaptable, and real.</h3>
+							<p>
+								I work from platform logic and interaction design through visual craft and functioning
+								front-end prototypes. I care about what ships and what teams can sustain.
+							</p>
+						</article>
+						<article>
+							<p class="eyebrow">Teaching practice</p>
+							<h3>Create a way in for people with different starting points.</h3>
+							<p>
+								Open-level pole classes and intergenerational community programs keep me grounded in
+								participation, feedback, confidence, and multiple ways of learning.
+							</p>
+						</article>
+					</div>
+
+					<div class="dual-footer">
+						<p data-feature="credibility">10+ years designing products and the systems that make them possible.</p>
+						<p data-feature="company">Across enterprise platforms, Bose, UNIQLO, creative tools, and independent builds.</p>
+					</div>
+				</div>
+
+				<aside class="concept-rationale wrapper">
+					<div>
+						<p class="eyebrow">Why it fits</p>
+						<p>
+							This creates the most ownable narrative. Building and teaching are not separate hobbies;
+							they share a concern for systems, entry points, feedback, and increasing capability.
+						</p>
+					</div>
+					<div>
+						<p class="eyebrow">Risk</p>
+						<p>
+							Teaching receives unusually high prominence for a recruiting homepage. It could distinguish
+							you strongly or distract from enterprise Staff scope, depending on the target role.
+						</p>
+					</div>
+				</aside>
+			</section>
+		</div>
+	</main>
+</BaseLayout>
+
+<script>
+	const root = document.querySelector('[data-poc-root]');
+	const tabs = Array.from(document.querySelectorAll('[data-concept-target]'));
+	const panels = Array.from(document.querySelectorAll('[data-concept]'));
+	const toggles = Array.from(document.querySelectorAll('[data-feature-toggle]'));
+
+	const activateConcept = (concept) => {
+		tabs.forEach((tab) => {
+			const selected = tab.getAttribute('data-concept-target') === concept;
+			tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+		});
+
+		panels.forEach((panel) => {
+			panel.hidden = panel.getAttribute('data-concept') !== concept;
+		});
+
+		history.replaceState(null, '', `#concept-${concept}`);
+	};
+
+	tabs.forEach((tab) => {
+		tab.addEventListener('click', () => {
+			activateConcept(tab.getAttribute('data-concept-target') || '1');
+		});
+	});
+
+	toggles.forEach((toggle) => {
+		toggle.addEventListener('change', () => {
+			const feature = toggle.getAttribute('data-feature-toggle');
+			if (root && feature) {
+				root.setAttribute(`data-show-${feature}`, toggle.checked ? 'true' : 'false');
+			}
+		});
+	});
+
+	const initialConcept = window.location.hash.match(/concept-([1-6])/)?.[1];
+	if (initialConcept) activateConcept(initialConcept);
+</script>
+
+<style>
+	.poc-shell {
+		--poc-max: 78rem;
+		--poc-paper: color-mix(in srgb, var(--surface-page) 90%, white);
+		--poc-warm: color-mix(in srgb, var(--surface-page) 88%, #e8dfd1);
+		--poc-ink-soft: var(--text-secondary);
+		padding-bottom: 8rem;
+	}
+
+	.poc-shell[data-show-portrait='false'] [data-feature='portrait'],
+	.poc-shell[data-show-status='false'] [data-feature='status'],
+	.poc-shell[data-show-credibility='false'] [data-feature='credibility'],
+	.poc-shell[data-show-company='false'] [data-feature='company'] {
+		display: none;
+	}
+
+	.wrapper {
+		width: min(calc(100% - 2rem), var(--poc-max));
+		margin-inline: auto;
+	}
+
+	.poc-header {
+		display: grid;
+		gap: 2rem;
+		padding-block: 4rem 2rem;
+	}
+
+	.poc-header h1 {
+		max-width: 18ch;
+		font-family: var(--font-display);
+		font-size: clamp(2.4rem, 6vw, 5.8rem);
+		font-weight: var(--weight-display);
+		line-height: 0.98;
+		letter-spacing: -0.05em;
+		text-wrap: balance;
+	}
+
+	.poc-intro {
+		max-width: 62ch;
+		margin-top: 1.5rem;
+		font-size: var(--role-subhead-size);
+		line-height: 1.5;
+		color: var(--text-secondary);
+	}
+
+	.eyebrow {
+		font-size: var(--role-eyebrow-size);
+		font-weight: var(--weight-bold);
+		letter-spacing: 0.1em;
+		line-height: 1.4;
+		text-transform: uppercase;
+		color: var(--text-tertiary);
+	}
+
+	.poc-guidance {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 1rem;
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.poc-guidance strong {
+		color: var(--text-primary);
+	}
+
+	.poc-controls {
+		position: sticky;
+		top: 0;
+		z-index: 20;
+		display: grid;
+		gap: 1rem;
+		padding-block: 1rem;
+		background: color-mix(in srgb, var(--surface-page) 90%, transparent);
+		backdrop-filter: blur(18px);
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.concept-tabs {
+		display: flex;
+		gap: 0.5rem;
+		overflow-x: auto;
+		padding-bottom: 0.25rem;
+	}
+
+	.concept-tabs button {
+		flex: 0 0 auto;
+		border: 1px solid var(--border-subtle);
+		border-radius: 999px;
+		padding: 0.6rem 0.9rem;
+		background: var(--surface-page);
+		color: var(--text-secondary);
+		font: inherit;
+		font-size: var(--role-meta-size);
+		cursor: pointer;
+	}
+
+	.concept-tabs button[aria-selected='true'] {
+		border-color: var(--text-primary);
+		background: var(--text-primary);
+		color: var(--surface-page);
+	}
+
+	.feature-toggles {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+		border: 0;
+		padding: 0;
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.feature-toggles legend {
+		float: left;
+		margin-right: 1rem;
+		font-weight: var(--weight-bold);
+		color: var(--text-primary);
+	}
+
+	.feature-toggles label {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+	}
+
+	.concept-stage {
+		margin-top: 2rem;
+	}
+
+	.concept-panel[hidden] {
+		display: none;
+	}
+
+	.concept-canvas {
+		min-height: 42rem;
+		padding: clamp(2rem, 6vw, 6rem);
+		background: var(--poc-paper);
+		border: 1px solid var(--border-subtle);
+		border-radius: clamp(1.5rem, 4vw, 4.5rem);
+	}
+
+	.concept-canvas h2 {
+		font-family: var(--font-display);
+		font-weight: var(--weight-display);
+		letter-spacing: -0.045em;
+		text-wrap: balance;
+	}
+
+	.concept-canvas h3 {
+		font-weight: var(--weight-heading);
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		text-wrap: balance;
+	}
+
+	.concept-canvas p {
+		line-height: 1.55;
+	}
+
+	.status {
+		display: inline-flex;
+		align-items: center;
+		width: max-content;
+		border: 1px solid var(--border-strong);
+		border-radius: 999px;
+		padding: 0.45rem 0.75rem;
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.status::before {
+		content: '';
+		width: 0.45rem;
+		height: 0.45rem;
+		margin-right: 0.45rem;
+		border-radius: 50%;
+		background: currentColor;
+	}
+
+	.portrait {
+		display: block;
+		object-fit: cover;
+		object-position: top;
+		box-shadow: var(--shadow-md);
+	}
+
+	.portrait-medium {
+		width: min(100%, 22rem);
+		aspect-ratio: 3 / 4;
+		border-radius: 2rem;
+	}
+
+	.portrait-avatar {
+		width: 6.5rem;
+		height: 6.5rem;
+		border-radius: 50%;
+	}
+
+	.portrait-human {
+		width: min(100%, 24rem);
+		aspect-ratio: 3 / 4;
+		border-radius: 1.25rem;
+	}
+
+	.identity-row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.lead-copy {
+		max-width: 54ch;
+		font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+		line-height: 1.45;
+		color: var(--poc-ink-soft);
+	}
+
+	.lead-copy.compact {
+		font-size: clamp(1.1rem, 2vw, 1.5rem);
+	}
+
+	.company-line,
+	.credibility-line {
+		font-size: var(--role-meta-size);
+		color: var(--text-tertiary);
+	}
+
+	.concept-rationale {
+		display: grid;
+		gap: 1.5rem;
+		padding-block: 2rem 4rem;
+	}
+
+	.concept-rationale > div {
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	.concept-rationale p:last-child {
+		max-width: 58ch;
+		color: var(--text-secondary);
+		line-height: 1.55;
+	}
+
+	/* Concept 1 */
+	.concept-one .concept-canvas {
+		display: grid;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.role-first-copy {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.role-first-copy h2 {
+		max-width: 9ch;
+		font-size: clamp(3rem, 8vw, 7.5rem);
+		line-height: 0.9;
+	}
+
+	.proof-strip {
+		display: grid;
+		gap: 0.75rem;
+		padding-block: 1.25rem;
+		border-block: 1px solid var(--border-subtle);
+		font-size: var(--role-meta-size);
+		color: var(--text-secondary);
+	}
+
+	.proof-strip strong {
+		color: var(--text-primary);
+	}
+
+	/* Concept 2 */
+	.thesis-canvas {
+		display: grid;
+		align-content: center;
+		gap: clamp(2rem, 5vw, 5rem);
+		background: var(--poc-warm);
+	}
+
+	.thesis-meta {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.thesis-meta > div {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.thesis-canvas h2 {
+		max-width: 16ch;
+		font-size: clamp(3rem, 8vw, 8rem);
+		line-height: 0.92;
+	}
+
+	.thesis-support {
+		display: grid;
+		gap: 1.5rem;
+		max-width: 70rem;
+		font-size: clamp(1.05rem, 2vw, 1.4rem);
+		color: var(--text-secondary);
+	}
+
+	/* Concept 3 */
+	.human-canvas {
+		display: grid;
+		align-items: start;
+		gap: 3rem;
+	}
+
+	.human-intro {
+		display: grid;
+		gap: 1.5rem;
+	}
+
+	.human-intro h2 {
+		font-size: clamp(4rem, 10vw, 9rem);
+		line-height: 0.9;
+	}
+
+	.life-split {
+		display: grid;
+		gap: 1.5rem;
+		margin-top: 1rem;
+		padding-top: 1.5rem;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.life-split > div {
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	.life-split h3 {
+		font-size: var(--role-heading-size);
+	}
+
+	.life-split p {
+		color: var(--text-secondary);
+	}
+
+	/* Concept 4 */
+	.powers-canvas {
+		display: grid;
+		align-content: center;
+		gap: 4rem;
+	}
+
+	.powers-header {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.powers-header h2 {
+		margin-top: 0.5rem;
+		font-size: clamp(3rem, 7vw, 6.5rem);
+		line-height: 0.95;
+	}
+
+	.powers-profile {
+		display: grid;
+		gap: 1rem;
+		max-width: 34rem;
+		color: var(--text-secondary);
+	}
+
+	.powers-grid {
+		display: grid;
+		gap: 0;
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.powers-grid article {
+		display: grid;
+		gap: 0.75rem;
+		padding-block: 1.5rem;
+		border-top: 1px solid var(--border-subtle);
+	}
+
+	.powers-grid article:first-child {
+		border-top: 0;
+	}
+
+	.powers-grid span {
+		font-size: var(--role-meta-size);
+		color: var(--text-tertiary);
+	}
+
+	.powers-grid h3 {
+		font-size: clamp(1.35rem, 2.5vw, 2rem);
+	}
+
+	.powers-grid p {
+		max-width: 36ch;
+		color: var(--text-secondary);
+	}
+
+	.powers-footer {
+		display: grid;
+		gap: 0.5rem;
+		font-size: var(--role-meta-size);
+		color: var(--text-tertiary);
+	}
+
+	/* Concept 5 */
+	.evidence-canvas {
+		display: grid;
+		align-items: start;
+		gap: 3rem;
+	}
+
+	.evidence-profile {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.evidence-profile h2 {
+		max-width: 9ch;
+		font-size: clamp(3rem, 7vw, 6rem);
+		line-height: 0.92;
+	}
+
+	.evidence-profile > p:not(.eyebrow) {
+		max-width: 32ch;
+		font-size: var(--role-subhead-size);
+		color: var(--text-secondary);
+	}
+
+	.evidence-ledger {
+		border-top: 1px solid var(--border-strong);
+	}
+
+	.evidence-ledger article {
+		display: grid;
+		gap: 0.5rem;
+		padding-block: 1.25rem;
+		border-bottom: 1px solid var(--border-subtle);
+	}
+
+	.evidence-ledger strong {
+		font-family: var(--font-display);
+		font-size: clamp(2rem, 5vw, 4.5rem);
+		line-height: 1;
+		letter-spacing: -0.04em;
+	}
+
+	.evidence-ledger span {
+		max-width: 40ch;
+		color: var(--text-secondary);
+	}
+
+	/* Concept 6 */
+	.dual-canvas {
+		display: grid;
+		align-content: center;
+		gap: 3rem;
+		background: var(--poc-warm);
+	}
+
+	.dual-header {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.dual-header h2 {
+		max-width: 14ch;
+		margin-top: 0.75rem;
+		font-size: clamp(3.5rem, 8vw, 7rem);
+		line-height: 0.9;
+	}
+
+	.dual-meta {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.dual-practice {
+		display: grid;
+		border-block: 1px solid var(--border-strong);
+	}
+
+	.dual-practice article {
+		display: grid;
+		align-content: start;
+		gap: 1rem;
+		padding-block: 2rem;
+	}
+
+	.dual-practice article + article {
+		border-top: 1px solid var(--border-strong);
+	}
+
+	.dual-practice h3 {
+		max-width: 18ch;
+		font-size: clamp(1.75rem, 4vw, 3.25rem);
+	}
+
+	.dual-practice p:last-child {
+		max-width: 44ch;
+		color: var(--text-secondary);
+	}
+
+	.dual-footer {
+		display: grid;
+		gap: 0.5rem;
+		font-size: var(--role-meta-size);
+		color: var(--text-tertiary);
+	}
+
+	@media (min-width: 50em) {
+		.wrapper {
+			width: min(calc(100% - 4rem), var(--poc-max));
+		}
+
+		.poc-header {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: end;
+			padding-block: 6rem 3rem;
+		}
+
+		.poc-guidance {
+			max-width: 19rem;
+			justify-content: flex-end;
+			text-align: right;
+		}
+
+		.poc-controls {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: center;
+		}
+
+		.feature-toggles {
+			justify-content: flex-end;
+		}
+
+		.concept-rationale {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 4rem;
+		}
+
+		.concept-one .concept-canvas {
+			grid-template-columns: minmax(0, 1.6fr) minmax(16rem, 0.7fr);
+		}
+
+		.proof-strip {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.thesis-support {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 4rem;
+		}
+
+		.human-canvas {
+			grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.45fr);
+			gap: clamp(3rem, 7vw, 7rem);
+		}
+
+		.life-split {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 3rem;
+		}
+
+		.powers-header {
+			grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
+			align-items: end;
+		}
+
+		.powers-grid {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+
+		.powers-grid article {
+			padding: 2rem;
+			border-top: 0;
+			border-left: 1px solid var(--border-subtle);
+		}
+
+		.powers-grid article:first-child {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.powers-grid article:last-child {
+			padding-right: 0;
+		}
+
+		.evidence-canvas {
+			grid-template-columns: minmax(18rem, 0.75fr) minmax(0, 1.25fr);
+			gap: 6rem;
+		}
+
+		.evidence-canvas > .company-line {
+			grid-column: 1 / -1;
+		}
+
+		.evidence-ledger article {
+			grid-template-columns: minmax(12rem, 0.65fr) minmax(0, 1fr);
+			align-items: baseline;
+			gap: 2rem;
+		}
+
+		.dual-header {
+			grid-template-columns: minmax(0, 1fr) auto;
+			align-items: start;
+		}
+
+		.dual-meta {
+			justify-content: flex-end;
+		}
+
+		.dual-practice {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.dual-practice article {
+			padding: 3rem;
+		}
+
+		.dual-practice article:first-child {
+			padding-left: 0;
+		}
+
+		.dual-practice article + article {
+			padding-right: 0;
+			border-top: 0;
+			border-left: 1px solid var(--border-strong);
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		.concept-panel:not([hidden]) .concept-canvas {
+			animation: reveal 240ms ease-out both;
+		}
+	}
+
+	@keyframes reveal {
+		from {
+			opacity: 0;
+			transform: translateY(0.5rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+</style>
