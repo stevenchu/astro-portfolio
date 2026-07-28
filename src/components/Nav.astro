@@ -7,6 +7,11 @@ const textLinks: { label: string; href: string; path: string }[] = [
 	{ label: 'Home', href: '', path: '/' },
 	{ label: 'Work', href: 'work/', path: '/work/' },
 	{ label: 'About', href: 'about/', path: '/about/' },
+	{
+		label: 'Resume',
+		href: `${import.meta.env.BASE_URL}files/Steven-Chu-Resume-Staff-Product-Designer.pdf`,
+		path: '/files/Steven-Chu-Resume-Staff-Product-Designer.pdf',
+	},
 ];
 const currentPath = Astro.url.pathname.slice(import.meta.env.BASE_URL.length - 1);
 
