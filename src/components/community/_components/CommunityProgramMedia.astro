@@ -1,0 +1,58 @@
+---
+type Props = {
+	label: string;
+	imageSrc?: string;
+	imageAlt?: string;
+	class?: string;
+};
+
+const { label, imageSrc, imageAlt = '', class: className = '' } = Astro.props;
+---
+
+<div class:list={['community-media', className]}>
+	{
+		imageSrc ? (
+			<img src={imageSrc} alt={imageAlt} loading="lazy" />
+		) : (
+			<div class="placeholder" role="img" aria-label={label}>
+				<span>{label}</span>
+			</div>
+		)
+	}
+</div>
+
+<style>
+	.community-media {
+		min-height: 15rem;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		background: var(--surface-subtle, var(--surface-page));
+	}
+
+	.community-media :global(img),
+	.placeholder {
+		display: block;
+		width: 100%;
+		height: 100%;
+		min-height: inherit;
+	}
+
+	.community-media :global(img) {
+		object-fit: cover;
+	}
+
+	.placeholder {
+		display: flex;
+		align-items: flex-end;
+		padding: 1.25rem;
+		background:
+			linear-gradient(145deg, transparent 0 42%, color-mix(in srgb, var(--text-primary) 8%, transparent) 42% 43%, transparent 43%),
+			color-mix(in srgb, var(--surface-page) 88%, var(--text-primary));
+		color: var(--text-secondary);
+	}
+
+	.placeholder span {
+		font-size: var(--text-sm, 0.875rem);
+		line-height: 1.4;
+	}
+</style>
