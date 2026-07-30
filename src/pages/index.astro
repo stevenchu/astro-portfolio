@@ -6,6 +6,8 @@ import Hero from '../components/Hero.astro';
 import HomepageShowcase from '../components/HomepageShowcase.astro';
 import Icon from '../components/Icon.astro';
 import Skills from '../components/Skills.astro';
+import CommunityFeatured from '../components/community/CommunityFeatured.astro';
+import { homepageCommunityPrograms } from '../data/community-programs';
 import { getCollection } from 'astro:content';
 import { sortWorkProjects } from '../utils/work-order';
 
@@ -67,6 +69,8 @@ const homepageProjects = (await getCollection('work'))
 					<Skills />
 				</header>
 			</section>
+
+			<CommunityFeatured programs={homepageCommunityPrograms} />
 		</main>
 
 		<ContactCTA />
@@ -155,7 +159,6 @@ const homepageProjects = (await getCollection('work'))
 		position: relative;
 	}
 
-	/* title role */
 	.services h3 {
 		font-size: var(--role-title-size);
 		font-weight: var(--weight-display);
@@ -190,9 +193,7 @@ const homepageProjects = (await getCollection('work'))
 
 		.hero img {
 			aspect-ratio: 3 / 4;
-			/*border-radius: 4.5rem;*/
 			object-fit: cover;
 		}
-
 	}
 </style>
