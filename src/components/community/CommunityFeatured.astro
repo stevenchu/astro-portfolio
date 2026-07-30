@@ -1,0 +1,51 @@
+---
+import type { CommunityProgram } from '../../data/community-programs';
+import CommunityProgramCard from './_components/CommunityProgramCard.astro';
+import CommunityProgramMedia from './_components/CommunityProgramMedia.astro';
+
+type Props = { programs: CommunityProgram[] };
+const { programs } = Astro.props;
+const featured = programs.find((program) => program.featured);
+const supporting = programs.filter((program) => program.homepageSupport);
+---
+
+{
+	featured && (
+		<section class="community-featured" aria-labelledby="community-featured-title">
+			<header class="community-heading stack gap-2">
+				<p class="eyebrow">Community programming · Teaching · Talks</p>
+				<h2 id="community-featured-title">Community programming, teaching, and talks.</h2>
+				<p class="lede">I create structures for people to participate, learn, contribute, and be heard.</p>
+			</header>
+
+			<article class="featured-story">
+				<CommunityProgramMedia label={featured.mediaLabel} imageSrc={featured.imageSrc} imageAlt={featured.imageAlt} />
+				<div class="featured-story__copy stack gap-4">
+					<p class="eyebrow">{featured.categoryLabel} · {featured.role}</p>
+					<h3>{featured.title}</h3>
+					<p>{featured.summary}</p>
+					<p class="details">{featured.organization}<br />{featured.location}<br />{featured.date}</p>
+				</div>
+			</article>
+
+			<div class="supporting-grid">
+				{supporting.map((program) => <CommunityProgramCard program={program} headingLevel="h3" />)}
+			</div>
+		</section>
+	)
+}
+
+<style>
+	.community-featured { display: grid; gap: clamp(2rem, 5vw, 4rem); }
+	.community-heading { max-width: 48rem; }
+	.eyebrow { margin: 0; font-family: var(--font-display); font-size: var(--role-eyebrow-size); font-weight: var(--weight-bold); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary); }
+	h2 { margin: 0; font-family: var(--font-display); font-size: var(--role-heading-size); font-weight: var(--weight-heading); line-height: 1.05; letter-spacing: -.035em; }
+	.lede { margin: 0; max-width: 42rem; font-size: var(--text-lg); color: var(--text-secondary); }
+	.featured-story { display: grid; gap: 1.5rem; padding: clamp(1.25rem, 3vw, 2.5rem); border: 1px solid var(--border-strong); border-radius: clamp(1.75rem, 5vw, 4rem); }
+	.featured-story__copy { align-self: center; }
+	h3 { margin: 0; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.75rem); font-weight: var(--weight-heading); line-height: 1.05; letter-spacing: -.04em; }
+	.featured-story__copy p { margin: 0; }
+	.details { color: var(--text-secondary); }
+	.supporting-grid { display: grid; gap: 1.5rem; }
+	@media (min-width: 50em) { .featured-story { grid-template-columns: 1.25fr .9fr; gap: 3rem; } .supporting-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
