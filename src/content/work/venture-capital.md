@@ -38,5 +38,5 @@ showcaseArgument: |
 ### Venture Capital General Meeting Conference Design
 For the firm’s 2025 General Meeting, I adapted its design system across the designated stage, signage, lounges, murals, and storytelling moments
 <figure><img src="images/case/venture-capital/AGM-1.jpg" alt="Venture Capital General Meeting conference design."></figure>
-<figure><img src="images/case/venture-capital/AGM-2.jpg" alt="Venture Capital General Meeting conference design."></figure>
 <figure><img src="images/case/venture-capital/AGM-cover.png" alt="Venture Capital - Conference Design"></figure>
+<figure><img src="images/case/venture-capital/AGM-2.jpg" alt="Venture Capital General Meeting conference design."></figure>
