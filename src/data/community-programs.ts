@@ -1,3 +1,6 @@
+// Canonical local source for community programming, teaching, and talks.
+// Page components select and present these records; they should not duplicate event copy inline.
+
 export type CommunityProgramCategory = 'community-programming' | 'teaching' | 'talk';
 
 export type CommunityProgramStatus = 'past' | 'current' | 'upcoming';
