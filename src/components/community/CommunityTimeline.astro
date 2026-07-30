@@ -1,0 +1,52 @@
+---
+import type { CommunityProgram } from '../../data/community-programs';
+import CommunityProgramMedia from './_components/CommunityProgramMedia.astro';
+
+type Props = { programs: CommunityProgram[] };
+const { programs } = Astro.props;
+---
+
+<section class="community-timeline" aria-labelledby="community-timeline-title">
+	<header class="timeline-heading stack gap-2">
+		<p class="eyebrow">Community programming · Teaching · Talks</p>
+		<h2 id="community-timeline-title">Community programming, teaching, and talks.</h2>
+		<p class="lede">A sustained practice of creating ways for people to learn, participate, perform, and share their stories.</p>
+	</header>
+
+	<div class="timeline">
+		{programs.map((program) => (
+			<article class="timeline-entry">
+				<div class="timeline-date">
+					<p>{program.date}</p>
+				</div>
+				<div class="timeline-content">
+					<div class="timeline-copy stack gap-2">
+						<p class="eyebrow">{program.categoryLabel} · {program.role}</p>
+						<h3>{program.title}</h3>
+						<p>{program.summary}</p>
+						{program.organization && <p class="details">{program.organization}{program.location ? ` · ${program.location}` : ''}</p>}
+						{program.href && <a href={program.href} target="_blank" rel="noreferrer">View event <span aria-hidden="true">↗</span></a>}
+					</div>
+					<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} />
+				</div>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	.community-timeline { display: grid; gap: clamp(2.5rem, 6vw, 5rem); }
+	.timeline-heading { max-width: 48rem; }
+	.eyebrow { margin: 0; font-family: var(--font-display); font-size: var(--role-eyebrow-size); font-weight: var(--weight-bold); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary); }
+	h2 { margin: 0; font-family: var(--font-display); font-size: var(--role-heading-size); font-weight: var(--weight-heading); line-height: 1.05; letter-spacing: -.035em; }
+	.lede { margin: 0; max-width: 42rem; font-size: var(--text-lg); color: var(--text-secondary); }
+	.timeline { position: relative; display: grid; gap: 3rem; }
+	.timeline-entry { display: grid; gap: 1rem; }
+	.timeline-date p { margin: 0; color: var(--text-secondary); }
+	.timeline-content { display: grid; gap: 1.5rem; padding-bottom: 3rem; border-bottom: 1px solid var(--border-strong); }
+	h3 { margin: 0; font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 3rem); font-weight: var(--weight-heading); line-height: 1.08; letter-spacing: -.035em; }
+	.timeline-copy p { margin: 0; }
+	.details { color: var(--text-secondary); }
+	a { width: fit-content; color: var(--text-primary); font-weight: var(--weight-bold); text-underline-offset: .25em; }
+	@media (min-width: 50em) { .timeline-entry { grid-template-columns: minmax(8rem, .35fr) 1.65fr; gap: 2.5rem; } .timeline-content { grid-template-columns: .9fr 1.1fr; gap: 2rem; } }
+</style>
