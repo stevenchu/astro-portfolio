@@ -1,0 +1,25 @@
+---
+import type { CommunityProgram } from '../../data/community-programs';
+import CommunityProgramCard from './_components/CommunityProgramCard.astro';
+
+type Props = { programs: CommunityProgram[] };
+const { programs } = Astro.props;
+---
+
+<section class="community-grid" aria-labelledby="community-grid-title">
+	<header class="stack gap-2">
+		<p class="eyebrow">Community programming · Teaching · Talks</p>
+		<h2 id="community-grid-title">Community programming, teaching, and talks.</h2>
+	</header>
+	<div class="grid">
+		{programs.map((program) => <CommunityProgramCard program={program} headingLevel="h3" />)}
+	</div>
+</section>
+
+<style>
+	.community-grid { display: grid; gap: clamp(2rem, 5vw, 4rem); }
+	.eyebrow { margin: 0; font-family: var(--font-display); font-size: var(--role-eyebrow-size); font-weight: var(--weight-bold); letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary); }
+	h2 { margin: 0; font-family: var(--font-display); font-size: var(--role-heading-size); font-weight: var(--weight-heading); line-height: 1.05; letter-spacing: -.035em; }
+	.grid { display: grid; gap: 1.5rem; }
+	@media (min-width: 50em) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+</style>
