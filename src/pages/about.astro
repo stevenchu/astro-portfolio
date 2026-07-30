@@ -1,142 +1,62 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
 import ContactCTA from '../components/ContactCTA.astro';
 import CallToAction from '../components/CallToAction.astro';
 import Icon from '../components/Icon.astro';
 import Hero from '../components/Hero.astro';
-
-// Page section components
-import Skills from '../components/Skills.astro';
+import CommunityTimeline from '../components/community/CommunityTimeline.astro';
+import { aboutCommunityPrograms } from '../data/community-programs';
 ---
 
 <BaseLayout title="About | Steven Chu" description="About Steven Chu">
 	<div class="stack gap-20">
 		<main class="wrapper about">
-			<Hero
-				title="Well hello! I'm Steven"
-				tagline=""
-			>
-
-			</Hero>
+			<Hero title="Well hello! I'm Steven" tagline=""></Hero>
 
 			<section class="gap-20 lg:gap-40">
 				<h2 class="section-title">Product Design Background</h2>
 				<div class="content">
-										
 					<p class="lede">
 						I’ve spent more than 10 years designing products and systems across creative tools, learning, and enterprise software. My background spans product design, design systems, interaction design, front-end coding, and—more recently—AI-assisted product development, from early-stage concepts to complex platforms used at scale.
 					</p>
 
-					<!--img
-					width="800"
-					height="450"
-					src="images/about-me.jpg"
-					alt="Steven Chu teaching kayaking"
-				/-->
+					<br />
 
-					<br>
-	
 					<p>Most recently, I architected institution-level theming for a shared financial-services platform and designed AI-assisted search for an enterprise logistics platform. I’ve also used AI-assisted development workflows to independently build and launch BodyMap in three weeks. The computer-vision tool helps movement teachers turn student videos into clear, visual coaching feedback.</p>
 					<p>At Bose, I led product design for the site experience and owned the design system. Earlier, I led design operations and brand at Motif Photos, solved internal workflow problems for UNIQLO, and got my UX start at Marie Forleo, designing the pathways that helped aspiring women entrepreneurs move from free educational content toward the confidence and readiness to enroll in B-School.</p>
 					<p>Outside of design, I teach aerial arts and produce intergenerational LGBTQ+ storytelling programs through Out in Tech and The Generations Project. Designing, teaching, and community-building all draw from the same belief: meet people where they are, create welcoming ways in, and support different ways of learning and participating.</p>
 					<img
-					width="800"
-					height="450"
-					src="images/about-me.jpg"
-					alt="Steven Chu teaching kayaking"
-				><br><br>	
+						width="800"
+						height="450"
+						src="images/about-me.jpg"
+						alt="Steven Chu teaching kayaking"
+					/>
+					<br /><br />
 					<div class="ctas">
 						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
-							Say Hello 
+							Say Hello
 							<Icon icon="paper-plane-tilt" size="1.2em" />
 						</CallToAction>
 					</div>
-					<br>
-					
+					<br />
 				</div>
 			</section>
+
+			<div class="community-section">
+				<CommunityTimeline programs={aboutCommunityPrograms} />
+			</div>
 
 			<section>
 				<h2 class="section-title">Past Clients</h2>
 				<div class="content cols-3">
-                    <div>
-						<strong>Agencies</strong><br>
-						Alpaca VC<br>
-						August Jackson<br>
-						BarkerNYC<br>
-						Deutsch<br>
-						DraftFCB<br>
-						Jack Morton<br>
-						Ketchum Change (Daggerwing Group)<br>
-						Kraftworks NYC<br>
-						Meredith Digital<br>
-						Momentum Worldwide<br>
-						The Lab NYC<br>
-					</div>
-					<div>
-						<strong>Consumer</strong><br>
-						Disney Vacation Club<br>
-						IKEA<br>
-						Kiehl's<br>
-						Olympus<br>
-						Prevacid<br>
-						Spectrum<br>
-						State Farm<br>
-						UNIQLO<br>
-						USAA<br>
-						Verizon<br>
-					</div>
-					<div>
-						<strong>Arts & Design</strong><br>
-						Brian Kish Inc.<br>
-						The Archers Design Group<br>
-						The Temenos Foundation<br>
-						Taffera Fine Building & Finishes<br>
-					</div>
-					<div>
-						<strong>Music</strong><br>
-						LadyFag's LadyLand Festival<br>
-						Avant Gardner<br>
-						ebb+flow music<br>
-						United Palace<br>
-						FNV (Fruits & Vegetables)<br>
-					</div>
-					<div>
-						<strong>E-Commerce</strong><br>
-						SokoGlam Beauty<br>
-						Marissa Webb<br>
-						MONSE<br>
-						Voutsa Wallpaper<br>
-						Heather Huey Millinery<br>
-						Virani Jewelers<br>
-					</div>
-					<div>
-						<strong>Lifestyle</strong><br>
-						Jeffrey Fashion Cares<br>
-						Cafe Cluny<br>
-						Cafe Luxembourg<br>
-						The Odeon Restaurant<br>
-						Marie Forleo<br>
-						Sotheby's<br>
-					</div>
-					<div>
-						<strong>Startups</strong><br>
-						Motif Photos<br>
-						Life School<br>
-						GrowthFountain Capital<br>
-						InstaTechie<br>
-						Morgan & Morgan<br>
-					</div>
-					<div>
-						<strong>Publications</strong><br>
-						The Economist<br>
-						Fitness Magazine<br>
-						Food & Wine Magazine<br>
-						More Magazine<br>
-						Pin-UP Architectural Digest<br>
-						The Wall Street Journal<br>
-					</div>
+					<div><strong>Agencies</strong><br />Alpaca VC<br />August Jackson<br />BarkerNYC<br />Deutsch<br />DraftFCB<br />Jack Morton<br />Ketchum Change (Daggerwing Group)<br />Kraftworks NYC<br />Meredith Digital<br />Momentum Worldwide<br />The Lab NYC</div>
+					<div><strong>Consumer</strong><br />Disney Vacation Club<br />IKEA<br />Kiehl's<br />Olympus<br />Prevacid<br />Spectrum<br />State Farm<br />UNIQLO<br />USAA<br />Verizon</div>
+					<div><strong>Arts & Design</strong><br />Brian Kish Inc.<br />The Archers Design Group<br />The Temenos Foundation<br />Taffera Fine Building & Finishes</div>
+					<div><strong>Music</strong><br />LadyFag's LadyLand Festival<br />Avant Gardner<br />ebb+flow music<br />United Palace<br />FNV (Fruits & Vegetables)</div>
+					<div><strong>E-Commerce</strong><br />SokoGlam Beauty<br />Marissa Webb<br />MONSE<br />Voutsa Wallpaper<br />Heather Huey Millinery<br />Virani Jewelers</div>
+					<div><strong>Lifestyle</strong><br />Jeffrey Fashion Cares<br />Cafe Cluny<br />Cafe Luxembourg<br />The Odeon Restaurant<br />Marie Forleo<br />Sotheby's</div>
+					<div><strong>Startups</strong><br />Motif Photos<br />Life School<br />GrowthFountain Capital<br />InstaTechie<br />Morgan & Morgan</div>
+					<div><strong>Publications</strong><br />The Economist<br />Fitness Magazine<br />Food & Wine Magazine<br />More Magazine<br />Pin-UP Architectural Digest<br />The Wall Street Journal</div>
 				</div>
 			</section>
 		</main>
@@ -146,11 +66,6 @@ import Skills from '../components/Skills.astro';
 </BaseLayout>
 
 <style>
-	/* Lede — was previously an <h5>, which (via the global body-face h5 rule)
-	   rendered smaller than the paragraphs beneath it: the opening line was
-	   the least prominent text on the page. This sits clearly above body
-	   size instead, in the body face at a brighter weight, so it reads as
-	   the sentence you're meant to read first. */
 	.lede {
 		font-family: var(--font-body);
 		font-size: 1.5rem;
@@ -179,7 +94,6 @@ import Skills from '../components/Skills.astro';
 		gap: 0.5rem;
 	}
 
-	/* heading role */
 	.section-title {
 		grid-column-start: 1;
 		font-family: var(--font-display);
@@ -190,62 +104,23 @@ import Skills from '../components/Skills.astro';
 		color: var(--text-primary);
 	}
 
-	.ctas {
-		margin-top: 1rem;
+	.community-section {
+		grid-column: 1 / -1;
+		margin-block: clamp(2rem, 5vw, 5rem);
 	}
 
-	.cols-3 {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        grid-gap: 2em;
-		font-size: 1rem;
-    }
+	.ctas { margin-top: 1rem; }
+	.cols-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); grid-gap: 2em; font-size: 1rem; }
+	p { margin-bottom: 1em; }
+	.content { grid-column: 2 / 4; max-width: 48ch; }
+	.content :global(a) { text-decoration: 1px solid underline transparent; text-underline-offset: 0.25em; transition: text-decoration-color var(--theme-transition); }
+	.content :global(a:hover), .content :global(a:focus) { text-decoration-color: currentColor; }
 
 	@media (min-width: 50em) {
-		.ctas {
-			margin-top: 0.5rem;
-			display: flex;
-			gap: 0.5rem;
-		}
-	}
-
-	.i {
-		font-style: italic;
-	}
-
-	p {
-		margin-bottom: 1em;
-	}
-
-	.content {
-		grid-column: 2 / 4;
-		max-width: 48ch;
-	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
+		.ctas { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
+		.about { display: grid; grid-template-columns: 1fr 60% 1fr; }
+		.about > :global(:first-child) { grid-column-start: 2; }
+		section { display: contents; font-size: var(--text-lg); }
+		.community-section { display: block; }
 	}
 </style>
