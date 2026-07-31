@@ -12,5 +12,5 @@ showcaseArgument: |
   I independently designed and built BodyMap using AI-assisted development. This computer-vision web app helps movement instructors annotate student videos, organize coaching guidance, and share visual feedback students can revisit. I shipped the working beta in three weeks.
 detailAvailability: external
 ctaLabel: Try BodyMap
-externalUrl: https://bodymapcoach.vercel.app
+externalUrl: https://bodymap-next.vercel.app/
 ---
