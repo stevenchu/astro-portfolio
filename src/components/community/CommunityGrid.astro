@@ -1,5 +1,5 @@
 ---
-import type { CommunityProgram } from '../../data/community-programs';
+import { communitySectionContent, type CommunityProgram } from '../../data/community-programs';
 import CommunityProgramCard from './_components/CommunityProgramCard.astro';
 
 type Props = { programs: CommunityProgram[] };
@@ -8,8 +8,8 @@ const { programs } = Astro.props;
 
 <section class="community-grid" aria-labelledby="community-grid-title">
 	<header class="stack gap-2">
-		<p class="eyebrow">Community programming · Teaching · Talks</p>
-		<h2 id="community-grid-title">Community programming, teaching, and talks.</h2>
+		<p class="eyebrow">{communitySectionContent.eyebrow}</p>
+		<h2 id="community-grid-title">{communitySectionContent.title}</h2>
 	</header>
 	<div class="grid">
 		{programs.map((program) => <CommunityProgramCard program={program} headingLevel="h3" />)}

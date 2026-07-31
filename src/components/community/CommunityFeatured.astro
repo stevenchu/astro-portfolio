@@ -1,5 +1,5 @@
 ---
-import type { CommunityProgram } from '../../data/community-programs';
+import { communitySectionContent, type CommunityProgram } from '../../data/community-programs';
 import CommunityProgramCard from './_components/CommunityProgramCard.astro';
 import CommunityProgramMedia from './_components/CommunityProgramMedia.astro';
 
@@ -13,9 +13,9 @@ const supporting = programs.filter((program) => program.homepageSupport);
 	featured && (
 		<section class="community-featured" aria-labelledby="community-featured-title">
 			<header class="community-heading stack gap-2">
-				<p class="eyebrow">Community programming · Teaching · Talks</p>
-				<h2 id="community-featured-title">Community programming, teaching, and talks.</h2>
-				<p class="lede">I create structures for people to participate, learn, contribute, and be heard.</p>
+				<p class="eyebrow">{communitySectionContent.eyebrow}</p>
+				<h2 id="community-featured-title">{communitySectionContent.title}</h2>
+				<p class="lede">{communitySectionContent.featuredLede}</p>
 			</header>
 
 			<article class="featured-story">

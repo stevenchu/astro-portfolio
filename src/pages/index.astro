@@ -63,14 +63,14 @@ const homepageProjects = (await getCollection('work'))
 				</CallToAction>
 			</div>
 
+			<CommunityFeatured programs={homepageCommunityPrograms} />
+
 			<section class="services with-background bg-variant">
 				<header class="stack gap-2 lg:gap-4">
-					<h3>Services</h3>
+					<h2>Services</h2>
 					<Skills />
 				</header>
 			</section>
-
-			<CommunityFeatured programs={homepageCommunityPrograms} />
 		</main>
 
 		<ContactCTA />
@@ -159,7 +159,7 @@ const homepageProjects = (await getCollection('work'))
 		position: relative;
 	}
 
-	.services h3 {
+	.services h2 {
 		font-size: var(--role-title-size);
 		font-weight: var(--weight-display);
 		letter-spacing: -0.03em;

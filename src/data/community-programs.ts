@@ -44,6 +44,13 @@ export type CommunityProgram = {
 	about?: boolean;
 };
 
+export const communitySectionContent = {
+	eyebrow: 'Community programming · Teaching · Talks',
+	title: 'Community programming, teaching, and talks.',
+	featuredLede: 'I create structures for people to participate, learn, contribute, and be heard.',
+	timelineLede: 'A sustained practice of creating ways for people to learn, participate, perform, and share their stories.',
+} as const;
+
 export const communityPrograms: CommunityProgram[] = [
 	{
 		id: 'queer-tech-stories',

@@ -1,5 +1,5 @@
 ---
-import type { CommunityProgram } from '../../data/community-programs';
+import { communitySectionContent, type CommunityProgram } from '../../data/community-programs';
 import CommunityProgramMedia from './_components/CommunityProgramMedia.astro';
 
 type Props = { programs: CommunityProgram[] };
@@ -8,9 +8,9 @@ const { programs } = Astro.props;
 
 <section class="community-timeline" aria-labelledby="community-timeline-title">
 	<header class="timeline-heading stack gap-2">
-		<p class="eyebrow">Community programming · Teaching · Talks</p>
-		<h2 id="community-timeline-title">Community programming, teaching, and talks.</h2>
-		<p class="lede">A sustained practice of creating ways for people to learn, participate, perform, and share their stories.</p>
+		<p class="eyebrow">{communitySectionContent.eyebrow}</p>
+		<h2 id="community-timeline-title">{communitySectionContent.title}</h2>
+		<p class="lede">{communitySectionContent.timelineLede}</p>
 	</header>
 
 	<div class="timeline">
