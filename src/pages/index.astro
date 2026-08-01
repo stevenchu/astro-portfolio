@@ -5,7 +5,6 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import HomepageShowcase from '../components/HomepageShowcase.astro';
 import Icon from '../components/Icon.astro';
-import Skills from '../components/Skills.astro';
 import CommunityFeatured from '../components/community/CommunityFeatured.astro';
 import { homepageCommunityPrograms } from '../data/community-programs';
 import { getCollection } from 'astro:content';
@@ -64,13 +63,6 @@ const homepageProjects = (await getCollection('work'))
 			</div>
 
 			<CommunityFeatured programs={homepageCommunityPrograms} />
-
-			<section class="services with-background bg-variant">
-				<header class="stack gap-2 lg:gap-4">
-					<h2>Services</h2>
-					<Skills />
-				</header>
-			</section>
 		</main>
 
 		<ContactCTA />
@@ -153,33 +145,6 @@ const homepageProjects = (await getCollection('work'))
 	.view-all-work {
 		display: flex;
 		justify-content: center;
-	}
-
-	.services {
-		position: relative;
-	}
-
-	.services h2 {
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-display);
-		letter-spacing: -0.03em;
-	}
-
-	.with-background::before {
-		--hero-bg: var(--bg-image-subtle-1);
-		content: '';
-		position: absolute;
-		pointer-events: none;
-		left: 50%;
-		width: 100vw;
-		aspect-ratio: calc(2.25 / var(--bg-scale));
-		top: 0;
-		transform: translateY(-75%) translateX(-50%);
-		background: url('../images/backgrounds/noise.png') top center/220px repeat,
-			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat, var(--surface-page);
-		background-blend-mode: overlay, normal, normal, normal;
-		mix-blend-mode: var(--bg-blend-mode);
-		z-index: -1;
 	}
 
 	@media (min-width: 50em) {

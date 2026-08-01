@@ -3,16 +3,36 @@ type Props = {
 	label: string;
 	imageSrc?: string;
 	imageAlt?: string;
+	secondaryImageSrc?: string;
+	secondaryImageAlt?: string;
 	class?: string;
+	variant?: 'standard' | 'interest-featured' | 'interest-supporting';
 };
 
-const { label, imageSrc, imageAlt = '', class: className = '' } = Astro.props;
+const {
+	label,
+	imageSrc,
+	imageAlt = '',
+	secondaryImageSrc,
+	secondaryImageAlt = '',
+	class: className = '',
+	variant = 'standard',
+} = Astro.props;
 ---
 
-<div class:list={['community-media', className]}>
+<div class:list={['community-media', `community-media--${variant}`, { 'community-media--paired': Boolean(imageSrc && secondaryImageSrc) }, className]}>
 	{
 		imageSrc ? (
-			<img src={imageSrc} alt={imageAlt} loading="lazy" />
+			secondaryImageSrc ? (
+				<div class="community-media__lockup">
+					<img class="community-media__primary" src={imageSrc} alt={imageAlt} loading="lazy" />
+				{
+						<img class="community-media__secondary" src={secondaryImageSrc} alt={secondaryImageAlt} loading="lazy" />
+				}
+				</div>
+			) : (
+				<img class="community-media__primary" src={imageSrc} alt={imageAlt} loading="lazy" />
+			)
 		) : (
 			<div class="placeholder" role="img" aria-label={label}>
 				<span>{label}</span>
@@ -29,7 +49,7 @@ const { label, imageSrc, imageAlt = '', class: className = '' } = Astro.props;
 		background: var(--surface-subtle, var(--surface-page));
 	}
 
-	.community-media :global(img),
+	.community-media__primary,
 	.placeholder {
 		display: block;
 		width: 100%;
@@ -37,8 +57,45 @@ const { label, imageSrc, imageAlt = '', class: className = '' } = Astro.props;
 		min-height: inherit;
 	}
 
-	.community-media :global(img) {
+	.community-media__primary {
 		object-fit: cover;
+	}
+
+	.community-media--paired {
+		--secondary-size: clamp(7.5rem, 36vw, 13.75rem);
+		min-height: 0;
+		max-width: 38.125rem;
+		aspect-ratio: auto;
+		overflow: visible;
+	}
+
+	.community-media__lockup {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) calc(var(--secondary-size) / 2);
+		grid-template-rows: auto calc(var(--secondary-size) / 2);
+		width: 100%;
+	}
+
+	.community-media--paired .community-media__primary {
+		grid-column: 1;
+		grid-row: 1;
+		min-height: 0;
+		height: auto;
+		aspect-ratio: 5 / 3;
+		border-radius: clamp(1.75rem, 4vw, 3.5rem);
+	}
+
+	.community-media__secondary {
+		position: absolute;
+		z-index: 1;
+		right: 0;
+		bottom: 0;
+		width: var(--secondary-size);
+		aspect-ratio: 1;
+		object-fit: cover;
+		border-radius: clamp(1.75rem, 4vw, 3.5rem);
+		box-shadow: 0 1.25rem 2.5rem color-mix(in srgb, var(--surface-page) 45%, transparent);
 	}
 
 	.placeholder {
@@ -55,4 +112,80 @@ const { label, imageSrc, imageAlt = '', class: className = '' } = Astro.props;
 		font-size: var(--text-sm, 0.875rem);
 		line-height: 1.4;
 	}
+
+	.community-media--interest-featured,
+	.community-media--interest-supporting {
+		background: #17132e;
+	}
+
+	.community-media--interest-featured {
+		min-height: 0;
+		aspect-ratio: 5 / 3;
+		border-radius: clamp(1.75rem, 4vw, 3.5rem);
+	}
+
+	.community-media--interest-featured.community-media--paired {
+		aspect-ratio: auto;
+		background: transparent;
+	}
+
+	.community-media--interest-supporting {
+		min-height: 0;
+		aspect-ratio: 4 / 3;
+		border-radius: 2.25rem;
+	}
+
+	.community-media--interest-featured .placeholder,
+	.community-media--interest-supporting .placeholder {
+		position: relative;
+		align-items: flex-end;
+		isolation: isolate;
+		overflow: hidden;
+		background:
+			radial-gradient(circle at 75% 28%, #d3706c 0 13%, transparent 13.5%),
+			radial-gradient(circle at 22% 85%, #5d4c9c 0 19%, transparent 19.5%),
+			radial-gradient(circle at 75% 85%, #21184f 0 23%, transparent 23.5%),
+			linear-gradient(130deg, #17132e 0 34%, #50438c 34% 57%, #c76568 57% 100%);
+		color: #f3f4f7;
+	}
+
+	.community-media--interest-featured .placeholder::before,
+	.community-media--interest-supporting .placeholder::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		inset: auto -12% -34% auto;
+		width: 55%;
+		aspect-ratio: 1;
+		border: 1px solid color-mix(in srgb, white 42%, transparent);
+		border-radius: 48% 52% 42% 58%;
+		box-shadow: -1.2rem -1.2rem 0 color-mix(in srgb, #1b123f 75%, transparent),
+			-2.4rem -2.4rem 0 color-mix(in srgb, #17132e 70%, transparent);
+	}
+
+	.community-media--interest-featured .placeholder::after,
+	.community-media--interest-supporting .placeholder::after {
+		content: '';
+		position: absolute;
+		inset: 14% auto auto 9%;
+		width: 30%;
+		aspect-ratio: 1.6;
+		border-radius: 48% 52% 58% 42%;
+		background: color-mix(in srgb, #d68c4e 80%, transparent);
+		filter: blur(22px);
+		opacity: 0.72;
+	}
+
+	.community-media--interest-featured .placeholder span,
+	.community-media--interest-supporting .placeholder span {
+		position: relative;
+		z-index: 1;
+		max-width: 20ch;
+		padding: 0.45rem 0.7rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, #090b11 54%, transparent);
+		backdrop-filter: blur(8px);
+		color: #f3f4f7;
+	}
+
 </style>

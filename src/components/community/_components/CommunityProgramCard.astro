@@ -5,22 +5,26 @@ import CommunityProgramMedia from './CommunityProgramMedia.astro';
 type Props = {
 	program: CommunityProgram;
 	headingLevel?: 'h3' | 'h4';
+	variant?: 'standard' | 'interest';
+	mediaVariant?: 'standard' | 'interest-supporting';
 };
 
-const { program, headingLevel = 'h3' } = Astro.props;
+const { program, headingLevel = 'h3', variant = 'standard', mediaVariant = 'standard' } = Astro.props;
 const Heading = headingLevel;
 ---
 
-<article class="community-card">
+<article class:list={['community-card', `community-card--${variant}`]}>
 	<CommunityProgramMedia
 		label={program.mediaLabel}
 		imageSrc={program.imageSrc}
 		imageAlt={program.imageAlt}
+		variant={mediaVariant}
 	/>
 	<div class="community-card__copy stack gap-2">
-		<p class="community-card__meta">{program.categoryLabel} · {program.role}</p>
-		<Heading>{program.title}</Heading>
-		<p>{program.shortSummary}</p>
+		{(variant !== 'interest' || program.homepageLabel) && <p class="community-card__meta">{program.homepageLabel ?? `${program.categoryLabel} · ${program.role}`}</p>}
+		<Heading>{program.homepageTitle ?? program.title}</Heading>
+		{program.homepageSubtitle && <p class="community-card__subtitle">{program.homepageSubtitle}</p>}
+		<p>{program.homepageSummary ?? program.shortSummary}</p>
 		{
 			program.href && (
 				<a href={program.href} target="_blank" rel="noreferrer">
@@ -51,6 +55,11 @@ const Heading = headingLevel;
 		color: var(--text-secondary);
 	}
 
+	.community-card__subtitle {
+		margin: 0;
+		color: var(--text-secondary);
+	}
+
 	h3,
 	h4 {
 		margin: 0;
@@ -59,6 +68,7 @@ const Heading = headingLevel;
 		font-weight: var(--weight-heading);
 		line-height: 1.1;
 		letter-spacing: -0.03em;
+		text-wrap: balance;
 	}
 
 	p {
@@ -70,5 +80,31 @@ const Heading = headingLevel;
 		color: var(--text-primary);
 		font-weight: var(--weight-bold);
 		text-underline-offset: 0.25em;
+	}
+
+	.community-card--interest {
+		gap: 1rem;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+		align-items: center;
+		padding: 0;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+	}
+
+	.community-card--interest h3,
+	.community-card--interest h4 {
+		font-size: clamp(1.4rem, 2.1vw, 1.85rem);
+	}
+
+	.community-card--interest .community-card__copy {
+		gap: 0.6rem;
+	}
+
+	@media (min-width: 50em) {
+		.community-card--interest {
+			grid-template-columns: minmax(8.5rem, 0.55fr) 1fr;
+			gap: 1.5rem;
+		}
 	}
 </style>

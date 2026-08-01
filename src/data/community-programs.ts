@@ -34,6 +34,13 @@ export type CommunityProgram = {
 	mediaLabel: string;
 	imageSrc?: string;
 	imageAlt?: string;
+	secondaryImageSrc?: string;
+	secondaryImageAlt?: string;
+	homepageLabel?: string;
+	homepageTitle?: string;
+	homepageSubtitle?: string;
+	homepageSummary?: string;
+	homepageHighlights?: string[];
 	href?: string;
 	sources?: CommunityProgramSource[];
 	occurrences?: CommunityProgramOccurrence[];
@@ -45,9 +52,10 @@ export type CommunityProgram = {
 };
 
 export const communitySectionContent = {
-	eyebrow: 'Community programming · Teaching · Talks',
+	eyebrow: 'Community · Teaching · Talks',
 	title: 'Community programming, teaching, and talks.',
-	featuredLede: 'I create structures for people to participate, learn, contribute, and be heard.',
+	homepageTitle: 'I create spaces where people can learn, contribute, and be seen.',
+	featuredLede: 'Product design is one way I do that. I also produce community programs, teach movement, and facilitate conversations about belonging.',
 	timelineLede: 'A sustained practice of creating ways for people to learn, participate, perform, and share their stories.',
 } as const;
 
@@ -67,6 +75,12 @@ export const communityPrograms: CommunityProgram[] = [
 			'I co-produce an intergenerational storytelling series that brings queer technologists together to share the experiences, decisions, and turning points that shaped their lives and careers.',
 		shortSummary: 'A recurring storytelling series across three New York programs.',
 		mediaLabel: 'PayPal, Spotify, and Leadership Institute event photography',
+		imageSrc: 'images/community/queer-tech-stories.jpg',
+		imageAlt: 'A speaker presents at Queer Tech Stories Across Generations with the audience softly blurred in the foreground.',
+		secondaryImageSrc: 'images/community/queer-tech-steven.jpg',
+		secondaryImageAlt: 'Steven Chu speaks into a microphone at Queer Tech Stories Across Generations.',
+		homepageLabel: 'Community building · Co-producer',
+		homepageHighlights: ['PayPal · 2025', 'Spotify · 2026', 'Out in Tech Leadership Institute · 2026'],
 		occurrences: [
 			{
 				label: 'PayPal edition',
@@ -110,7 +124,11 @@ export const communityPrograms: CommunityProgram[] = [
 		status: 'current',
 		summary:
 			'I teach mixed-level aerial acrobatics, choreograph group pieces, and guide students from first rehearsal through live performance. The work requires adapting instruction to different bodies, confidence levels, movement histories, and learning styles while maintaining physical and emotional safety.',
-		shortSummary: 'Developing people from first rehearsal through live performance.',
+		shortSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
+		homepageTitle: 'Teaching through movement',
+		homepageSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
+		imageSrc: 'images/community/teaching-aerial-acrobatics.jpg',
+		imageAlt: 'Steven Chu demonstrates an aerial movement beside a pole in a dance studio.',
 		mediaLabel: 'Crunch teaching and performance showcase photography',
 		contributions: [
 			'Teach X-Pole Choreo at Crunch Chelsea.',
@@ -140,17 +158,22 @@ export const communityPrograms: CommunityProgram[] = [
 	},
 	{
 		id: 'designing-belonging',
-		title: 'Designing Belonging',
+		title: 'How I built it: Designing belonging',
 		category: 'talk',
 		categoryLabel: 'Talk and teaching session',
 		role: 'Speaker and educator',
-		organization: 'Out in Tech U',
+		organization: 'Out in Tech U: Launch Lab',
 		date: 'July 2026',
 		year: 2026,
 		status: 'past',
 		summary:
 			'A participatory learning session connecting design, community organizing, and the conditions that help people enter, contribute, and feel recognized.',
-		shortSummary: 'Designing participation, not just attendance.',
+		shortSummary: 'A participatory session about creating conditions for people to enter, contribute, and feel recognized.',
+		homepageTitle: 'How I built it: Designing belonging',
+		homepageSubtitle: 'Out in Tech U: Launch Lab · 2026',
+		homepageSummary: 'A participatory session about creating conditions for people to enter, contribute, and feel recognized.',
+		imageSrc: 'images/community/talk.jpg',
+		imageAlt: 'Out in Tech U Launch Lab Pilot graphic with student group photos and illustrated workshop elements.',
 		mediaLabel: 'Workshop photography, slides, or recording',
 		evidenceNotes: [
 			'Confirm the exact official title, date, platform or venue, audience, collaborators, and attendance.',
