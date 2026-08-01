@@ -85,7 +85,7 @@ const Heading = headingLevel;
 	.community-card--interest {
 		gap: 1rem;
 		grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-		align-items: center;
+		align-items: normal;
 		padding: 0;
 		border: 0;
 		border-radius: 0;
@@ -101,9 +101,10 @@ const Heading = headingLevel;
 		gap: 0.6rem;
 	}
 
-	@media (min-width: 50em) {
+	@media (min-width: 51.25em) {
 		.community-card--interest {
 			grid-template-columns: minmax(8.5rem, 0.55fr) 1fr;
+			align-items: center;
 			gap: 1.5rem;
 		}
 	}
