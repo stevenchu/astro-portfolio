@@ -18,7 +18,7 @@ platforms: Responsive web, iOS, macOS, Contentful CMS
 result: |
   Reduced page production by 98.7% and recovered an estimated $200K in annual cross-team capacity.
 year: "2021"
-eyebrow: MOTIF PHOTOS · BRAND, GROWTH & CONTENT SYSTEMS · 2019–2023
+eyebrow: MOTIF PHOTOS · BRAND, GROWTH & CONTENT SYSTEMS · 2018–2023
 showcaseArgument: |
   Motif’s customer-acquisition experience spanned its marketing website, email communications, and brand touchpoints across 32 countries. New web pages depended on a one-off production process across design, content, engineering, QA, and an external development partner, limiting how quickly the team could respond to campaigns and customer needs.
 
