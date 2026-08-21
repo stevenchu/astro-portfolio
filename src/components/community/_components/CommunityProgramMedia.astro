@@ -18,20 +18,26 @@ const {
 	class: className = '',
 	variant = 'standard',
 } = Astro.props;
+const withBasePath = (path: string) =>
+	path.startsWith('/') && !path.startsWith('//')
+		? `${import.meta.env.BASE_URL}${path.slice(1)}`
+		: `${import.meta.env.BASE_URL}${path}`;
+const mediaSrc = imageSrc ? withBasePath(imageSrc) : undefined;
+const secondaryMediaSrc = secondaryImageSrc ? withBasePath(secondaryImageSrc) : undefined;
 ---
 
 <div class:list={['community-media', `community-media--${variant}`, { 'community-media--paired': Boolean(imageSrc && secondaryImageSrc) }, className]}>
 	{
-		imageSrc ? (
-			secondaryImageSrc ? (
+		mediaSrc ? (
+			secondaryMediaSrc ? (
 				<div class="community-media__lockup">
-					<img class="community-media__primary" src={imageSrc} alt={imageAlt} loading="lazy" />
+					<img class="community-media__primary" src={mediaSrc} alt={imageAlt} loading="lazy" />
 				{
-						<img class="community-media__secondary" src={secondaryImageSrc} alt={secondaryImageAlt} loading="lazy" />
+						<img class="community-media__secondary" src={secondaryMediaSrc} alt={secondaryImageAlt} loading="lazy" />
 				}
 				</div>
 			) : (
-				<img class="community-media__primary" src={imageSrc} alt={imageAlt} loading="lazy" />
+				<img class="community-media__primary" src={mediaSrc} alt={imageAlt} loading="lazy" />
 			)
 		) : (
 			<div class="placeholder" role="img" aria-label={label}>
@@ -102,9 +108,7 @@ const {
 		display: flex;
 		align-items: flex-end;
 		padding: 1.25rem;
-		background:
-			linear-gradient(145deg, transparent 0 42%, color-mix(in srgb, var(--text-primary) 8%, transparent) 42% 43%, transparent 43%),
-			color-mix(in srgb, var(--surface-page) 88%, var(--text-primary));
+		background: var(--bg-image-subtle-1) center / cover no-repeat, var(--surface-subtle, var(--surface-page));
 		color: var(--text-secondary);
 	}
 

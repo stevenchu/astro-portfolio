@@ -211,7 +211,7 @@ export const communityPrograms: CommunityProgram[] = [
 			'Add the full script, source media, stage documentation, credits, and usage rights.',
 			'The reason for the invitation remains undocumented and should not be inferred.',
 		],
-		about: true,
+		about: false,
 	},
 	{
 		id: 'focus-and-flow',
@@ -279,7 +279,7 @@ export const communityPrograms: CommunityProgram[] = [
 		evidenceNotes: [
 			'Record co-producer names, attendance, participant feedback, and resulting photography after the event.',
 		],
-		about: true,
+		about: false,
 	},
 	{
 		id: 'mental-health-workshop',
@@ -311,7 +311,7 @@ export const communityPrograms: CommunityProgram[] = [
 			},
 		],
 		evidenceNotes: ['Confirm the exact public format, panelists, and Steven’s production responsibilities before publication.'],
-		about: true,
+		about: false,
 	},
 	{
 		id: 'halloween-pet-costume-night',
@@ -344,7 +344,7 @@ export const communityPrograms: CommunityProgram[] = [
 			},
 		],
 		evidenceNotes: ['Confirm the exact event date, venue, collaborators, and Steven’s production responsibilities before publication.'],
-		about: true,
+		about: false,
 	},
 	{
 		id: 'kayaking-instruction',
@@ -362,7 +362,7 @@ export const communityPrograms: CommunityProgram[] = [
 		shortSummary: 'Earlier instruction grounded in outdoor facilitation and participant safety.',
 		mediaLabel: 'Kayaking instruction photography',
 		contributions: ['ACA Level 1 credential.', 'Kayaking instructor from 2013 through 2018.'],
-		about: true,
+		about: false,
 	},
 	{
 		id: 'black-trans-liberation-kitchen',
