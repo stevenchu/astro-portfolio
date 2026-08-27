@@ -173,9 +173,20 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 		.about > :global(:first-child) { grid-column-start: 2; }
 		section { display: contents; font-size: var(--text-lg); }
 		.principles {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: 2rem;
+			grid-template-columns: 1fr;
+			gap: clamp(3rem, 5vw, 5rem);
 		}
+		.principle {
+			display: grid;
+			grid-template-columns: minmax(4rem, 0.25fr) minmax(0, 1.75fr);
+			gap: 2.5rem;
+			align-items: start;
+		}
+		.principle-number {
+			margin-bottom: 0;
+			padding-top: 0.5rem;
+		}
+		.principle h3 { max-width: 24ch; }
 		.community-section { display: block; }
 	}
 </style>
