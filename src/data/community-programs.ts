@@ -53,7 +53,7 @@ export type CommunityProgram = {
 
 export const communitySectionContent = {
 	eyebrow: 'Community · Teaching · Talks',
-	title: 'Community programming, teaching, and talks.',
+	title: 'Community, teaching, and talks',
 	homepageTitle: 'I create spaces where people can learn, contribute, and be seen.',
 	featuredLede: 'Product design is one way I do that. I also produce community programs, teach movement, and facilitate conversations about belonging.',
 	timelineLede: 'A sustained practice of creating ways for people to learn, participate, perform, and share their stories.',
@@ -67,12 +67,12 @@ export const communityPrograms: CommunityProgram[] = [
 		categoryLabel: 'Out in Tech NY × The Generations Project',
 		role: 'Co-producer',
 		organization: 'Out in Tech NY × The Generations Project',
-		date: '2025–2026',
+		date: '2025–present',
 		year: 2026,
 		location: 'New York',
 		status: 'current',
 		summary:
-			'I co-produce an intergenerational storytelling series that brings queer technologists together to share the experiences, decisions, and turning points that shaped their lives and careers.',
+			'An intergenerational storytelling series bringing queer technologists together to share the experiences and turning points that shaped their lives and careers.',
 		shortSummary: 'A recurring storytelling series across three New York programs.',
 		mediaLabel: 'PayPal, Spotify, and Leadership Institute event photography',
 		imageSrc: 'images/community/queer-tech-stories.jpg',
@@ -118,12 +118,12 @@ export const communityPrograms: CommunityProgram[] = [
 		categoryLabel: 'Crunch Fitness',
 		role: 'Instructor',
 		organization: 'Crunch Fitness',
-		date: '2025–2026',
+		date: '2023–present',
 		year: 2026,
 		location: 'New York',
 		status: 'current',
 		summary:
-			'I teach mixed-level aerial acrobatics, adapting instruction to different bodies, confidence levels, and learning styles. I also choreograph group pieces that students learn, rehearse, and perform in showcases.',
+			'Mixed-level aerial instruction adapted to different bodies, confidence levels, and learning styles, plus choreography students learn and perform in showcases.',
 		shortSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
 		homepageTitle: 'Teaching through movement',
 		homepageSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
@@ -167,7 +167,7 @@ export const communityPrograms: CommunityProgram[] = [
 		year: 2026,
 		status: 'past',
 		summary:
-			'I led a session for students learning how to create their own community-building events, focused on designing the welcome experience and creating a sense of belonging. I later joined a panel of industry professionals to review their final event pitches.',
+			'Teaching students how to create their own community-building events, with a focus on the welcome experience and sense of belonging. I later joined a panel of industry professionals to review their final event pitches.',
 		shortSummary: 'A session on designing the welcome experience for student-led community events.',
 		homepageTitle: 'How I built it: Designing belonging',
 		homepageSubtitle: 'Out in Tech U: Launch Lab · 2026',
@@ -225,7 +225,7 @@ export const communityPrograms: CommunityProgram[] = [
 		location: 'Brooklyn Community Pride Center · Crown Heights, Brooklyn',
 		status: 'past',
 		summary:
-			'I brought together four mental health professionals for a panel on focus strategies for neurodivergent professionals.',
+			'A panel with four mental health professionals on focus strategies for neurodivergent professionals.',
 		shortSummary: 'A panel on focus strategies for neurodivergent professionals.',
 		mediaLabel: 'Official event artwork and event photography',
 		href: 'https://outintech.com/event/out-in-tech-nyc-%E2%9C%A8-focus-flow-strategies-for-queer-tech-professionals/',
