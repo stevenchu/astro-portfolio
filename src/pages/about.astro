@@ -43,6 +43,26 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 				</div>
 			</section>
 
+			<div class="principles-section">
+				<div class="principles-heading">
+					<h2>Principles I work by</h2>
+				</div>
+				<div class="principles">
+					<article class="principle">
+						<span class="principle-number">01</span>
+						<h3>Help people explore, learn, and grow</h3>
+					</article>
+					<article class="principle">
+						<span class="principle-number">02</span>
+						<h3>Tackle ambiguous problems by establishing a structure teams can build from.</h3>
+					</article>
+					<article class="principle">
+						<span class="principle-number">03</span>
+						<h3>Build early to expose constraints and test possibilities.</h3>
+					</article>
+				</div>
+			</div>
+
 			<div class="community-section">
 				<CommunityTimeline programs={aboutCommunityPrograms} />
 			</div>
@@ -91,6 +111,56 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 		color: var(--text-primary);
 	}
 
+	.principles-section {
+		grid-column: 1 / -1;
+		padding-block: clamp(2.5rem, 5vw, 4.5rem);
+		border-block: 1px solid var(--border-subtle);
+	}
+
+	.principles-heading {
+		margin-bottom: 2rem;
+	}
+
+	.principles-heading h2 {
+		font-family: var(--font-display);
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--text-primary);
+	}
+
+	.principles {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1.75rem;
+	}
+
+	.principle {
+		padding-top: 1.125rem;
+		border-top: 2px solid var(--border-strong);
+	}
+
+	.principle-number {
+		display: block;
+		margin-bottom: 0.875rem;
+		font-family: var(--font-display);
+		font-size: var(--role-eyebrow-size);
+		font-weight: var(--weight-bold);
+		letter-spacing: 0.12em;
+		line-height: 1.4;
+		color: var(--text-tertiary);
+	}
+
+	.principle h3 {
+		font-family: var(--font-display);
+		font-size: var(--role-heading-size);
+		font-weight: var(--weight-heading);
+		letter-spacing: -0.02em;
+		line-height: 1.2;
+		color: var(--text-primary);
+	}
+
 	.community-section {
 		grid-column: 1 / -1;
 		margin-block: clamp(2rem, 5vw, 5rem);
@@ -108,6 +178,15 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 		.about { display: grid; grid-template-columns: 1fr 60% 1fr; }
 		.about > :global(:first-child) { grid-column-start: 2; }
 		section { display: contents; font-size: var(--text-lg); }
+		.principles-heading {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+		.principles-heading h2 { grid-column: 2; }
+		.principles {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 2rem;
+		}
 		.community-section { display: block; }
 	}
 </style>
