@@ -114,7 +114,6 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 	.principles-section {
 		grid-column: 1 / -1;
 		padding-block: clamp(2.5rem, 5vw, 4.5rem);
-		border-block: 1px solid var(--border-subtle);
 	}
 
 	.principles-heading {
@@ -133,12 +132,7 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 	.principles {
 		display: grid;
 		grid-template-columns: 1fr;
-		gap: 1.75rem;
-	}
-
-	.principle {
-		padding-top: 1.125rem;
-		border-top: 2px solid var(--border-strong);
+		gap: 2.5rem;
 	}
 
 	.principle-number {
@@ -178,11 +172,6 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 		.about { display: grid; grid-template-columns: 1fr 60% 1fr; }
 		.about > :global(:first-child) { grid-column-start: 2; }
 		section { display: contents; font-size: var(--text-lg); }
-		.principles-heading {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-		.principles-heading h2 { grid-column: 2; }
 		.principles {
 			grid-template-columns: repeat(3, minmax(0, 1fr));
 			gap: 2rem;
