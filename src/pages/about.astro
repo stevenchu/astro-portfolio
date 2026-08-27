@@ -8,13 +8,18 @@ import CommunityTimeline from '../components/community/CommunityTimeline.astro';
 import { aboutCommunityPrograms } from '../data/community-programs';
 ---
 
-<BaseLayout title="About | Steven Chu" description="About Steven Chu">
+<BaseLayout
+	title="Steven Chu | Staff Product Designer"
+	description="Staff Product Designer Steven Chu works across product systems, visual craft, and implementation, with experience spanning enterprise software, ecommerce, and creative tools."
+>
 	<div class="stack gap-20">
 		<main class="wrapper about">
-			<Hero title="Well hello! I'm Steven" tagline=""></Hero>
+			<Hero
+				title="Well hello! I'm Steven"
+				tagline="Staff Product Designer working across systems, visual craft, and implementation."
+			></Hero>
 
 			<section class="gap-20 lg:gap-40">
-				<h2 class="section-title">Product Design Background</h2>
 				<div class="content">
 					<p class="lede">
 						I've spent more than 10 years designing products and systems across enterprise software, ecommerce, and creative tools. I work on problems that are still in motion, creating enough structure for teams to make confident decisions and keep building.
@@ -97,16 +102,6 @@ import { aboutCommunityPrograms } from '../data/community-programs';
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-family: var(--font-display);
-		font-size: var(--role-heading-size);
-		font-weight: var(--weight-heading);
-		letter-spacing: -0.02em;
-		line-height: 1.2;
-		color: var(--text-primary);
 	}
 
 	.principles-section {
