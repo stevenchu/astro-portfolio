@@ -53,7 +53,7 @@ export type CommunityProgram = {
 
 export const communitySectionContent = {
 	eyebrow: 'Community · Teaching · Talks',
-	title: 'Community, teaching, and talks',
+	title: 'Community, talks, and teaching',
 	homepageTitle: 'I create spaces where people can learn, contribute, and be seen.',
 	featuredLede: 'Product design is one way I do that. I also produce community programs, teach movement, and facilitate conversations about belonging.',
 	timelineLede: 'A sustained practice of creating ways for people to learn, participate, perform, and share their stories.',
@@ -340,7 +340,7 @@ export const communityPrograms: CommunityProgram[] = [
 			},
 			{
 				label: 'Eventbrite hero image source',
-				href: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F867158759%2F274726954638%2F1%2Foriginal.20241004-223612?auto=format%2Ccompress&q=75&sharp=10&s=4593d868c13738784879f42a11985248',
+				href: 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F867158759%2F274726954638%2F1%2Foriginal.20241004-223612?auto=format%2Ccompress&q=75&sharp=10&s=f4c226325e1f2ae0a19155c841db57e9',
 			},
 		],
 		evidenceNotes: ['Confirm the exact event date, venue, collaborators, and Steven’s production responsibilities before publication.'],
