@@ -4,6 +4,13 @@ import CommunityProgramMedia from './_components/CommunityProgramMedia.astro';
 
 type Props = { programs: CommunityProgram[] };
 const { programs } = Astro.props;
+
+const getDetails = (program: CommunityProgram) => {
+	const parts = [];
+	if (program.organization && program.organization !== program.categoryLabel) parts.push(program.organization);
+	if (program.location) parts.push(program.location);
+	return parts.join(' · ');
+};
 ---
 
 <section class="community-timeline" aria-labelledby="community-timeline-title">
@@ -24,7 +31,7 @@ const { programs } = Astro.props;
 						<p class="eyebrow">{program.categoryLabel} · {program.role}</p>
 						<h3>{program.title}</h3>
 						<p>{program.summary}</p>
-						{program.organization && <p class="details">{program.organization}{program.location ? ` · ${program.location}` : ''}</p>}
+						{getDetails(program) && <p class="details">{getDetails(program)}</p>}
 						{program.href && <a href={program.href} target="_blank" rel="noreferrer">View event <span aria-hidden="true">↗</span></a>}
 					</div>
 					<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} />
