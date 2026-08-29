@@ -75,9 +75,9 @@ export const communityPrograms: CommunityProgram[] = [
 			'An intergenerational storytelling series bringing queer technologists together to share the experiences and turning points that shaped their lives and careers.',
 		shortSummary: 'A recurring storytelling series across three New York programs.',
 		mediaLabel: 'PayPal, Spotify, and Leadership Institute event photography',
-		imageSrc: 'images/community/queer-tech-stories.jpg',
+		imageSrc: 'queer-tech-stories.jpg',
 		imageAlt: 'A speaker presents at Queer Tech Stories Across Generations with the audience softly blurred in the foreground.',
-		secondaryImageSrc: 'images/community/queer-tech-steven.jpg',
+		secondaryImageSrc: 'queer-tech-steven.jpg',
 		secondaryImageAlt: 'Steven Chu speaks into a microphone at Queer Tech Stories Across Generations.',
 		homepageLabel: 'Community building · Co-producer',
 		homepageHighlights: ['PayPal · 2025', 'Spotify · 2026', 'Out in Tech Leadership Institute · 2026'],
@@ -127,7 +127,7 @@ export const communityPrograms: CommunityProgram[] = [
 		shortSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
 		homepageTitle: 'Teaching through movement',
 		homepageSummary: 'I teach mixed-level aerial acrobatics, breaking complex movements into progressive, actionable guidance.',
-		imageSrc: 'images/community/teaching-aerial-acrobatics.jpg',
+		imageSrc: 'teaching-aerial-acrobatics.jpg',
 		imageAlt: 'Steven Chu demonstrates an aerial movement beside a pole in a dance studio.',
 		mediaLabel: 'Crunch teaching and performance showcase photography',
 		contributions: [
@@ -172,7 +172,7 @@ export const communityPrograms: CommunityProgram[] = [
 		homepageTitle: 'How I built it: Designing belonging',
 		homepageSubtitle: 'Out in Tech U: Launch Lab · 2026',
 		homepageSummary: 'A participatory session about creating conditions for people to enter, contribute, and feel recognized.',
-		imageSrc: 'images/community/talk.jpg',
+		imageSrc: 'talk.jpg',
 		imageAlt: 'Out in Tech U Launch Lab Pilot graphic with student group photos and illustrated workshop elements.',
 		mediaLabel: 'Workshop photography, slides, or recording',
 		evidenceNotes: [
@@ -228,6 +228,8 @@ export const communityPrograms: CommunityProgram[] = [
 			'A panel with four mental health professionals on focus strategies for neurodivergent professionals.',
 		shortSummary: 'A panel on focus strategies for neurodivergent professionals.',
 		mediaLabel: 'Official event artwork and event photography',
+		imageSrc: 'focus-flow.jpeg',
+		imageAlt: 'Panelists speak during the Focus & Flow Strategies event for queer tech professionals.',
 		href: 'https://outintech.com/event/out-in-tech-nyc-%E2%9C%A8-focus-flow-strategies-for-queer-tech-professionals/',
 		sources: [
 			{

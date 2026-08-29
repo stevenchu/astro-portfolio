@@ -1,4 +1,6 @@
 ---
+import { Picture, type ImageMetadata } from 'astro:assets';
+
 type Props = {
 	label: string;
 	imageSrc?: string;
@@ -18,26 +20,40 @@ const {
 	class: className = '',
 	variant = 'standard',
 } = Astro.props;
-const withBasePath = (path: string) =>
-	path.startsWith('/') && !path.startsWith('//')
-		? `${import.meta.env.BASE_URL}${path.slice(1)}`
-		: `${import.meta.env.BASE_URL}${path}`;
-const mediaSrc = imageSrc ? withBasePath(imageSrc) : undefined;
-const secondaryMediaSrc = secondaryImageSrc ? withBasePath(secondaryImageSrc) : undefined;
+const communityImages = import.meta.glob<{ default: ImageMetadata }>('../../../assets/community/*.{jpg,jpeg,png,webp}', {
+	eager: true,
+});
+const getImage = (assetName: string | undefined) =>
+	assetName ? communityImages[`../../../assets/community/${assetName}`]?.default : undefined;
+const image = getImage(imageSrc);
+const secondaryImage = getImage(secondaryImageSrc);
+const responsiveWidths = image
+	? [320, 480, 640, 960, 1280, 1600].filter((width) => width <= image.width)
+	: [];
+const imageSizes =
+	variant === 'interest-supporting'
+		? '(min-width: 51.25em) 18vw, 33vw'
+		: '(min-width: 51.25em) 44vw, 100vw';
 ---
 
-<div class:list={['community-media', `community-media--${variant}`, { 'community-media--paired': Boolean(imageSrc && secondaryImageSrc) }, className]}>
+<div class:list={['community-media', `community-media--${variant}`, { 'community-media--paired': Boolean(image && secondaryImage) }, className]}>
 	{
-		mediaSrc ? (
-			secondaryMediaSrc ? (
+		image ? (
+			secondaryImage ? (
 				<div class="community-media__lockup">
-					<img class="community-media__primary" src={mediaSrc} alt={imageAlt} loading="lazy" />
+					<div class="community-media__primary">
+						<Picture src={image} alt={imageAlt} widths={responsiveWidths} sizes={imageSizes} formats={['avif', 'webp']} />
+					</div>
 				{
-						<img class="community-media__secondary" src={secondaryMediaSrc} alt={secondaryImageAlt} loading="lazy" />
+						<div class="community-media__secondary">
+							<Picture src={secondaryImage} alt={secondaryImageAlt} widths={[320, 440]} sizes="(min-width: 51.25em) 13.75rem, 36vw" formats={['avif', 'webp']} />
+						</div>
 				}
 				</div>
 			) : (
-				<img class="community-media__primary" src={mediaSrc} alt={imageAlt} loading="lazy" />
+				<div class="community-media__primary">
+					<Picture src={image} alt={imageAlt} widths={responsiveWidths} sizes={imageSizes} formats={['avif', 'webp']} />
+				</div>
 			)
 		) : (
 			<div class="placeholder" role="img" aria-label={label}>
@@ -63,7 +79,17 @@ const secondaryMediaSrc = secondaryImageSrc ? withBasePath(secondaryImageSrc) : 
 		min-height: inherit;
 	}
 
-	.community-media__primary {
+	.community-media__primary :global(picture),
+	.community-media__primary :global(img),
+	.community-media__secondary :global(picture),
+	.community-media__secondary :global(img) {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.community-media__primary :global(img),
+	.community-media__secondary :global(img) {
 		object-fit: cover;
 	}
 

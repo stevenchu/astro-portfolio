@@ -1,184 +1,110 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactCTA from '../components/ContactCTA.astro';
 import CallToAction from '../components/CallToAction.astro';
-import Icon from '../components/Icon.astro';
-import Hero from '../components/Hero.astro';
-import CommunityTimeline from '../components/community/CommunityTimeline.astro';
+import CommunityProgramMedia from '../components/community/_components/CommunityProgramMedia.astro';
 import { aboutCommunityPrograms } from '../data/community-programs';
+
+const galleryImages = [
+	{ src: '/images/about/about-oaxaca.jpeg', alt: 'Steven Chu outdoors in Oaxaca.' },
+	{ src: '/images/about/about-teo.JPG', alt: 'Steven Chu with Teo.' },
+	{ src: '/images/about/about-madambrett.jpg', alt: 'Steven Chu outdoors at Madam Brett Park.' },
+];
+
+const principles = [
+	'Help people explore, learn, and grow.',
+	'Tackle ambiguous problems by establishing a structure teams can build from.',
+	'Build early to expose constraints and test possibilities.',
+];
 ---
 
 <BaseLayout
 	title="Steven Chu | Staff Product Designer"
 	description="Staff Product Designer Steven Chu works across product systems, visual craft, and implementation, with experience spanning enterprise software, ecommerce, and creative tools."
 >
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="Well hello! I'm Steven"
-				tagline="Staff Product Designer working across systems, visual craft, and implementation."
-			></Hero>
-
-			<section class="gap-20 lg:gap-40">
-				<div class="content">
-					<p class="lede">
-						I've spent more than 10 years designing products and systems across enterprise software, ecommerce, and creative tools. I work on problems that are still in motion, creating enough structure for teams to make confident decisions and keep building.
-					</p>
-
-					<br />
-
-					<p>Most recently, I architected theming and customization for a banking platform that powers 1,300 banks and credit unions, designed conversational search for a global supply-chain platform, and led product design for Bose's ecommerce experience while owning the design system and integrating brand storytelling into product discovery and the purchase journey.</p>
+	<main class="wrapper about-page">
+		<section class="hero">
+			<div class="hero__copy">
+				<p class="t-eyebrow">About</p>
+				<h1 class="t-title">Well hello, I&apos;m Steven</h1>
+				<p class="t-subhead hero__subhead">Staff Product Designer working across systems, visual craft, and implementation.</p>
+				<div class="hero__body">
+					<p>I&apos;ve spent more than 10 years designing products and systems across enterprise software, ecommerce, and creative tools. I work on problems that are still in motion, creating enough structure for teams to make confident decisions and keep building.</p>
+					<p>Most recently, I architected theming and customization for a banking platform that powers 1,300 banks and credit unions, designed conversational search for a global supply-chain platform, and led product design for Bose&apos;s ecommerce experience while owning the design system and integrating brand storytelling into product discovery and the purchase journey.</p>
 					<p>My design practice has always extended into how things get built. I have a background in front-end development and recently used AI-assisted workflows to independently design and launch BodyMap in three weeks, a computer-vision coaching tool that helps movement instructors turn student video into clear visual feedback they can annotate and share. My career began in brand, art direction, and experiential design before expanding into UX strategy, design operations, and product design.</p>
-					<img
-						width="800"
-						height="450"
-						src="images/about-me.jpg"
-						alt="Steven Chu teaching kayaking"
-					/>
-					<br /><br />
-					<div class="ctas">
-						<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">
-							Say Hello
-							<Icon icon="paper-plane-tilt" size="1.2em" />
-						</CallToAction>
-					</div>
-					<br />
 				</div>
-			</section>
-
-			<div class="principles-section">
-				<div class="principles-heading">
-					<h2>Principles I work by</h2>
-				</div>
-				<div class="principles">
-					<article class="principle">
-						<span class="principle-number">01</span>
-						<h3>Help people explore, learn, and grow</h3>
-					</article>
-					<article class="principle">
-						<span class="principle-number">02</span>
-						<h3>Tackle ambiguous problems by establishing a structure teams can build from.</h3>
-					</article>
-					<article class="principle">
-						<span class="principle-number">03</span>
-						<h3>Build early to expose constraints and test possibilities.</h3>
-					</article>
-				</div>
+				<CallToAction href="mailto:work@stevenchustudio.com?subject=Web%20Inquiry" style="small">Say Hello 👋</CallToAction>
 			</div>
+			<img class="hero__portrait" src="/images/about/steven-utah.jpg" alt="Steven Chu outdoors in Utah." width="3265" height="4898" />
+		</section>
 
-			<div class="community-section">
-				<CommunityTimeline programs={aboutCommunityPrograms} />
+		<section class="photo-strip" aria-label="Photos of Steven">
+			{galleryImages.map((image) => <img src={image.src} alt={image.alt} width="1536" height="1152" />)}
+		</section>
+
+		<section class="rail-section">
+			<h2 class="t-heading">Principles I work by</h2>
+			<ol class="principles">
+				{principles.map((principle, index) => (
+					<li>
+						<span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+						<p>{principle}</p>
+					</li>
+				))}
+			</ol>
+		</section>
+
+		<section class="rail-section community">
+			<h2 class="t-heading">Community, talks, and teaching</h2>
+			<div class="community__entries">
+				{aboutCommunityPrograms.map((program) => (
+					<article class="community-entry">
+						<div class="community-entry__copy">
+							<p class="t-eyebrow">{program.date} · {program.categoryLabel} · {program.role}</p>
+							<h3>{program.title}</h3>
+							<p class="t-body">{program.summary}</p>
+							{program.location && <p class="t-meta">{program.location}</p>}
+						</div>
+						{
+							program.id === 'focus-and-flow' ? (
+								<img src="/images/community/focus-flow.jpeg" alt={program.imageAlt ?? program.mediaLabel} width="2000" height="1429" loading="lazy" />
+							) : (
+								<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} class="about-community-media" />
+							)
+						}
+					</article>
+				))}
 			</div>
-		</main>
-
-		<ContactCTA />
-	</div>
+		</section>
+	</main>
 </BaseLayout>
 
 <style>
-	.lede {
-		font-family: var(--font-body);
-		font-size: 1.5rem;
-		font-weight: var(--weight-body);
-		letter-spacing: var(--track-body);
-		line-height: 1.45;
-		color: var(--text-primary);
-		max-width: 54ch;
-	}
-
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
-
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-	}
-
-	.principles-section {
-		grid-column: 1 / -1;
-		padding-block: clamp(2.5rem, 5vw, 4.5rem);
-	}
-
-	.principles-heading {
-		margin-bottom: 2rem;
-	}
-
-	.principles-heading h2 {
-		font-family: var(--font-display);
-		font-size: var(--role-heading-size);
-		font-weight: var(--weight-heading);
-		letter-spacing: -0.02em;
-		line-height: 1.2;
-		color: var(--text-primary);
-	}
-
-	.principles {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 2.5rem;
-	}
-
-	.principle-number {
-		display: block;
-		margin-bottom: 0.875rem;
-		font-family: var(--font-display);
-		font-size: var(--role-eyebrow-size);
-		font-weight: var(--weight-bold);
-		letter-spacing: 0.12em;
-		line-height: 1.4;
-		color: var(--text-tertiary);
-	}
-
-	.principle h3 {
-		font-family: var(--font-display);
-		font-size: var(--role-title-size);
-		font-weight: var(--weight-heading);
-		letter-spacing: -0.02em;
-		line-height: 1.2;
-		color: var(--text-primary);
-	}
-
-	.community-section {
-		grid-column: 1 / -1;
-		margin-block: clamp(2rem, 5vw, 5rem);
-	}
-
-	.ctas { margin-top: 1rem; }
-	.cols-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); grid-gap: 2em; font-size: 1rem; }
-	p { margin-bottom: 1em; }
-	.content { grid-column: 2 / 4; max-width: 48ch; }
-	.content :global(a) { text-decoration: 1px solid underline transparent; text-underline-offset: 0.25em; transition: text-decoration-color var(--theme-transition); }
-	.content :global(a:hover), .content :global(a:focus) { text-decoration-color: currentColor; }
+	.about-page { display: flex; flex-direction: column; gap: 5rem; padding-block: 2.5rem 5rem; }
+	.hero, .rail-section { display: grid; gap: 2.5rem; }
+	.hero__copy { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+	.hero__subhead { max-width: 42ch; }
+	.hero__body { display: flex; flex-direction: column; gap: 1rem; max-width: 52ch; color: var(--text-primary); line-height: 1.6; }
+	.hero__portrait, .photo-strip img, .community-entry > img { display: block; width: 100%; object-fit: cover; }
+	.hero__portrait { aspect-ratio: 3 / 4; border-radius: 1.5rem; }
+	.photo-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
+	.photo-strip img { aspect-ratio: 4 / 3; border-radius: .75rem; }
+	.principles, .community__entries { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+	.principles { gap: 2rem; }
+	.principles li { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: baseline; }
+	.principles span { color: var(--accent); font-family: var(--font-display); font-size: var(--role-eyebrow-size); font-weight: var(--weight-bold); }
+	.principles p { font-family: var(--font-display); font-size: clamp(1.35rem, 2.6vw, 1.75rem); font-weight: var(--weight-heading); letter-spacing: -.02em; line-height: 1.25; }
+	.community__entries { gap: 3rem; }
+	.community-entry { display: grid; gap: 1.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-subtle); }
+	.community-entry:last-child { padding-bottom: 0; border-bottom: 0; }
+	.community-entry__copy { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
+	.community-entry h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: var(--weight-heading); letter-spacing: -.02em; line-height: 1.15; }
+	.community-entry > img, :global(.about-community-media) { width: 100%; min-width: 0; max-width: 100%; aspect-ratio: 4 / 3; border-radius: 1rem; }
+	:global(.community-entry .about-community-media) { min-height: 0; }
+	:global(.community-entry .about-community-media .community-media__primary) { min-height: 0; height: 100%; }
 
 	@media (min-width: 50em) {
-		.ctas { margin-top: 0.5rem; display: flex; gap: 0.5rem; }
-		.about { display: grid; grid-template-columns: 1fr 60% 1fr; }
-		.about > :global(:first-child) { grid-column-start: 2; }
-		section { display: contents; font-size: var(--text-lg); }
-		.principles {
-			grid-template-columns: 1fr;
-			gap: clamp(3rem, 5vw, 5rem);
-		}
-		.principle {
-			display: grid;
-			grid-template-columns: minmax(8rem, 0.35fr) 1.65fr;
-			gap: 2.5rem;
-			align-items: start;
-		}
-		.principle-number {
-			margin-bottom: 0;
-			padding-top: 0.5rem;
-		}
-		.community-section { display: block; }
+		.hero { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); align-items: center; gap: 2.75rem; }
+		.rail-section { grid-template-columns: minmax(8rem, .35fr) 1fr; gap: 2.5rem; }
+		.community-entry { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); align-items: center; gap: 2rem; }
 	}
 </style>
