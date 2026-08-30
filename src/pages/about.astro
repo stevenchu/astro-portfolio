@@ -73,7 +73,6 @@ const aboutTextOnlyProgramIds = ['designing-belonging', 'focus-and-flow'];
 								<p class="t-eyebrow">{program.date} · {program.categoryLabel} · {program.role}</p>
 								<h3>{program.title}</h3>
 								<p class="t-body">{program.summary}</p>
-								{program.location && <p class="t-meta">{program.location}</p>}
 							</div>
 							{!textOnly && (
 								<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} class="about-community-media" />
