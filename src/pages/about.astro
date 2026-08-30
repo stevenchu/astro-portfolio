@@ -20,6 +20,10 @@ const principles = [
 	'Tackle ambiguous problems by establishing a structure teams can build from.',
 	'Build early to expose constraints and test possibilities.',
 ];
+
+// No real event photo available for these two — run text-only, full width,
+// rather than force a mismatched graphic or a sparse photo into the 60/40 media slot.
+const aboutTextOnlyProgramIds = ['designing-belonging', 'focus-and-flow'];
 ---
 
 <BaseLayout
@@ -61,17 +65,22 @@ const principles = [
 		<section class="rail-section community">
 			<h2 class="t-heading">Community, talks, and teaching</h2>
 			<div class="community__entries">
-				{aboutCommunityPrograms.map((program) => (
-					<article class="community-entry">
-						<div class="community-entry__copy">
-							<p class="t-eyebrow">{program.date} · {program.categoryLabel} · {program.role}</p>
-							<h3>{program.title}</h3>
-							<p class="t-body">{program.summary}</p>
-							{program.location && <p class="t-meta">{program.location}</p>}
-						</div>
-						<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} class="about-community-media" />
-					</article>
-				))}
+				{aboutCommunityPrograms.map((program) => {
+					const textOnly = aboutTextOnlyProgramIds.includes(program.id);
+					return (
+						<article class:list={['community-entry', { 'community-entry--text-only': textOnly }]}>
+							<div class="community-entry__copy">
+								<p class="t-eyebrow">{program.date} · {program.categoryLabel} · {program.role}</p>
+								<h3>{program.title}</h3>
+								<p class="t-body">{program.summary}</p>
+								{program.location && <p class="t-meta">{program.location}</p>}
+							</div>
+							{!textOnly && (
+								<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} class="about-community-media" />
+							)}
+						</article>
+					);
+				})}
 			</div>
 		</section>
 	</main>
@@ -95,6 +104,7 @@ const principles = [
 	.community__entries { gap: 3rem; }
 	.community-entry { display: grid; gap: 1.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--border-subtle); }
 	.community-entry:last-child { padding-bottom: 0; border-bottom: 0; }
+	.community-entry--text-only { max-width: 60ch; }
 	.community-entry__copy { display: flex; flex-direction: column; align-items: flex-start; gap: .75rem; }
 	.community-entry h3 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: var(--weight-heading); letter-spacing: -.02em; line-height: 1.15; }
 	:global(.about-community-media) { width: 100%; min-width: 0; max-width: 100%; aspect-ratio: 4 / 3; border-radius: 1rem; }
@@ -104,6 +114,6 @@ const principles = [
 	@media (min-width: 50em) {
 		.hero { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); align-items: center; gap: 2.75rem; }
 		.rail-section { grid-template-columns: minmax(8rem, .35fr) 1fr; gap: 2.5rem; }
-		.community-entry { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); align-items: center; gap: 2rem; }
+		.community-entry:not(.community-entry--text-only) { grid-template-columns: minmax(0, 6fr) minmax(0, 4fr); align-items: center; gap: 2rem; }
 	}
 </style>
