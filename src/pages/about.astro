@@ -72,7 +72,7 @@ const aboutTextOnlyProgramIds = ['designing-belonging', 'focus-and-flow'];
 							<div class="community-entry__copy">
 								<p class="t-eyebrow">{program.date} · {program.categoryLabel} · {program.role}</p>
 								<h3>{program.title}</h3>
-								<p class="t-body">{program.summary}</p>
+								<p class="t-body">{program.id === 'queer-tech-stories' ? 'An intergenerational storytelling series I created to bring queer technologists together to share the experiences and turning points that shaped their lives and careers.' : program.summary}</p>
 							</div>
 							{!textOnly && (
 								<CommunityProgramMedia label={program.mediaLabel} imageSrc={program.imageSrc} imageAlt={program.imageAlt} class="about-community-media" />
