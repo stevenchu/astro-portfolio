@@ -12,7 +12,7 @@ img_alt: Adaptive banking
 mediaType: video
 poster: /images/case/cover-financial-services.png
 homepageOrder: 1
-eyebrow: ENTERPRISE PLATFORM · CONFIDENTIAL
+eyebrow: CANDESCENT · ENTERPRISE BANKING PLATFORM
 showcaseArgument: |
   A shared banking platform needed to support the identities of more than 1,000 banks and credit unions without fragmenting into separate products.
 
