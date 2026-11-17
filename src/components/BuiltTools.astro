@@ -1,0 +1,116 @@
+---
+interface Props {
+	compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const tools = [
+	{
+		name: 'Meta Media',
+		platform: 'macOS',
+		icon: 'meta-media.png',
+		summary: 'Fix dates and locations on photos and videos.',
+		detail: 'Edit metadata in the app, or copy and paste it between files from Finder’s Quick Actions menu.',
+		href: 'https://github.com/stevenchu/meta-media/releases/latest',
+		action: 'Get Meta Media',
+	},
+	{
+		name: 'Ad Dimmer',
+		platform: 'Android TV',
+		icon: 'ad-dimmer.svg',
+		summary: 'Dim ad breaks with your remote while keeping the countdown visible.',
+		detail: 'I designed the overlay around the Prime Video countdown and tested it on Android 11.',
+		href: 'https://github.com/stevenchu/ad-dimmer/releases/tag/v0.4.0',
+		action: 'Get Ad Dimmer',
+	},
+	{
+		name: 'BodyMap',
+		platform: 'Web',
+		icon: 'bodymap.png',
+		summary: 'Turn student videos into visual coaching feedback.',
+		detail: 'Movement instructors can annotate key moments and share feedback students can revisit between lessons.',
+		href: 'https://bodymap-next.vercel.app/',
+		action: 'Try BodyMap',
+	},
+];
+const entries = compact ? tools.slice(0, 2) : tools;
+---
+
+<section id="tools" class="built-tools" aria-labelledby="tools-heading">
+	<h2 class="t-title" id="tools-heading">Tools I’ve built</h2>
+	<ul class:list={['tool-list', { compact }]}>
+		{entries.map((tool) => (
+			<li class="tool">
+				<img src={`${base}images/tools/${tool.icon}`} alt="" width="72" height="72" loading="lazy" class:list={{ 'icon-outlined': tool.icon === 'ad-dimmer.svg' }} />
+				<div class="tool-copy">
+					<p class="t-eyebrow">{tool.platform}</p>
+					<h3 class="t-heading">{tool.name}</h3>
+					<p class="t-body">{tool.summary}</p>
+					{!compact && <p class="t-body">{tool.detail}</p>}
+					<a href={tool.href}>{tool.action}<span aria-hidden="true"> ↗</span></a>
+				</div>
+			</li>
+		))}
+	</ul>
+</section>
+
+<style>
+	.built-tools {
+		display: grid;
+		gap: 2rem;
+		scroll-margin-block-start: 5rem;
+	}
+
+	.tool-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+	}
+
+	.tool-list.compact {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.tool {
+		display: grid;
+		grid-template-columns: auto minmax(0, 1fr);
+		align-content: start;
+		gap: 1rem;
+	}
+
+	.tool img {
+		width: 4.5rem;
+		height: 4.5rem;
+		border-radius: .75rem;
+	}
+
+	.icon-outlined {
+		outline: 1px solid var(--border-subtle);
+	}
+
+	.tool-copy {
+		display: grid;
+		justify-items: start;
+		gap: .4rem;
+	}
+
+	.tool a {
+		margin-block-start: .3rem;
+	}
+
+	@media (max-width: 58em) {
+		.tool-list:not(.compact) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 42em) {
+		.tool-list.compact {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
